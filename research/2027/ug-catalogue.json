@@ -1,0 +1,10340 @@
+{
+"source": "https://programsandcourses.anu.edu.au/data/CourseSearch/GetCourses?ShowAll=true&SelectedYear=2027&Careers[0]=Undergraduate (the JSON behind the catalogue search at https://programsandcourses.anu.edu.au/catalogue)",
+"retrieved": "2026-09-27",
+"note": "Units for variable-unit courses are listed at their minimum; the 98 program courses in courses.json carry the full unit range from their course pages.",
+"courses": {
+"AATD1001": {
+"title": "SoCIETIE Initiative",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"AATD2001": {
+"title": "SoCIETIE Initiative",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"AATD3001": {
+"title": "SoCIETIE Initiative",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ACST3032": {
+"title": "Actuarial Data Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ACST4031": {
+"title": "Actuarial Control Cycle 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ACST4032": {
+"title": "Actuarial Control Cycle 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ACST4062": {
+"title": "Actuarial Data Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ACST4500": {
+"title": "Actuarial Honours Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ANIP3003": {
+"title": "Australian National Internships Program A",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ANIP3005": {
+"title": "Australian National Internships Program B",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ANIP3007": {
+"title": "Australian National Internships Program D",
+"units": 24.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ANTH1002": {
+"title": "Culture and Human Diversity: Introducing Anthropology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ANTH1003": {
+"title": "Anthropology: Critical Foundations",
+"units": 6.0,
+"sessions": []
+},
+"ANTH2005": {
+"title": "Traditional Australian Indigenous Cultures, Societies and Environment",
+"units": 6.0,
+"sessions": []
+},
+"ANTH2009": {
+"title": "Culture and Development",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ANTH2017": {
+"title": "Culture, Social Justice and Aboriginal Society Today",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ANTH2020": {
+"title": "Science, Technology, and Social Justice",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ANTH2025": {
+"title": "Gender in Cross-Cultural Perspective",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ANTH2026": {
+"title": "Medicine, Healing and the Body",
+"units": 6.0,
+"sessions": []
+},
+"ANTH2027": {
+"title": "EthnoLab 1: Anthropological Methods",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ANTH2122": {
+"title": "Economic Anthropology: cross-cultural alternatives to capitalism",
+"units": 6.0,
+"sessions": []
+},
+"ANTH2129": {
+"title": "Crossing Borders: Migration, Displacement and Im/mobility",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ANTH2130": {
+"title": "Violence and Terror",
+"units": 6.0,
+"sessions": []
+},
+"ANTH3010": {
+"title": "Contemporary Anthropological Theory: Special Topics",
+"units": 6.0,
+"sessions": []
+},
+"ANTH3018": {
+"title": "Unfreedoms: Anthropological Explorations of Oppression, Tyranny and Domination",
+"units": 6.0,
+"sessions": []
+},
+"ANTH3059": {
+"title": "EthnoLab 2: Applied Anthropology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ANTH4011": {
+"title": "History of Anthropological Theory Extended",
+"units": 12.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"ARAB1002": {
+"title": "Introductory Arabic 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARAB1003": {
+"title": "Introductory Arabic 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARAB2011": {
+"title": "Intermediate Arabic 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARAB2012": {
+"title": "Intermediate Arabic 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARAB3001": {
+"title": "Advanced Arabic 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARAB3002": {
+"title": "Advanced Arabic 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARAB3006": {
+"title": "Special Topics in Arabic",
+"units": 6.0,
+"sessions": []
+},
+"ARAB3008": {
+"title": "Media Arabic 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARAB3010": {
+"title": "Applied Arabic",
+"units": 12.0,
+"sessions": [
+"Spring Session"
+]
+},
+"ARAB3011": {
+"title": "Media Arabic 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARAB3100": {
+"title": "Advanced Arabic 3",
+"units": 6.0,
+"sessions": []
+},
+"ARCH1001": {
+"title": "Uncovering the Past: A Survey of Global Archaeology and Methods",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARCH2004": {
+"title": "Australian Archaeology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARCH2005": {
+"title": "Archaeology of the Pacific Islanders",
+"units": 6.0,
+"sessions": []
+},
+"ARCH2007": {
+"title": "Archaeological Laboratory Methods",
+"units": 6.0,
+"sessions": []
+},
+"ARCH2030": {
+"title": "Angkor: Power and Glory. The Rise of States in Southeast Asia",
+"units": 6.0,
+"sessions": []
+},
+"ARCH2037": {
+"title": "From Empire to Invasions: the Archaeology of Europe from the Romans to the Vikings",
+"units": 6.0,
+"sessions": []
+},
+"ARCH2041": {
+"title": "Introduction to Environmental Archaeology",
+"units": 6.0,
+"sessions": []
+},
+"ARCH2050": {
+"title": "Archaeology of Southeast Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARCH2055": {
+"title": "Archaeological Field Schools and Fieldwork Practice",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"ARCH2058": {
+"title": "European Prehistory from Cultivation to the Celts",
+"units": 6.0,
+"sessions": []
+},
+"ARCH2061": {
+"title": "Archaeological Field Methods",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARCH2220": {
+"title": "Archaeology and Cultural Heritage Field Schools",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"Winter Session"
+]
+},
+"ARCH3006": {
+"title": "Professional Archaeology",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"ARCH3023": {
+"title": "Thinking Through the Past: Archaeological History and Theory",
+"units": 6.0,
+"sessions": []
+},
+"ARCH3030": {
+"title": "Archaeology of Ritual and Religion",
+"units": 6.0,
+"sessions": []
+},
+"ARCH3042": {
+"title": "Scientific Dating in Archaeology and Palaeoenvironmental Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARCH3043": {
+"title": "Advanced Methods in Environmental Archaeology",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"ARCH3108": {
+"title": "Animal and Plant Domestication",
+"units": 6.0,
+"sessions": []
+},
+"ARCH4003": {
+"title": "Archaeology and Biological Anthropology Honours Writing Seminar",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTH1006": {
+"title": "Art History and Curatorial Studies 1: Classicism to Modernity",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTH1007": {
+"title": "Art History and Curatorial Studies 2: Modernisms to Contemporary Art",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTH2001": {
+"title": "Art History and Curatorial Studies In-Country",
+"units": 12.0,
+"sessions": []
+},
+"ARTH2040": {
+"title": "Art and the Environment: Creative Practice and Ecologies",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2044": {
+"title": "Art and Its Context: Materials, Techniques, Display",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTH2050": {
+"title": "Photography and Art",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTH2052": {
+"title": "Art of the Multiple",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTH2098": {
+"title": "Australian First Nations Art and Culture",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2167": {
+"title": "Issues in Contemporary Craft and Design",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2169": {
+"title": "Asian Modernisms: Art, Nation and World, c.1860-1970",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2170": {
+"title": "Innovation and Transformation in Asian Art c. 1965-2015",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2174": {
+"title": "Art and the Body: Gender and Sexuality",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2176": {
+"title": "Cross Currents in Australian First Nations and Non-Indigenous Art and Culture",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2180": {
+"title": "Fashion Histories",
+"units": 6.0,
+"sessions": []
+},
+"ARTH2181": {
+"title": "Digital Approaches to Art History and Curatorship",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTH3001": {
+"title": "Curatorial Practice",
+"units": 6.0,
+"sessions": []
+},
+"ARTH3005": {
+"title": "Art and Colour: Pigment and Politics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTH3007": {
+"title": "Theories of Art History and Curatorial Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTH3057": {
+"title": "Art and Politics of Collecting",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTH4025": {
+"title": "Curatorial Project",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTH4026": {
+"title": "Sir William Dobell Research Seminar",
+"units": 12.0,
+"sessions": []
+},
+"ARTH4027": {
+"title": "Research Focus",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTH4030": {
+"title": "Art Museum Internship",
+"units": 12.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ARTS5912": {
+"title": "Exchange Program for Arts Students (Band 12)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTS5920": {
+"title": "Exchange Program for Arts Students",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTS5921": {
+"title": "Exchange Program for Arts Students (Band 1)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTS5922": {
+"title": "Exchange Program for Arts Students (Band 2)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTS5924": {
+"title": "Exchange Program for Arts Students (Band 14)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV1020": {
+"title": "Observational Drawing of the Human Figure",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV1034": {
+"title": "Foundations of Contemporary Arts Practices",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTV1150": {
+"title": "Ceramics 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV1350": {
+"title": "Glass 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV1550": {
+"title": "Painting 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV1650": {
+"title": "Photomedia 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV1651": {
+"title": "Moving Image 1",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV1750": {
+"title": "Press-based Print 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTV1751": {
+"title": "Planographic Print 1",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV1850": {
+"title": "Sculpture and Spatial Practice 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV1950": {
+"title": "Textiles 1",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV2027": {
+"title": "Professional Practice: Economies and Ecologies in the Australian Cultural Sector",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV2028": {
+"title": "Professional Practice Internship",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2066": {
+"title": "Art in Context",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2150": {
+"title": "Ceramics 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2350": {
+"title": "Glass 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2550": {
+"title": "Painting 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2650": {
+"title": "Photomedia 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2651": {
+"title": "Moving Image 2",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"Second Semester"
+]
+},
+"ARTV2750": {
+"title": "Press-based Print 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV2751": {
+"title": "Planographic Print 2",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTV2752": {
+"title": "Drawing 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2850": {
+"title": "Sculpture and Spatial Practice 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV2909": {
+"title": "The Public Project: Engaging with Institutions and Communities",
+"units": 6.0,
+"sessions": []
+},
+"ARTV2921": {
+"title": "Environment Studio: field based research and studio practice in visual arts",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ARTV2950": {
+"title": "Textiles 2",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTV3033": {
+"title": "Creative Research Practice: Developing an Independent Work Proposal",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTV3034": {
+"title": "Creative Research Practice: Extending and Consolidating an Independent Work Proposal",
+"units": 6.0,
+"sessions": []
+},
+"ARTV3035": {
+"title": "Creative Research Practice: Extending and Consolidating an Independent Project",
+"units": 12.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ARTV4022": {
+"title": "Research Principles and Methods 1",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"ARTV4023": {
+"title": "Research Principles and Methods 2",
+"units": 12.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA1025": {
+"title": "Asia and the Pacific: Power, diversity and change",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA1030": {
+"title": "Asia and the Pacific in Motion",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA1035": {
+"title": "Introduction to Asian Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA1999": {
+"title": "The Origins of Political Order in Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2001": {
+"title": "Language in Asia and the Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2003": {
+"title": "Chinese Literature",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2006": {
+"title": "Gender in Korean History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2009": {
+"title": "The Making of Modern Japan: From Samurai to Economic Superpower and Beyond",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2014": {
+"title": "China: Language, Discourse, and Political Culture",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2016": {
+"title": "The Mongol Empire in World History",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2017": {
+"title": "History of International Relations in Northeast Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2018": {
+"title": "Maps and Mapping in Asia and the Pacific",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2026": {
+"title": "The Politics of China",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2031": {
+"title": "Japanese Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2037": {
+"title": "History of Modern China",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2039": {
+"title": "Burma/Myanmar: a Country in Crisis",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2040": {
+"title": "The Making of Modern Korea",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2041": {
+"title": "Mainland Southeast Asia: Colonial and Postcolonial Predicaments",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2044": {
+"title": "Chinese History: The Imperial Period (221 BC - 1800)",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2049": {
+"title": "Politics and Society in Contemporary Korea",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2054": {
+"title": "Chinese Philosophy: Creation and Development",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2058": {
+"title": "Japanese Popular Culture: Manga, Anime, Film & the Visual Arts",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2060": {
+"title": "Southeast Asian Security",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2065": {
+"title": "Asia’s Changing Politics in Comparative Perspective",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2067": {
+"title": "Asian Economies",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2072": {
+"title": "Taiwan: History and Culture",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2074": {
+"title": "Popular Culture in East Asia",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2081": {
+"title": "Human Rights in Asia",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2088": {
+"title": "Culture and Environment in Indonesia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2093": {
+"title": "Natural Resource Conflicts in Asia and the Pacific",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2096": {
+"title": "North Korea: History, Culture, Politics",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2097": {
+"title": "Global Learning",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2099": {
+"title": "Social Power in China: Family to Family-State",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2103": {
+"title": "Language in Asia and the Pacific (L)",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2111": {
+"title": "Indonesian Foreign and Security Policy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2112": {
+"title": "Special Topics in Asian and Pacific Studies",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ASIA2116": {
+"title": "India's Culture Wars",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2128": {
+"title": "Culture and Environment in Indonesia (L)",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2130": {
+"title": "The Archaeology of Rock Art in Asia, the Pacific and Australia",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"ASIA2203": {
+"title": "Archaeology of China",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2222": {
+"title": "Taiwanese Society and Politics",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"ASIA2270": {
+"title": "India Past and Present: The Impact of Pre-colonial History on India Today",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2271": {
+"title": "The Making of South Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2275": {
+"title": "The Pleasures and Powers of Stories in South and Southeast Asia",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2301": {
+"title": "Human Migration and Expansion in the Rise of the Asia-Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2302": {
+"title": "Culture and Modernity in Asia: Anthropological Perspectives",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2304": {
+"title": "What is Literature? Asian Perspectives",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2307": {
+"title": "History of Empire in Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2308": {
+"title": "Linguistic Histories in Asia and the Pacific",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2311": {
+"title": "Gender and Cultural Studies in Asia and the Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2324": {
+"title": "What is Literature? Asian Perspectives (L)",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2366": {
+"title": "Foundations of Chinese Culture",
+"units": 6.0,
+"sessions": []
+},
+"ASIA2411": {
+"title": "Indonesian Foreign and Security Policy (L)",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA2416": {
+"title": "Indonesia: Politics, Society and Development (L)",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2516": {
+"title": "Indonesia: Politics, Society and Development",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA2747": {
+"title": "Airlines in Asia and the Pacific: Histories, Technologies, Cultures, and Geographies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA3011": {
+"title": "Samurai Society and Social Control in Japan",
+"units": 6.0,
+"sessions": []
+},
+"ASIA3012": {
+"title": "Independent Research Project in Asian Studies",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ASIA3021": {
+"title": "Engaging Asia: Australia and the Asian Century",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"ASIA3023": {
+"title": "Asia Pacific Week Internship",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA3027": {
+"title": "Issues in Japanese Policy in their global context",
+"units": 6.0,
+"sessions": []
+},
+"ASIA3029": {
+"title": "Reconciliation and the Memory of Conflict in Asia",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA3030": {
+"title": "History of the State System in Southeast Asia",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA3031": {
+"title": "Cultures in Korean Society",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA3032": {
+"title": "Technology and Society in Asia",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA3033": {
+"title": "Rethinking Northeast Asia: Region, Culture and Society",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA3034": {
+"title": "The Contemporary Chinese World: From Mao to Now",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA3039": {
+"title": "Thinking About Thought: Ethical Research using AI in the Humanities (Asia and the Pacific)",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA3040": {
+"title": "Literary and Cultural Discourse in Modern Japan",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASIA3084": {
+"title": "Modern Mongolia - On Campus Experience",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ASIA3088": {
+"title": "The Korean War",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA3108": {
+"title": "Research Topics in Asian and Pacific Languages (L)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ASIA3220": {
+"title": "Asia-Pacific In-Country Learning",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"Spring Session"
+]
+},
+"ASIA3272": {
+"title": "Truth and Falsity in Indian History and Politics",
+"units": 6.0,
+"sessions": []
+},
+"ASIA3525": {
+"title": "Learning Language Locally",
+"units": 0.0,
+"sessions": [
+"Summer Session",
+"Winter Session"
+]
+},
+"ASIA3551": {
+"title": "Year in Asia",
+"units": 24.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ASIA4001": {
+"title": "Fundamentals of Research Design in Asia-Pacific Culture, History and Languages",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASIA4044": {
+"title": "Research Methods in Chinese Studies",
+"units": 6.0,
+"sessions": []
+},
+"ASIA5925": {
+"title": "Global Semester",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ASTR1001": {
+"title": "Astrophysics",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester",
+"Spring Session"
+]
+},
+"ASTR1003": {
+"title": "Astronomy and Space",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ASTR2013": {
+"title": "Foundations of Astrophysics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASTR3002": {
+"title": "Galaxies and Cosmology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASTR3005": {
+"title": "Astrophysics Research Topic",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"ASTR3007": {
+"title": "Stars",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASTR3010": {
+"title": "Computational and Data Tools for Scientists",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASTR3013": {
+"title": "Astrophysical Processes",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASTR4004": {
+"title": "Astronomical Computing",
+"units": 6.0,
+"sessions": []
+},
+"ASTR4005": {
+"title": "Astronomy and Astrophysics IV Honours Research Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ASTR4006": {
+"title": "Galaxies",
+"units": 6.0,
+"sessions": []
+},
+"ASTR4011": {
+"title": "Observational Techniques",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASTR4020": {
+"title": "Diffuse Matter and Star Formation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ASTR4021": {
+"title": "Astrophysical Processes II",
+"units": 6.0,
+"sessions": []
+},
+"ASTR4022": {
+"title": "Stars II and Exoplanets",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ASTR6010": {
+"title": "Computational and Data Tools for Scientists",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BAPA1001": {
+"title": "The Origins of Political Order in Asia",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"BAPA1002": {
+"title": "Understanding Peace and Conflict",
+"units": 6.0,
+"sessions": []
+},
+"BAPA1003": {
+"title": "Pacific Encounters: An introduction to Pacific Studies",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"BAPA1004": {
+"title": "Introduction to International Security Studies",
+"units": 6.0,
+"sessions": []
+},
+"BAPA1005": {
+"title": "How Nations Fight: From Tsushima to Taiwan",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"BAPA1006": {
+"title": "Peacebuilding and Conflict Resolution",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"BAPA2003": {
+"title": "Special Topics in Asia-Pacific Affairs",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"BAPA2004": {
+"title": "Readings in Asia-Pacific Affairs",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"BAPA3001": {
+"title": "Humanitarianism: Principles, Politics and Practice",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"BAPA3002": {
+"title": "Global Governance in the Asia-Pacific",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"BAPA3003": {
+"title": "Politics and Development in the Contemporary Pacific",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"BAPA3004": {
+"title": "Living with Giants: Australia's Security in a Contested Asia",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"BIAN1001": {
+"title": "The Human Voyage: Introduction to Biological Anthropology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIAN2015": {
+"title": "Human Skeletal Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIAN2064": {
+"title": "Anthropology of Environmental Disasters",
+"units": 6.0,
+"sessions": []
+},
+"BIAN2119": {
+"title": "Nutrition, Disease and the Environment",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIAN2128": {
+"title": "Forensic Anthropology and Archaeology",
+"units": 6.0,
+"sessions": []
+},
+"BIAN3014": {
+"title": "Research Design and Analysis in Biological Anthropology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIAN3113": {
+"title": "Human Evolution",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIAN3124": {
+"title": "Evolution and Human Behaviour",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIAN3125": {
+"title": "Ancient Health and Disease",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIAN3127": {
+"title": "Primate Behaviour and Conservation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIAN3129": {
+"title": "Supervised Research in Biological Anthropology",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BIAN4010": {
+"title": "Theory Seminar in Biological Anthropology and Archaeology",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIAN4011": {
+"title": "Data Analysis and Methods in Biological Anthropology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL1008": {
+"title": "Human Biology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL1009": {
+"title": "Diversity of Life",
+"units": 6.0,
+"sessions": []
+},
+"BIOL1020": {
+"title": "Foundations of life",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL1030": {
+"title": "Diversity of Life",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2001": {
+"title": "Introduction to Quantitative Biology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL2114": {
+"title": "Evolution",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2115": {
+"title": "Comparative Physiology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2117": {
+"title": "Cell Biology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2131": {
+"title": "Ecology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL2142": {
+"title": "General Microbiology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2151": {
+"title": "Genetics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL2161": {
+"title": "Genes: Replication and Expression",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL2162": {
+"title": "Molecular Gene Technology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2171": {
+"title": "Biochemistry and Nutrition",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL2174": {
+"title": "Cell Physiology in Health and Disease",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2202": {
+"title": "Experimental Design and Analysis in Biology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL2203": {
+"title": "Field Studies in Functional Ecology",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"Winter Session"
+]
+},
+"BIOL3002": {
+"title": "Plants: Genes and the Environment",
+"units": 6.0,
+"sessions": []
+},
+"BIOL3023": {
+"title": "Special Topics in Biology",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"BIOL3106": {
+"title": "Biosecurity",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3107": {
+"title": "Advances in Medical and Plant Biochemistry",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3108": {
+"title": "Hallmarks of Cancer",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3109": {
+"title": "Developmental Biology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3125": {
+"title": "Plants and Global Climate Change",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3130": {
+"title": "Quantitative Ecology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3131": {
+"title": "Behavioural Ecology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3141": {
+"title": "Infection and Immunity",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3142": {
+"title": "Biomedical Parasitology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3144": {
+"title": "Advanced and Applied Immunology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3157": {
+"title": "Bioinformatics and its Applications",
+"units": 6.0,
+"sessions": []
+},
+"BIOL3161": {
+"title": "Genomics and its Applications",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3177": {
+"title": "Advances in Molecular Plant Science",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3178": {
+"title": "Recovering Threatened Species and Ecosystems",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3188": {
+"title": "ANU SynBio Challenge Team Project",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3190": {
+"title": "Medical Science in the Workplace",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3191": {
+"title": "Bioethics and Society",
+"units": 6.0,
+"sessions": []
+},
+"BIOL3194": {
+"title": "Biological Sciences in the Workplace",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3203": {
+"title": "Advanced Microscopy in Biosciences",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"BIOL3204": {
+"title": "Genetics of Human Disease",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3205": {
+"title": "Genomic Medicine",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3206": {
+"title": "Evolution of Biodiversity",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3207": {
+"title": "Data Science for Biologists",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BIOL3208": {
+"title": "Biology Research Project",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Winter Session",
+"Second Semester"
+]
+},
+"BIOL3209": {
+"title": "Biology Research Project",
+"units": 12.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Winter Session",
+"Second Semester"
+]
+},
+"BIOL3210": {
+"title": "Appreciating Parasites: From Molecules to Ecosystems",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"BIOL3213": {
+"title": "Australian Wildlife",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BIOL3303": {
+"title": "Advanced Field Studies in Functional Ecology",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"Winter Session"
+]
+},
+"BIOL4001": {
+"title": "Biology IV Honours",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BPHB1114": {
+"title": "Advanced Studies in the Social Sciences and Humanities 1",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BPHB2114": {
+"title": "Advanced Studies in the Social Sciences and Humanities 2",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"BPHB3114": {
+"title": "Advanced Studies in the Social Sciences and Humanities 3",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"BURM1002": {
+"title": "Burmese 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BURM1003": {
+"title": "Burmese 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BURM2001": {
+"title": "Burmese 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BURM2002": {
+"title": "Burmese 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSI2023": {
+"title": "Dynamics of Asian Business",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSI2024": {
+"title": "Dynamics of Business in the Middle East",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSI2025": {
+"title": "International Business",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSI2034": {
+"title": "Dynamics of European Business",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSI3020": {
+"title": "International Strategic Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSI3024": {
+"title": "Export Business Planning",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSI3028": {
+"title": "Business in China",
+"units": 6.0,
+"sessions": []
+},
+"BUSI3029": {
+"title": "Cross-Cultural Management",
+"units": 6.0,
+"sessions": []
+},
+"BUSI3030": {
+"title": "International Supply Chain Management",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSN1001": {
+"title": "Business Reporting and Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN1002": {
+"title": "Accounting Processes and Systems",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN1101": {
+"title": "Introduction to Commercial Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSN2011": {
+"title": "Management Accounting",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN2015": {
+"title": "Company Accounting",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN2036": {
+"title": "Financial Statement Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSN2037": {
+"title": "Fundamentals of Accounting Data Analytics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN2101": {
+"title": "Law of Business Entities",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSN3001": {
+"title": "Accounting Theory",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN3002": {
+"title": "Auditing",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSN3003": {
+"title": "Advanced Management Accounting",
+"units": 6.0,
+"sessions": []
+},
+"BUSN3008": {
+"title": "Financial Reporting By Corporations",
+"units": 6.0,
+"sessions": []
+},
+"BUSN3014": {
+"title": "Principles of Tax Law",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN3017": {
+"title": "Corporate Social Responsibility, Accountability and Reporting",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSN3051": {
+"title": "Advanced Accounting Data Analytics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSN3060": {
+"title": "Special Topics In Commerce",
+"units": 6.0,
+"sessions": []
+},
+"BUSN4007": {
+"title": "Analysis of Financial Reporting",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"BUSN4013": {
+"title": "Seminar in Research Method in Accounting",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"BUSN4045": {
+"title": "Corporate Governance (Honours)",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSN4111": {
+"title": "Seminal Research in Accounting",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"BUSN4500": {
+"title": "Accounting Honours Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CBEA2000": {
+"title": "Employability Fundamentals for Professional Practice",
+"units": 6.0,
+"sessions": []
+},
+"CBEA2001": {
+"title": "Australian Indigenous Perspectives in Business and Economics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CBEA3001": {
+"title": "College of Business and Economics Special Industry Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CBEA3003": {
+"title": "Australian and First Nations Business Immersion",
+"units": 6.0,
+"sessions": []
+},
+"CBEA3066": {
+"title": "Global Business Immersion",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"CBEA3070": {
+"title": "ANU College of Business and Economics Internship Program (UG)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CHEM1101": {
+"title": "Chemistry 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM1201": {
+"title": "Chemistry 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM2202": {
+"title": "Chemical Structure and Reactivity 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM2203": {
+"title": "Chemical Structure and Reactivity 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM2208": {
+"title": "Chemical Biology 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM2210": {
+"title": "Structure Elucidation in Chemistry",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester"
+]
+},
+"CHEM2211": {
+"title": "Chemical Biology 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM2213": {
+"title": "Soft Matter",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM2214": {
+"title": "Chemical Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM3013": {
+"title": "NMR spectroscopy and mass spectrometry of small and large molecules",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM3060": {
+"title": "Research Project in Chemistry",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"CHEM3123": {
+"title": "Molecular Materials",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM3201": {
+"title": "Synthetic Aspects of Medicinal Chemistry",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM3202": {
+"title": "Hard Matter",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM3203": {
+"title": "Advanced Inorganic Chemistry",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHEM3204": {
+"title": "Advanced Protein Technologies: Laboratory course",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"CHEM3206": {
+"title": "Catalysis in Chemistry",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM3207": {
+"title": "Current Topics in Chemical and Synthetic Biology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM3208": {
+"title": "Computational Chemistry",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHEM4005": {
+"title": "Chemistry IV Honours (S)",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CHIN1012": {
+"title": "Modern Chinese 1: Spoken",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN1013": {
+"title": "Modern Chinese 1: Written",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN2013": {
+"title": "Taiwanese (Southern Min)",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"CHIN2019": {
+"title": "Literary Chinese 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN2021": {
+"title": "Literary Chinese 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN2022": {
+"title": "Modern Chinese 2: Spoken",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN2023": {
+"title": "Modern Chinese 2: Written",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN2024": {
+"title": "Cantonese 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN2025": {
+"title": "Cantonese 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN3015": {
+"title": "Advanced Literary Chinese",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CHIN3017": {
+"title": "Modern Chinese 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN3018": {
+"title": "Modern Chinese 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN3022": {
+"title": "Modern Chinese 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN3023": {
+"title": "Modern Chinese 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN3024": {
+"title": "Modern Chinese 7",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHIN3025": {
+"title": "Modern Chinese 8",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN3041": {
+"title": "Chinese-English Translation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHIN3216": {
+"title": "Chinese-English Interpreting",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHMD2005": {
+"title": "Health Humanities",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CHST3211": {
+"title": "Reading China: Past and Present",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CHST3212": {
+"title": "Reading Chinese Literature: Theory and Criticism",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CLAS1003": {
+"title": "Classical Mythology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CLAS1005": {
+"title": "Ancient Rome: History, Culture, and Society",
+"units": 6.0,
+"sessions": []
+},
+"CLAS1006": {
+"title": "Ancient Greece: History, Culture and Society",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CLAS2013": {
+"title": "The Muse and the Machine: The Arts, Technology and Society in Graeco-Roman Antiquity",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CLAS2014": {
+"title": "Democrats, Tyrants, and Emperors: The Art of Government in the Ancient Mediterranean",
+"units": 6.0,
+"sessions": []
+},
+"CLAS2015": {
+"title": "Alexander the Great and the Hellenistic World: An Age of Transformation and Discovery",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CLAS2100": {
+"title": "Ancient Mediterranean Study Tour",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"CLAS3001": {
+"title": "Rome: The Eternal City from Antiquity to the Early Middle Ages",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CLAS3002": {
+"title": "Life, Love, and Loss in Ancient Greece and Rome",
+"units": 6.0,
+"sessions": []
+},
+"CLAS3003": {
+"title": "Faith and Belief in the Ancient Mediterranean",
+"units": 6.0,
+"sessions": []
+},
+"CLAS3100": {
+"title": "Remembering and Forgetting in Imperial Greece and Rome",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CLAS4008": {
+"title": "Topics in Classics",
+"units": 12.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CLAS4022": {
+"title": "Classics Now!",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP1100": {
+"title": "Programming as Problem Solving",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP1110": {
+"title": "Structured Programming",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP1130": {
+"title": "Programming as Problem Solving (Advanced)",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP1140": {
+"title": "Structured Programming (Advanced)",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP1600": {
+"title": "Foundations of Computing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP1720": {
+"title": "Art and Interaction Computing",
+"units": 6.0,
+"sessions": []
+},
+"COMP1730": {
+"title": "Programming for Scientists",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP2100": {
+"title": "Software Construction",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP2120": {
+"title": "Software Engineering",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP2300": {
+"title": "Computer Architecture",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP2310": {
+"title": "Systems, Networks, and Concurrency",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP2400": {
+"title": "Relational Databases",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP2550": {
+"title": "Computing R&D Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP2610": {
+"title": "Information Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP2620": {
+"title": "Logic",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP2700": {
+"title": "Cyber Security Foundations",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP2710": {
+"title": "Special Topics in Computer Science",
+"units": 6.0,
+"sessions": []
+},
+"COMP3242": {
+"title": "Deep Learning",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP3300": {
+"title": "Operating Systems Implementation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3310": {
+"title": "Computer Networks",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP3320": {
+"title": "High Performance Scientific Computation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3425": {
+"title": "Data Mining",
+"units": 6.0,
+"sessions": []
+},
+"COMP3430": {
+"title": "Data Wrangling",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3500": {
+"title": "Software Engineering Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP3540": {
+"title": "Game Development",
+"units": 6.0,
+"sessions": []
+},
+"COMP3600": {
+"title": "Algorithms",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3610": {
+"title": "Principles of Programming Languages",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3620": {
+"title": "Artificial Intelligence",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP3630": {
+"title": "Theory of Computation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP3670": {
+"title": "Introduction to Machine Learning",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3703": {
+"title": "Software Security",
+"units": 6.0,
+"sessions": []
+},
+"COMP3704": {
+"title": "Network Security",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP3710": {
+"title": "Topics in Computer Science",
+"units": 6.0,
+"sessions": []
+},
+"COMP3740": {
+"title": "Individual Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP3770": {
+"title": "Computing Research Project (R&D)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP3820": {
+"title": "Computing Internship",
+"units": 12.0,
+"sessions": []
+},
+"COMP3900": {
+"title": "Human-Computer Interaction",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP4011": {
+"title": "Advanced Topics in Formal Methods and Programming Languages",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP4020": {
+"title": "Advanced Topics in Human-Centred and Creative Computing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP4045": {
+"title": "Advanced Topics in Computer Systems",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4130": {
+"title": "Managing Software Quality and Process",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4300": {
+"title": "Parallel Systems",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4350": {
+"title": "Sound and Music Computing",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4425": {
+"title": "Data Mining",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4450": {
+"title": "Computing Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4500": {
+"title": "Software Engineering Team Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP4528": {
+"title": "Computer Vision",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4550": {
+"title": "Computing Research Project",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP4600": {
+"title": "Advanced Algorithms",
+"units": 6.0,
+"sessions": []
+},
+"COMP4610": {
+"title": "Computer Graphics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4620": {
+"title": "Advanced Topics in Artificial Intelligence",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP4650": {
+"title": "Document Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"COMP4670": {
+"title": "Statistical Machine Learning",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4680": {
+"title": "Advanced Topics in Machine Learning",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4691": {
+"title": "Optimisation",
+"units": 6.0,
+"sessions": []
+},
+"COMP4703": {
+"title": "Vulnerability Research and Exploit Mitigation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"COMP4712": {
+"title": "Compiler Construction",
+"units": 6.0,
+"sessions": []
+},
+"COMP4820": {
+"title": "Advanced Computing Internship",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"COMP4880": {
+"title": "Computational Methods for Network Science",
+"units": 6.0,
+"sessions": []
+},
+"COMP5920": {
+"title": "Exchange Program in Computer Science",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CRIM1001": {
+"title": "Criminological Imaginations: Understanding Criminality",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CRIM1002": {
+"title": "Criminological Perspectives: Understanding Crime",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CRIM2002": {
+"title": "Organised Crime: Understanding the Underworld",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"CRIM2003": {
+"title": "Controversies in Crime Control",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CRIM2005": {
+"title": "Alcohol, Drugs and Crime: Promoting Health and Preventing Consequences",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CRIM2006": {
+"title": "Young People and Crime: Developmental Criminology and its Discontents",
+"units": 6.0,
+"sessions": []
+},
+"CRIM2007": {
+"title": "Order in the Courts: An Introduction to the Australian Judicial System",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CRIM2008": {
+"title": "Punishment and Society: An Introduction to Penology",
+"units": 6.0,
+"sessions": []
+},
+"CRIM2009": {
+"title": "Corruption in our world",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"CRIM2010": {
+"title": "Cybercrime: an introduction",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"CRIM2011": {
+"title": "Special Topics in Criminology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CRIM2013": {
+"title": "Policing",
+"units": 6.0,
+"sessions": []
+},
+"CRIM2014": {
+"title": "Introduction to Crime Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CRIM2015": {
+"title": "Targeted Violence: Criminological Approaches to Understanding and Prevention",
+"units": 6.0,
+"sessions": []
+},
+"CRIM3001": {
+"title": "Professional Perspectives on Crime and Prevention",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"CRIM3002": {
+"title": "Corruption in Sport",
+"units": 6.0,
+"sessions": []
+},
+"CRIM3003": {
+"title": "Criminology at the Scene 1",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"CRIM3005": {
+"title": "Diversity and Crime: Equality in the Criminal Justice System",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CRIM3006": {
+"title": "Crime Prevention: Evaluation Theory and Practice",
+"units": 6.0,
+"sessions": []
+},
+"CRIM3010": {
+"title": "Doing Criminology: Advanced Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"CRIM4001": {
+"title": "Advanced Criminology Seminar",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DEMO1001": {
+"title": "Global Population Challenges",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DEMO2001": {
+"title": "Understanding Population Change",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DEMO2002": {
+"title": "Population Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DEMO2003": {
+"title": "Migration in the Modern World",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"DEMO2004": {
+"title": "Social Inequalities in Health",
+"units": 6.0,
+"sessions": []
+},
+"DEMO3001": {
+"title": "Population Policy Case Studies",
+"units": 6.0,
+"sessions": []
+},
+"DEMO3002": {
+"title": "Demographic Research Internship",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DEMO3010": {
+"title": "Perspectives on Sex, Gender and Population",
+"units": 6.0,
+"sessions": []
+},
+"DEMO4011": {
+"title": "Demography Honours Seminar in Theory and Methods",
+"units": 12.0,
+"sessions": []
+},
+"DEMO4091": {
+"title": "Special Topics in Population Change",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DEMO4092": {
+"title": "Life Course Analytics",
+"units": 6.0,
+"sessions": []
+},
+"DESN1002": {
+"title": "Visual Communication: Design and Production",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN1003": {
+"title": "Contemporary Design In Context",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN1004": {
+"title": "The Past as Prototype: History, Ethics and Concepts for Design in the Twenty-First Century",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN1005": {
+"title": "Precise Drawing and Model Making",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN2001": {
+"title": "Digital Form and Fabrication",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2002": {
+"title": "Foundations of Creative Code",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN2003": {
+"title": "Creative Data Visualisation: Representing Data in Visual and Material Form",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2004": {
+"title": "Autonomous Agents: Natural and Algorithmic Systems in Art and Design",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2006": {
+"title": "Front-End Web: Crafting Online Experience",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2007": {
+"title": "Speculative and Critical Design",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN2008": {
+"title": "Design Thinking: Human-Centred Design Methodologies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2009": {
+"title": "Typography in Context",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2010": {
+"title": "Making Creative and Critical Technologies: Physical Computing for Design and Art",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN2012": {
+"title": "The Ethics of Making: Design for Reparative Practices",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN2015": {
+"title": "Mediating Spaces Through Object Design",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN3010": {
+"title": "Design Studio: Independent Practice",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN3011": {
+"title": "Design Studio: Engagement and Collaboration",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"DESN3012": {
+"title": "Design Studio: Professional Practice",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN4011": {
+"title": "Design Research: Theory and Methods",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"DESN4012": {
+"title": "Design Research: Communication and Presentation",
+"units": 12.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECHI1006": {
+"title": "The Australian Economy: Past and Present",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECHI3009": {
+"title": "World Economy Since 1800",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON1100": {
+"title": "Economics I (H)",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON1101": {
+"title": "Microeconomics 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ECON1102": {
+"title": "Macroeconomics 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ECON2009": {
+"title": "Labour Economics and Industrial Relations",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON2013": {
+"title": "Behavioral Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON2014": {
+"title": "Managerial Economics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON2016": {
+"title": "Economics II (H)",
+"units": 6.0,
+"sessions": []
+},
+"ECON2026": {
+"title": "Money and Banking",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON2101": {
+"title": "Microeconomics 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ECON2102": {
+"title": "Macroeconomics 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ECON2108": {
+"title": "Japanese Economy and Economic Policy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON2125": {
+"title": "Optimisation for Economics and Financial Economics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ECON2131": {
+"title": "Public Sector Economics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON2141": {
+"title": "Strategic Thinking: An introduction to Game Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON2900": {
+"title": "Development Poverty and Famine",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3004": {
+"title": "Health Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3006": {
+"title": "Financial Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3020": {
+"title": "Special Topics in Economics: Computing and Data Skills",
+"units": 6.0,
+"sessions": []
+},
+"ECON3021": {
+"title": "International Monetary Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON3023": {
+"title": "Economic Policy Issues",
+"units": 6.0,
+"sessions": []
+},
+"ECON3056": {
+"title": "PPE Integration 3: Classic Literature in Politics, Philosophy and Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON3057": {
+"title": "Industrial Organisation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON3100": {
+"title": "Economics 3 (H)",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3101": {
+"title": "Microeconomics 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON3102": {
+"title": "Macroeconomics 3",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3103": {
+"title": "International Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3127": {
+"title": "Computational Methods in Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON3128": {
+"title": "Resource and Environmental Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON3152": {
+"title": "Game Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON3180": {
+"title": "Advanced Behavioral Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON3181": {
+"title": "Competition Policy and Regulation",
+"units": 6.0,
+"sessions": []
+},
+"ECON4040": {
+"title": "Applied Welfare Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON4403": {
+"title": "Economic Policy Issues",
+"units": 6.0,
+"sessions": []
+},
+"ECON4409": {
+"title": "Advanced Development Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON4411": {
+"title": "Microeconomic Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON4414": {
+"title": "Computational Methods in Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON4415": {
+"title": "International Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON4421": {
+"title": "Topics in Microeconomic Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON4422": {
+"title": "Macroeconomic Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON4434": {
+"title": "Advanced Public Economics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON4437": {
+"title": "Financial Economics",
+"units": 6.0,
+"sessions": []
+},
+"ECON4438": {
+"title": "Industrial Organisation",
+"units": 6.0,
+"sessions": []
+},
+"ECON4441": {
+"title": "Labour Economics & Industrial Relations",
+"units": 6.0,
+"sessions": []
+},
+"ECON4453": {
+"title": "Game Theory",
+"units": 6.0,
+"sessions": []
+},
+"ECON4480": {
+"title": "Advanced Behavioral Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ECON4488": {
+"title": "Economics Honours Research Essay",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ECON4492": {
+"title": "Organisational Economics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON4493": {
+"title": "Topics in Macroeconomics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ECON4500": {
+"title": "Economic Growth",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMET1001": {
+"title": "Foundations of Economic and Financial Models",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"EMET2007": {
+"title": "Econometrics I: Econometric Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMET3004": {
+"title": "Econometrics II: Econometric Modelling",
+"units": 6.0,
+"sessions": []
+},
+"EMET3006": {
+"title": "Applied Micro-econometrics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMET3007": {
+"title": "Business and Economic Forecasting",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMET3008": {
+"title": "Applied Macro and Financial Econometrics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMET4007": {
+"title": "Econometrics I: Econometric Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMET4301": {
+"title": "Applied Micro-econometrics",
+"units": 6.0,
+"sessions": []
+},
+"EMET4308": {
+"title": "Advanced Econometrics II",
+"units": 6.0,
+"sessions": []
+},
+"EMET4310": {
+"title": "Applied Macro & Financial Econometrics",
+"units": 6.0,
+"sessions": []
+},
+"EMET4312": {
+"title": "Business & Economic Forecasting",
+"units": 6.0,
+"sessions": []
+},
+"EMET4314": {
+"title": "Advanced Econometrics I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC1006": {
+"title": "The Blue Planet: An Introduction to Earth System Science",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC1008": {
+"title": "EARTH: The Chemistry and Physics of our Planet",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC1017": {
+"title": "Critical Minerals for The Energy Transition – Technology, Environment, & Geopolitics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC2010": {
+"title": "Data Science for Earth System Scientists",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC2021": {
+"title": "Fundamentals of Climate Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC2022": {
+"title": "Introduction to Global Geophysics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC2023": {
+"title": "Foundations of Geology and Geochemistry",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3002": {
+"title": "Structure and Tectonic Evolution of the Australian Plate",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC3007": {
+"title": "Economic Geology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC3019": {
+"title": "Coral Reef Field Studies",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"EMSC3020": {
+"title": "Geobiology and Evolution of Life on Earth",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3022": {
+"title": "Planetary Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC3023": {
+"title": "Marine Biogeochemistry",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3024": {
+"title": "Magmatism and Metamorphism",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3025": {
+"title": "Global Water Resources",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC3027": {
+"title": "Palaeoclimatology and Climate Change",
+"units": 6.0,
+"sessions": []
+},
+"EMSC3032": {
+"title": "Remote Sensing Techniques for Monitoring Earth",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3033": {
+"title": "Applied Geophysics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3034": {
+"title": "Dynamic Earth: Plates, Plumes and Mantle Convection",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"EMSC3039": {
+"title": "Climate Dynamics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"EMSC3050": {
+"title": "Special Topics",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"EMSC4005": {
+"title": "Earth and Marine Sciences Honours Thesis",
+"units": 3.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"EMSC4008": {
+"title": "Physics of the Earth Honours Reseach Project",
+"units": 3.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"EMSC4017": {
+"title": "Research Methods for Earth Sciences",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"EMSC4706": {
+"title": "Introduction to Natural Hazards",
+"units": 6.0,
+"sessions": []
+},
+"ENGL1100": {
+"title": "Secrets and Lies: Literature and the Self",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL1200": {
+"title": "Imagined Worlds",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL2015": {
+"title": "Creative Writing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL2022": {
+"title": "Jane Austen History and Fiction",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2023": {
+"title": "Feeling Bad in Contemporary Literature",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL2027": {
+"title": "Queens, Tyrants, Traitors: Power Play on the Early Modern Stage",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL2040": {
+"title": "The Making of Literature: Topics in Literary Production and Reception",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2067": {
+"title": "Adaptation: From Text to Screen",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL2068": {
+"title": "Empire: the Black Atlantic and Colonial Romanticism",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2077": {
+"title": "Creative Writing 2: Story to Script to Performance",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2085": {
+"title": "Strange Home: Rethinking Australian Literature",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2087": {
+"title": "Reality Effects: Truth, Representation and Narrative Form",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2111": {
+"title": "Imaginary Journeys: Writing Travel in Australian Literature and Film",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2116": {
+"title": "Televisual: Investigating Narrative Television",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL2222": {
+"title": "Great Writers: Special Topics in Gender, Authorship and History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL2230": {
+"title": "Poetry and Activism",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL2451": {
+"title": "Writing and Technology: Theories, Texts and Debates",
+"units": 6.0,
+"sessions": []
+},
+"ENGL2789": {
+"title": "Writing Climate: Form and Crisis",
+"units": 6.0,
+"sessions": []
+},
+"ENGL3005": {
+"title": "The Evolution of Comedy: Early Modern to Eighteenth Century",
+"units": 6.0,
+"sessions": []
+},
+"ENGL3008": {
+"title": "The Meaning of Monsters: Frankenstein and Literary Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL3021": {
+"title": "American Literature: Nature, Retreat, Experiment",
+"units": 6.0,
+"sessions": []
+},
+"ENGL3022": {
+"title": "Make It New: Innovation and Experiment in Modernist Literature, 1910-1940",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL3036": {
+"title": "Victorian Literature",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL3037": {
+"title": "Literature, Law and Human Rights",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL3078": {
+"title": "Advanced Creative Writing: Genre and Literary Value",
+"units": 6.0,
+"sessions": []
+},
+"ENGL3100": {
+"title": "English Capstone: Understanding, Communicating, Creating",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGL4019": {
+"title": "Cultures of Criticism",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENGL4020": {
+"title": "Thesis Writing Workshop",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGL4021": {
+"title": "Creative Reading: Topics in Theory, Methodology and Interpretation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN1023": {
+"title": "Introduction to Social Innovation",
+"units": 6.0,
+"sessions": []
+},
+"ENGN1211": {
+"title": "Engineering Design 1: Discovering Engineering",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN1217": {
+"title": "Introduction to Mechanics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN1218": {
+"title": "Introduction to Electronics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN2014": {
+"title": "Introduction to Materials Engineering",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN2015": {
+"title": "Engineering for Positive Impact",
+"units": 6.0,
+"sessions": []
+},
+"ENGN2217": {
+"title": "Mechanical Systems and Design",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN2218": {
+"title": "Electronic Systems and Design",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN2219": {
+"title": "Computer Architecture",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN2222": {
+"title": "Engineering Thermodynamics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN2228": {
+"title": "Signals and Systems",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN2300": {
+"title": "Engineering Design 2: Systems Approaches for Design",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN2301": {
+"title": "Engineering Design 3: Systems Approaches for Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN2706": {
+"title": "Engineering Research and Development Project (Methods)",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN2707": {
+"title": "Engineering Research and Development Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN3013": {
+"title": "Engineering for a Humanitarian Context",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"Winter Session"
+]
+},
+"ENGN3021": {
+"title": "Social Innovation Practice",
+"units": 6.0,
+"sessions": []
+},
+"ENGN3100": {
+"title": "Practical Experience",
+"units": 0.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Winter Session",
+"Second Semester"
+]
+},
+"ENGN3200": {
+"title": "Engineering Internship",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ENGN3223": {
+"title": "Control Systems",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN3224": {
+"title": "Fluid Mechanics and Heat Transfer",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3226": {
+"title": "Digital Communications",
+"units": 6.0,
+"sessions": []
+},
+"ENGN3300": {
+"title": "Engineering Design 4A: Systems Approaches for Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3301": {
+"title": "Engineering Design 4B: Systems Approaches for Operations",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN3331": {
+"title": "System Dynamics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3338": {
+"title": "Aerodynamics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3339": {
+"title": "Aerospace Structures and Materials",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3350": {
+"title": "Principles of Information Engineering",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3410": {
+"title": "Engineering Sustainable Systems",
+"units": 6.0,
+"sessions": []
+},
+"ENGN3415": {
+"title": "Signal and Information Processing",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3516": {
+"title": "Energy Resources and Renewable Technologies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN3539": {
+"title": "Computer Networks",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3706": {
+"title": "Engineering Research & Development Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN3712": {
+"title": "Engineering Research and Development Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN3820": {
+"title": "Biomedical Imaging: Principles, Technologies and Applications in Health Sciences",
+"units": 6.0,
+"sessions": []
+},
+"ENGN3901": {
+"title": "Environmental Fluid Mechanics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN3902": {
+"title": "Environmental Chemistry and Systems",
+"units": 6.0,
+"sessions": []
+},
+"ENGN3903": {
+"title": "Environmental Sensing, Mapping and Modelling",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4122": {
+"title": "Intelligent Autonomous Systems",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4200": {
+"title": "Individual Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN4204": {
+"title": "Fundamentals of Nuclear Radiation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4205": {
+"title": "Nuclear Fuel Cycle",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4212": {
+"title": "Manufacturing Technologies",
+"units": 6.0,
+"sessions": []
+},
+"ENGN4213": {
+"title": "Digital Systems and Microprocessors",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4222": {
+"title": "Advanced Reactor Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4300": {
+"title": "Capstone Design Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN4337": {
+"title": "Flight Dynamics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4338": {
+"title": "Propulsion Systems",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4339": {
+"title": "Aerospace Instrumentation and Avionics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4350": {
+"title": "Individual Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN4430": {
+"title": "Applied AI for Electronic Systems",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4520": {
+"title": "Special Topics in Engineering I",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"ENGN4521": {
+"title": "Special Topics in Engineering 2",
+"units": 6.0,
+"sessions": []
+},
+"ENGN4524": {
+"title": "Photovoltaic Technologies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4528": {
+"title": "Computer Vision",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4536": {
+"title": "Wireless Communications",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4537": {
+"title": "Digital Signal Processing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4547": {
+"title": "Grid Integration of Renewable and Storage Technologies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4548": {
+"title": "Wind Energy",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4549": {
+"title": "Engineering Nuclear Systems",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4613": {
+"title": "Applied Optics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4625": {
+"title": "Power Systems and Power Electronics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4627": {
+"title": "Robotics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4628": {
+"title": "Optimisation and Control with Uncertainty and Constraints",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN4706": {
+"title": "Engineering Research and Development Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN4712": {
+"title": "Engineering Research and Development Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN4718": {
+"title": "Engineering Research and Development Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENGN4810": {
+"title": "Nanotechnology and Applications",
+"units": 6.0,
+"sessions": []
+},
+"ENGN4820": {
+"title": "Bio Micro and Nano Electro-Mechanical Systems (BioMEMS and BioNEMS)",
+"units": 6.0,
+"sessions": []
+},
+"ENGN4901": {
+"title": "Water Systems Engineering",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4902": {
+"title": "The Environmental Impacts of Engineered Systems",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENGN4903": {
+"title": "Infrastructure System Design",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENGN5920": {
+"title": "Exchange Program in Engineering",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ENVS1001": {
+"title": "Environment and Society: Geography of Sustainability",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS1003": {
+"title": "Introduction to Environmental and Social Research",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS1004": {
+"title": "Australia's Environment",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS1008": {
+"title": "Fundamentals of Environment and Sustainability",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS2001": {
+"title": "Biodiversity Science: Wildlife, Vegetation and Landscape Ecology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS2002": {
+"title": "Environmental Measurement, Modelling and Monitoring",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"ENVS2004": {
+"title": "Climate and Its Applications",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS2005": {
+"title": "Island Sustainable Development: Fiji Field School",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS2007": {
+"title": "Economics for Environmental Policy: Instruments and Issues",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS2011": {
+"title": "Human Ecology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS2012": {
+"title": "Sustainable Urban Systems",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"ENVS2013": {
+"title": "Society and Environmental Change",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS2015": {
+"title": "GIS and Spatial Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS2017": {
+"title": "Vietnam Field School",
+"units": 6.0,
+"sessions": []
+},
+"ENVS2018": {
+"title": "Environmental Science Field School",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS2020": {
+"title": "Water Science",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"ENVS2023": {
+"title": "Sustainable Agricultural Systems",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS2024": {
+"title": "Agricultural Science",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS2025": {
+"title": "Indigenous Cultural and Natural Resource Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS3003": {
+"title": "Pollution in Practice",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS3004": {
+"title": "Land and Catchment Management",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS3005": {
+"title": "Water Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS3007": {
+"title": "Participatory Resource Management: Working with Communities and Stakeholders",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS3008": {
+"title": "Fire in the Environment",
+"units": 6.0,
+"sessions": []
+},
+"ENVS3013": {
+"title": "Climate Change: Past, Present and Future",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS3015": {
+"title": "Essentials of Environmental Law",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS3016": {
+"title": "Special Topic",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ENVS3020": {
+"title": "Climate Change: Science, Society, and Policy",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS3028": {
+"title": "Environmental Policy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS3029": {
+"title": "Palaeo-Environmental Reconstruction",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"ENVS3033": {
+"title": "International Environmental Policy",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"ENVS3039": {
+"title": "Biodiversity Conservation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS3040": {
+"title": "Complex Environmental Problems in Action",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS3041": {
+"title": "Managing Forested Landscapes",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ENVS3042": {
+"title": "Agricultural Innovation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS3045": {
+"title": "Social Applications of GIS",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"ENVS3100": {
+"title": "Independent Research Project",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"ENVS3344": {
+"title": "Environmental Justice Practicum",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"ENVS3902": {
+"title": "Environmental Chemistry and Systems",
+"units": 6.0,
+"sessions": []
+},
+"ENVS3903": {
+"title": "Environmental Sensing, Mapping and Modelling",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ENVS4000": {
+"title": "Honours Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"ENVS4001": {
+"title": "Honours Research Skills",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"EXCH5721": {
+"title": "Exchange Program College of Systems and Society (Band 1)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"EXCH5722": {
+"title": "Exchange Program College of Systems and Society (Band 2)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM1001": {
+"title": "Foundations of Finance",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM2001": {
+"title": "Corporate Finance",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM2002": {
+"title": "Derivatives",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM2004": {
+"title": "Financial Data Analytics",
+"units": 6.0,
+"sessions": []
+},
+"FINM3003": {
+"title": "Continuous Time Finance",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"FINM3005": {
+"title": "Corporate Valuation",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM3006": {
+"title": "Financial Intermediation and Debt Markets",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"FINM3007": {
+"title": "Advanced Derivatives Pricing and Applications",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FINM3008": {
+"title": "Portfolio Construction",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM3009": {
+"title": "Student Managed Fund",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM3010": {
+"title": "Student Managed Fund Extension",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM3011": {
+"title": "Investments",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM3015": {
+"title": "Foundations of Fintech",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FINM3045": {
+"title": "Asian Capital Markets",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM4015": {
+"title": "Advanced Corporate Finance",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM4017": {
+"title": "Trading and Markets",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FINM4106": {
+"title": "Advanced Investments",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM4500": {
+"title": "Finance Honours Thesis",
+"units": 24.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"FINM4600": {
+"title": "Special Topics in Finance",
+"units": 6.0,
+"sessions": []
+},
+"FREN1101": {
+"title": "Introductory French Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"FREN1102": {
+"title": "Introductory French Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FREN2101": {
+"title": "Continuing French Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"FREN2102": {
+"title": "Continuing French Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FREN3101": {
+"title": "Intermediate French Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"FREN3102": {
+"title": "Intermediate French Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FREN3103": {
+"title": "Advanced French Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"FREN3104": {
+"title": "Advanced French Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FREN3107": {
+"title": "Voyages littéraires: Literature in French",
+"units": 6.0,
+"sessions": []
+},
+"FREN3108": {
+"title": "From Colonialism to Cinéma-monde: Films of the French-speaking World",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"FREN3109": {
+"title": "Global Paris: Culture, History and Identity in the French Capital",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"FREN3110": {
+"title": "Selected Topics in French Studies",
+"units": 6.0,
+"sessions": []
+},
+"FREN3515": {
+"title": "The Sounds of French: Phonetics and Pronunciation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GEND1001": {
+"title": "Sex, Gender and Identity: An Introduction to Gender Studies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GEND1002": {
+"title": "Reading Popular Culture: An Introduction to Cultural Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GEND2001": {
+"title": "Gender and Cultural Studies in Asia and the Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GEND2002": {
+"title": "Gender in Korean History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GEND2022": {
+"title": "Jane Austen History and Fiction",
+"units": 6.0,
+"sessions": []
+},
+"GEND2023": {
+"title": "Gender, Sex and Sexuality: An Introduction to Feminist Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GEND2034": {
+"title": "Gender, Sex and Sexuality: Queer and Trans Theory",
+"units": 6.0,
+"sessions": []
+},
+"GEND2035": {
+"title": "Gender in Cross-Cultural Perspective",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GEND2036": {
+"title": "Excessive Appetites: Sociocultural Perspectives on Addiction and Drug Use",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GEND2037": {
+"title": "Young People, Sex and Consent",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GEND3001": {
+"title": "Posthuman Bodies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GEND3002": {
+"title": "Gender and Sexuality in the Pacific",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GEND3016": {
+"title": "Writing Lives: Autobiography in Fiction and Memoir",
+"units": 6.0,
+"sessions": []
+},
+"GEND3057": {
+"title": "Relationships, Marriage and Family",
+"units": 6.0,
+"sessions": []
+},
+"GERM1101": {
+"title": "Introductory German Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GERM1102": {
+"title": "Introductory German Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GERM2101": {
+"title": "Continuing German Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GERM2102": {
+"title": "Continuing German Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GERM2114": {
+"title": "German Cultural Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GERM3051": {
+"title": "Special Topics in German Literature and Culture",
+"units": 6.0,
+"sessions": []
+},
+"GERM3101": {
+"title": "Intermediate German Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GERM3102": {
+"title": "Intermediate German Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GERM3103": {
+"title": "Advanced German Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GERM3104": {
+"title": "Advanced German Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GERM3114": {
+"title": "German Cultural Studies Advanced",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GREK1001": {
+"title": "Introductory Ancient Greek",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GREK2119": {
+"title": "Continuing Ancient Greek",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"GREK2121": {
+"title": "Intermediate Ancient Greek",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"GREK3125": {
+"title": "Advanced Ancient Greek",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"HIND1100": {
+"title": "Hindi 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIND1200": {
+"title": "Hindi 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIND2300": {
+"title": "Hindi 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIND2400": {
+"title": "Hindi 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIND3500": {
+"title": "Hindi 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIND3600": {
+"title": "Hindi 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIST1209": {
+"title": "Terror to Terrorism: A History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIST1214": {
+"title": "Empires in Global History",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST2022": {
+"title": "Aboriginal and Torres Strait Islander History",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST2070": {
+"title": "Emperors, Pilgrims and Crusaders: The World of Byzantium",
+"units": 6.0,
+"sessions": []
+},
+"HIST2110": {
+"title": "Approaches to History",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST2136": {
+"title": "World at War, 1939-1945",
+"units": 6.0,
+"sessions": []
+},
+"HIST2141": {
+"title": "The Cold War: 1945-1989",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIST2196": {
+"title": "From the Romans to the Anglo-Saxons: Early Medieval Europe c. 400-1000 CE",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST2205": {
+"title": "Europe and the Atlantic World, c.1492—1776.",
+"units": 6.0,
+"sessions": []
+},
+"HIST2206": {
+"title": "The Great War’s Battlefields: A Study Tour of Gallipoli, the Western Front and Paris",
+"units": 12.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"HIST2211": {
+"title": "Global Environmental History Since 1945",
+"units": 6.0,
+"sessions": []
+},
+"HIST2214": {
+"title": "The Great War. The Conflict that Changed the World",
+"units": 6.0,
+"sessions": []
+},
+"HIST2221": {
+"title": "Britain in the Age of Revolutions and Empires 1688-1848",
+"units": 6.0,
+"sessions": []
+},
+"HIST2226": {
+"title": "Nazi Germany",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST2227": {
+"title": "Australian Political History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIST2231": {
+"title": "Exploration: From Captain Cook to the Astronauts",
+"units": 6.0,
+"sessions": []
+},
+"HIST2240": {
+"title": "Democracy and Dissent: Europe Since 1945",
+"units": 6.0,
+"sessions": []
+},
+"HIST2242": {
+"title": "The Soviet Union: From the Russian Revolution to the Collapse of Communism",
+"units": 6.0,
+"sessions": []
+},
+"HIST2252": {
+"title": "Twentieth Century America: Building a Global Hegemon",
+"units": 6.0,
+"sessions": []
+},
+"HIST3007": {
+"title": "Making History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HIST3012": {
+"title": "Topics in History",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST3110": {
+"title": "Approaches to History",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST3142": {
+"title": "Indigenous History, Memory and Politics",
+"units": 6.0,
+"sessions": []
+},
+"HIST4011": {
+"title": "Seminar in Advanced Historiography",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"HIST4013": {
+"title": "Key Issues in History",
+"units": 12.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HLMD3021": {
+"title": "Health and Medicine Research Project",
+"units": 6.0,
+"sessions": []
+},
+"HLTH1001": {
+"title": "Health in the 21st Century",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HLTH1002": {
+"title": "Research Methods in the Health Sciences",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HLTH2001": {
+"title": "Health Systems and Policy: An Introduction",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HLTH2002": {
+"title": "Introduction to Global Health: Issues, Theories and Practices",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HLTH3001": {
+"title": "Aboriginal and Torres Strait Islander Health",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"HLTH3002": {
+"title": "Professional Practice in Health Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HLTH3004": {
+"title": "Wicked Problems in Health Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"HLTH4001": {
+"title": "Health and Medicine Honours",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"HONS4100": {
+"title": "Final Honours Grade",
+"units": 0.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"HONS4300": {
+"title": "Final Honours Grade",
+"units": 0.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"HONS4601": {
+"title": "Final Honours Grade",
+"units": 0.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"HONS4602": {
+"title": "Final Honours Grade",
+"units": 0.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"HUMN2000": {
+"title": "Introduction to Heritage and Museum Studies",
+"units": 6.0,
+"sessions": []
+},
+"HUMN2004": {
+"title": "Global Vietnam: Gender, Labour and Migration",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"HUMN2051": {
+"title": "Introduction to Cultural Heritage Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INDG1001": {
+"title": "Country, Kinship and Continuities: An Introduction to Australian Indigenous Studies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INDG1002": {
+"title": "Resilience, Responsibility, and Resurgence: First Peoples' Experiences and Ways of Being",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDG2001": {
+"title": "Indigenous Cultural and Natural Resource Management",
+"units": 6.0,
+"sessions": []
+},
+"INDG2002": {
+"title": "Contemporary Australian Indigenous Music Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDG2003": {
+"title": "Gamilaraay - Introduction to an Australian Indigenous Language",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INDG2004": {
+"title": "Continuing Gamilaraay",
+"units": 6.0,
+"sessions": []
+},
+"INDG2009": {
+"title": "Unsettling: Critical Indigenous Studies in Australia",
+"units": 6.0,
+"sessions": []
+},
+"INDG3001": {
+"title": "First Nations Peoples, the State and Public Policy in Australia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDG3003": {
+"title": "First Peoples' Economic Self-determination and Prosperity in the Australian Economy",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDG3004": {
+"title": "Australian Indigenous Studies Research Project",
+"units": 6.0,
+"sessions": []
+},
+"INDG3005": {
+"title": "Special Topics in Indigenous Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDG3006": {
+"title": "First Peoples and Research Methods: Practice, Collaboration and Ethics",
+"units": 6.0,
+"sessions": []
+},
+"INDG3007": {
+"title": "First Peoples' Social Justice Internship",
+"units": 6.0,
+"sessions": []
+},
+"INDG3008": {
+"title": "On-Country immersive learning experience",
+"units": 6.0,
+"sessions": []
+},
+"INDG4001": {
+"title": "Decolonising Methodologies and other Indigenous Perspectives on Research",
+"units": 6.0,
+"sessions": []
+},
+"INDN1002": {
+"title": "Indonesian 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INDN1003": {
+"title": "Indonesian 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDN2002": {
+"title": "Indonesian 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INDN2003": {
+"title": "Indonesian 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDN3002": {
+"title": "Indonesian 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INDN3003": {
+"title": "Indonesian 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INDN3015": {
+"title": "Indonesian in Contemporary Society",
+"units": 6.0,
+"sessions": []
+},
+"INFS1001": {
+"title": "Business Information Systems",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"INFS2005": {
+"title": "Accounting Information Systems",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"INFS2024": {
+"title": "Information Systems Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INFS3002": {
+"title": "Enterprise Systems in Business",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INFS3016": {
+"title": "Business Information Systems Ethics",
+"units": 6.0,
+"sessions": []
+},
+"INFS3024": {
+"title": "Information Systems Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INFS3059": {
+"title": "Information Systems Capstone Project",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INTR1021": {
+"title": "Understanding Peace and Conflict",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INTR1022": {
+"title": "Peacebuilding and Conflict Resolution",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"INTR2010": {
+"title": "International Relations in the Asia-Pacific",
+"units": 6.0,
+"sessions": []
+},
+"INTR2012": {
+"title": "Chinese Foreign and Security Policy",
+"units": 6.0,
+"sessions": []
+},
+"INTR2018": {
+"title": "Japanese Foreign and Security Policy",
+"units": 6.0,
+"sessions": []
+},
+"INTR2024": {
+"title": "The Politics of Nuclear Weapons",
+"units": 6.0,
+"sessions": []
+},
+"INTR3001": {
+"title": "Humanitarianism: Principles, Politics and Practice",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"INTR3002": {
+"title": "Global Governance in the Asia-Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"INTR3003": {
+"title": "Perspectives on Peace and Conflict",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ITAL1101": {
+"title": "Introductory Italian Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ITAL1102": {
+"title": "Introductory Italian Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ITAL2101": {
+"title": "Continuing Italian Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ITAL2102": {
+"title": "Continuing Italian Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ITAL3101": {
+"title": "Intermediate Italian Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ITAL3102": {
+"title": "Intermediate Italian Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"ITAL3103": {
+"title": "Advanced Italian Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"ITAL3104": {
+"title": "Advanced Italian Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS1012": {
+"title": "Japanese 1: Spoken",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"JPNS1014": {
+"title": "Japanese 1: Written",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"JPNS2003": {
+"title": "Japanese 2: Spoken",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS2005": {
+"title": "Japanese 2: Written",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS2024": {
+"title": "Japanese Grammar and Expressions",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"JPNS3005": {
+"title": "Advanced Japanese",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"JPNS3012": {
+"title": "Teaching Japanese",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS3013": {
+"title": "Japanese - English Translation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS3023": {
+"title": "Research Topics in Japanese: History & Society",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS3102": {
+"title": "Debating Japan: Contemporary Intellectual Debates",
+"units": 6.0,
+"sessions": []
+},
+"JPNS3201": {
+"title": "Japanese 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"JPNS3202": {
+"title": "Japanese 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"JPNS3203": {
+"title": "Japanese 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"JPNS3204": {
+"title": "Japanese 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"KORE1020": {
+"title": "Korean 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"KORE1021": {
+"title": "Korean 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"KORE2521": {
+"title": "Korean 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"KORE2522": {
+"title": "Korean 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"KORE3012": {
+"title": "Korean 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"KORE3013": {
+"title": "Korean 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"KORE3015": {
+"title": "Advanced Korean A: Film and Society",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"KORE3018": {
+"title": "Advanced Korean B: Culture and History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LANG2104": {
+"title": "World Literature in Translation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LANG3007": {
+"title": "Romance Linguistics",
+"units": 6.0,
+"sessions": []
+},
+"LANG4100": {
+"title": "Transnational Cultural Studies",
+"units": 12.0,
+"sessions": []
+},
+"LATN1001": {
+"title": "Introductory Latin",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LATN2119": {
+"title": "Continuing Latin",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LATN2121": {
+"title": "Intermediate Latin",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LATN3125": {
+"title": "Advanced Latin",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LAWS1001": {
+"title": "International Student Legal Orientation",
+"units": 0.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS1201": {
+"title": "Foundations of Australian Law",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LAWS1202": {
+"title": "Lawyers, Justice and Ethics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS1203": {
+"title": "Torts",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS1204": {
+"title": "Contracts",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS1205": {
+"title": "Australian Public Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS1206": {
+"title": "Criminal Law and Procedure",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS2201": {
+"title": "Administrative Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS2202": {
+"title": "Commonwealth Constitutional Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS2203": {
+"title": "Corporations Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS2204": {
+"title": "Property",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS2205": {
+"title": "Equity and Trusts",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS2207": {
+"title": "Evidence",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS2244": {
+"title": "Litigation and Dispute Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS2248": {
+"title": "Legal Research and Writing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS2249": {
+"title": "Legal Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS2250": {
+"title": "International Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4001": {
+"title": "Unravelling Complexity",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LAWS4003": {
+"title": "Public Interest Law Clinic",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LAWS4010": {
+"title": "Jessup Moot",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4011": {
+"title": "Law Mooting and Advocacy",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4148": {
+"title": "Special Topics in Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4201": {
+"title": "Law Reform and Public Interest Lawyering",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4202": {
+"title": "Media Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4210": {
+"title": "Commercial Law",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"LAWS4212": {
+"title": "Conflict of Laws",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4213": {
+"title": "Contemporary Issues in Constitutional Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4215": {
+"title": "Environmental Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4216": {
+"title": "International Law and Political Economy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4217": {
+"title": "Family Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4218": {
+"title": "Feminist and Critical Legal Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4219": {
+"title": "Health Law, Bioethics and Human Rights",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4221": {
+"title": "Income Tax",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4222": {
+"title": "Intellectual Property",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4223": {
+"title": "International Dispute Resolution",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4224": {
+"title": "International Law of the Sea",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4225": {
+"title": "International Law of Human Rights",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4226": {
+"title": "International Trade Law",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4227": {
+"title": "Japanese Law and Society",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4228": {
+"title": "Labour Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4229": {
+"title": "Law and Society in South East Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4230": {
+"title": "Law Internship (Capstone)",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Winter Session",
+"Second Semester"
+]
+},
+"LAWS4231": {
+"title": "Law and Art: Representation and Critique",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4233": {
+"title": "Tort Liability and Public Authorities",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4236": {
+"title": "Succession",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4237": {
+"title": "Financial Markets and Takeovers",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4238": {
+"title": "Indigenous Peoples and the Law",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"LAWS4245": {
+"title": "Information Technology Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4251": {
+"title": "Artificial Intelligence and the Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4254": {
+"title": "Restitution",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4255": {
+"title": "Competition Law",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4256": {
+"title": "Law, Gender Identities and Sexualities",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4259": {
+"title": "Consumer Protection and Product Liability Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4260": {
+"title": "Law and Psychology",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"LAWS4262": {
+"title": "Advanced Administrative Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4264": {
+"title": "Advanced International Law",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4266": {
+"title": "International Arbitration and Negotiation Moot Competition in Japan",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4268": {
+"title": "Community Law Clinic",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4271": {
+"title": "Refugee Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4274": {
+"title": "Climate Law",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4275": {
+"title": "Federal Judicial System",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"LAWS4276": {
+"title": "Chinese Law and Society",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"LAWS4280": {
+"title": "Law and the Humanities",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4285": {
+"title": "Australian National Security Law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4286": {
+"title": "Literature, Law and Human Rights",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4289": {
+"title": "Leviathan, Art, and Law: Constituting the Body Politic",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4299": {
+"title": "Law's History and Context",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4300": {
+"title": "Undergraduate Law Dissertation",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LAWS4301": {
+"title": "Law and Development Clinic",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4302": {
+"title": "International Law Clinic",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4304": {
+"title": "Prison Legal Clinic",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4306": {
+"title": "International Investment Treaty Law and Arbitration",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4307": {
+"title": "Legal Education for True Justice: Indigenous Perspectives and Deep Listening on Country",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4309": {
+"title": "Colonialism and the rule of law",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LAWS4312": {
+"title": "The Law of Money",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4314": {
+"title": "Sentencing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4315": {
+"title": "Law and Development in the Contemporary South Pacific",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4321": {
+"title": "Law and Social Movements",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4328": {
+"title": "Law and Economics",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4339": {
+"title": "The Rule of Law and Constitutionalism in Greater China",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4342": {
+"title": "International Law and Climate Change",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4343": {
+"title": "Mediation Skills Practicum",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"LAWS4344": {
+"title": "Environmental Justice Practicum",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4351": {
+"title": "Judicial Reasoning",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4358": {
+"title": "International Law, Science and Technology",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4359": {
+"title": "Property in a Settler State",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4364": {
+"title": "International Law of the Environment",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4370": {
+"title": "Order in the Courts: The Australian Criminal Judicial System",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4371": {
+"title": "Punishment, Law and Society",
+"units": 6.0,
+"sessions": []
+},
+"LAWS4395": {
+"title": "Critical Approaches to International Law",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4430": {
+"title": "Law Internship",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Winter Session",
+"Second Semester"
+]
+},
+"LAWS4597": {
+"title": "Corporations, Law and Technology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4601": {
+"title": "Comparative Human Rights",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LAWS4700": {
+"title": "Law Research Capstone Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LAWS5920": {
+"title": "Exchange Program for Law Students",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"LING1001": {
+"title": "Language Unlocked: An Introduction to Linguistics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING1002": {
+"title": "The Social Life of Language",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2003": {
+"title": "Grammar of the World's Languages",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2005": {
+"title": "Language Across Time",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2008": {
+"title": "Semantics",
+"units": 6.0,
+"sessions": []
+},
+"LING2010": {
+"title": "Sounds of the World's Languages: Phonetics and Phonology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2013": {
+"title": "Teaching Languages",
+"units": 6.0,
+"sessions": []
+},
+"LING2015": {
+"title": "Language, Culture and Translation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2016": {
+"title": "Language and Society in Indigenous Australia",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING2017": {
+"title": "Chinese Linguistics",
+"units": 6.0,
+"sessions": []
+},
+"LING2018": {
+"title": "Languages in Contact",
+"units": 6.0,
+"sessions": []
+},
+"LING2020": {
+"title": "Structure of English",
+"units": 6.0,
+"sessions": []
+},
+"LING2021": {
+"title": "Cross Cultural Communication",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING2023": {
+"title": "Dictionaries and Dictionary-Making",
+"units": 6.0,
+"sessions": []
+},
+"LING2028": {
+"title": "Japanese Linguistics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2029": {
+"title": "Language, Assessment and Policy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING2034": {
+"title": "Communication in Health Care",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING2040": {
+"title": "Austronesian Languages",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING2105": {
+"title": "Forensic Linguistics: Language and the Law",
+"units": 6.0,
+"sessions": []
+},
+"LING2106": {
+"title": "Language and Social Interaction",
+"units": 6.0,
+"sessions": []
+},
+"LING2521": {
+"title": "Child Language Acquisition",
+"units": 6.0,
+"sessions": []
+},
+"LING3012": {
+"title": "Field Methods in Linguistics",
+"units": 6.0,
+"sessions": []
+},
+"LING3025": {
+"title": "Special Topics in Linguistics",
+"units": 6.0,
+"sessions": []
+},
+"LING3031": {
+"title": "Papuan Languages",
+"units": 6.0,
+"sessions": []
+},
+"LING3032": {
+"title": "Forensic Linguistics: Forensic Voice and Text Comparison",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING3035": {
+"title": "Semantic Typology",
+"units": 6.0,
+"sessions": []
+},
+"LING3036": {
+"title": "Advanced Sociolinguistics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING3038": {
+"title": "Corpus Linguistics",
+"units": 6.0,
+"sessions": []
+},
+"LING3101": {
+"title": "Second Language Acquisition",
+"units": 6.0,
+"sessions": []
+},
+"LING3126": {
+"title": "Topics in Advanced Syntax and Morphology",
+"units": 6.0,
+"sessions": []
+},
+"LING4013": {
+"title": "Essentials for Thesis Writing in Linguistics",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING4100": {
+"title": "Quantitative Research Methods in Linguistics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"LING4103": {
+"title": "Qualitative Research Methods in Language Studies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"LING4106": {
+"title": "Advanced Readings in Linguistics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MATH1003": {
+"title": "Algebra and Calculus Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH1005": {
+"title": "Discrete Mathematical Models",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH1013": {
+"title": "Mathematics and Applications 1",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MATH1014": {
+"title": "Mathematics and Applications 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester",
+"Spring Session"
+]
+},
+"MATH1113": {
+"title": "Mathematical Foundations for Actuarial Studies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH1115": {
+"title": "Advanced Mathematics and Applications 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH1116": {
+"title": "Advanced Mathematics and Applications  2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH2222": {
+"title": "Introduction to Mathematical Thinking: Problem-Solving and Proofs",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH2301": {
+"title": "Games, Graphs and Machines",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH2305": {
+"title": "Applied Mathematics I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH2306": {
+"title": "Applied Mathematics II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH2307": {
+"title": "Bioinformatics and Biological Modelling",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH2320": {
+"title": "Advanced Analysis 1: Metric Spaces and Applications",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH2322": {
+"title": "Advanced Algebra 1: Groups, Rings and Linear Algebra",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3015": {
+"title": "Stochastic Analysis with Financial Applications",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3029": {
+"title": "Probability Theory with Applications",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH3062": {
+"title": "Fractal Geometry and Chaotic Dynamics",
+"units": 6.0,
+"sessions": []
+},
+"MATH3133": {
+"title": "Environmental Mathematics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3228": {
+"title": "Advanced Complex Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3301": {
+"title": "Number Theory and Cryptography",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3320": {
+"title": "Advanced Analysis 2: Lebesgue Integration and Hilbert Spaces",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH3325": {
+"title": "Advanced Functional Analysis, Spectral Theory, and Applications",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3342": {
+"title": "Advanced Differential Geometry",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH3345": {
+"title": "Advanced Algebra 2: Field extensions and Galois Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH3349": {
+"title": "Special Topics in Mathematics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MATH3351": {
+"title": "Advanced Topics in Mathematical Physics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3353": {
+"title": "Advanced Mathematical Bioinformatics",
+"units": 6.0,
+"sessions": []
+},
+"MATH3354": {
+"title": "Advanced Topics in Algebra",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3501": {
+"title": "Scientific and Industrial Modelling",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3511": {
+"title": "Scientific Computing",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH3512": {
+"title": "Matrix Computations",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH3514": {
+"title": "Numerical Optimisation",
+"units": 6.0,
+"sessions": []
+},
+"MATH4005": {
+"title": "Thesis and Presentations in Mathematics",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"MATH4201": {
+"title": "Topics in Computational Maths Honours",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH4202": {
+"title": "Theory of Partial Differential Equations Honours",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH4204": {
+"title": "Algebraic Topology Honours",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MATH4343": {
+"title": "Foundations of Mathematics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MATH4349": {
+"title": "Special Topics in Mathematics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MEAS1001": {
+"title": "Introduction to the Modern Middle East",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MEAS1002": {
+"title": "Islam: History and Institutions",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEAS2000": {
+"title": "Iranian History and Culture",
+"units": 6.0,
+"sessions": []
+},
+"MEAS2001": {
+"title": "New States of Eurasia: Emerging Issues in Politics and Security",
+"units": 6.0,
+"sessions": []
+},
+"MEAS2003": {
+"title": "Modern Turkey: History, Society and Culture",
+"units": 6.0,
+"sessions": []
+},
+"MEAS2004": {
+"title": "Turkish Politics and Foreign Policy",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEAS2005": {
+"title": "Gender and Culture in the Middle East",
+"units": 6.0,
+"sessions": []
+},
+"MEAS2006": {
+"title": "Gallipoli: A Transnational History",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEAS2008": {
+"title": "Middle East and Central Asia Study Tour",
+"units": 6.0,
+"sessions": []
+},
+"MEAS2105": {
+"title": "The Political Economy of the Middle East",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MEAS3003": {
+"title": "Critical Perspectives on Arabic Culture",
+"units": 6.0,
+"sessions": []
+},
+"MEAS3004": {
+"title": "Iran in World Politics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEAS3005": {
+"title": "Modern Iraq: State, Politics and Society",
+"units": 6.0,
+"sessions": []
+},
+"MEAS3007": {
+"title": "Syria in the Levant: State, Society, and the Current Turmoil",
+"units": 6.0,
+"sessions": []
+},
+"MEAS3008": {
+"title": "Egypt: Social and Political Dynamics in a Changing Middle East",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEAS3009": {
+"title": "Modern Arabian Peninsula: Politics, Security and Society",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MEAS4002": {
+"title": "Ways of Reading the Middle East, Central Asia and their Diasporas: the Big Issues",
+"units": 6.0,
+"sessions": []
+},
+"MEAS4102": {
+"title": "Islamic Radicalism",
+"units": 6.0,
+"sessions": []
+},
+"MEAS4113": {
+"title": "The Gulf Strategic Environment",
+"units": 6.0,
+"sessions": []
+},
+"MEAS4117": {
+"title": "Islam in Central Asia",
+"units": 6.0,
+"sessions": []
+},
+"MEDN1101": {
+"title": "Anatomy and Physiology 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MEDN2001": {
+"title": "Health and Medical Physiology",
+"units": 6.0,
+"sessions": []
+},
+"MEDN2002": {
+"title": "Pathogenesis of Human Disease",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEDN2201": {
+"title": "Anatomy and Physiology 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEDN2222": {
+"title": "Exquisite Corpse - Insight into the Human Body",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"MEDN3007": {
+"title": "Computational Biomedicine Project",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEDN3101": {
+"title": "Anatomy and Physiology 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MEDN3186": {
+"title": "Human Anatomy",
+"units": 6.0,
+"sessions": []
+},
+"MEDN3820": {
+"title": "Biomedical Imaging:  Principles, Technologies and Applications in Health Sciences",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MEDN4001": {
+"title": "Medical Research Honours",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MGMT1003": {
+"title": "Management, People and Organisations",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MGMT2001": {
+"title": "Corporate Sustainability",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT2003": {
+"title": "Business Decision Making",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT2004": {
+"title": "Negotiation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT2005": {
+"title": "Career Planning and Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT2007": {
+"title": "Organisational Behaviour",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT2008": {
+"title": "Social Enterprises and Social Business",
+"units": 6.0,
+"sessions": []
+},
+"MGMT2009": {
+"title": "Design Thinking: Human-Centred Innovation",
+"units": 6.0,
+"sessions": []
+},
+"MGMT2030": {
+"title": "Human Resource Management and Strategy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT2035": {
+"title": "Managing Organisational Change",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT2100": {
+"title": "Communication for Business",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MGMT3002": {
+"title": "Techniques for Business Project Management",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT3015": {
+"title": "Corporate Strategy",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT3016": {
+"title": "Business Ethics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT3021": {
+"title": "Leadership",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT3025": {
+"title": "International Human Resource Management",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT3027": {
+"title": "Entrepreneurship and Innovation",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MGMT3102": {
+"title": "Business and its Social Stakeholders",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT3401": {
+"title": "Applied Topics in Business Studies",
+"units": 6.0,
+"sessions": []
+},
+"MGMT4001": {
+"title": "Applied Topics in Business Honours Studies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT4006": {
+"title": "Management Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MGMT4018": {
+"title": "Qualitative Research Methods",
+"units": 6.0,
+"sessions": []
+},
+"MGMT4019": {
+"title": "Quantitative Research Methods in Management",
+"units": 6.0,
+"sessions": []
+},
+"MKTG2002": {
+"title": "Sustainable Marketing",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MKTG2004": {
+"title": "Introduction to Marketing",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MKTG2023": {
+"title": "Services Marketing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MKTG2031": {
+"title": "Consumer Behaviour",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MKTG2032": {
+"title": "E-Marketing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MKTG3001": {
+"title": "Marketing Research",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MKTG3023": {
+"title": "Strategic Marketing",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MKTG3033": {
+"title": "Integrated Marketing Communications",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MNGL1002": {
+"title": "Mongolian 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MNGL1003": {
+"title": "Mongolian 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MNGL2002": {
+"title": "Mongolian 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MNGL2003": {
+"title": "Mongolian 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI1101": {
+"title": "Music Performance 1",
+"units": 6.0,
+"sessions": []
+},
+"MUSI1102": {
+"title": "Music Performance 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI1110": {
+"title": "Introduction to Music Technology",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI1111": {
+"title": "Foundations of Composition",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI1114": {
+"title": "Composing for Film and Video Games",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI1115": {
+"title": "Fit to Perform: Technique, Musicianship, and Wellness",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI1116": {
+"title": "Pitch, Play, Perform: Introduction to Vocal and Instrumental Skills",
+"units": 6.0,
+"sessions": []
+},
+"MUSI1117": {
+"title": "Ears and Dots: Aural and Theory For The Modern World",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI2201": {
+"title": "Music Performance 3",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI2202": {
+"title": "Music Performance 4",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI2209": {
+"title": "Music Recording and Production Techniques",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI2227": {
+"title": "Music, Sound and the Moving Image",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI2229": {
+"title": "Composition: Methods and Craft",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI2230": {
+"title": "Songwriting: Concepts and Craft",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI2231": {
+"title": "Topics in Music Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI2232": {
+"title": "Topics in Music Technology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI2234": {
+"title": "Music, History, and Culture",
+"units": 6.0,
+"sessions": []
+},
+"MUSI2236": {
+"title": "Music and Globalisation",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI2237": {
+"title": "Music and Wellbeing",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI2238": {
+"title": "Studio Performance: Sound, Communication, and Collaboration",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI2239": {
+"title": "Live Music and Sound: Amplified and Acoustic Practices for Musicians",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI2240": {
+"title": "Music as Collaboration",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI3301": {
+"title": "Music Performance 5",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI3302": {
+"title": "Music Performance 6",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"MUSI3309": {
+"title": "Digital Music: Platforms, Content and AI",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI3317": {
+"title": "Music and Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI3325": {
+"title": "Contemporary Music Production: Planning and Developing an Independent Project",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI3326": {
+"title": "Contemporary Music Production: Delivering an Independent Project",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI3327": {
+"title": "Ethnomusicology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI3328": {
+"title": "Music Practice as Research",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI3329": {
+"title": "Professional and Community Music Leadership",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI3330": {
+"title": "Advanced Music Recording and Post-Production Techniques",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI3331": {
+"title": "Music Practice: Planning and Developing a Live Project",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI3332": {
+"title": "Music Practice: Delivering an Independent Project in a Live Music Environment",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"MUSI4401": {
+"title": "Music Research Methods",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"MUSI4402": {
+"title": "Music Research Theories",
+"units": 12.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"NEUR3101": {
+"title": "Cellular Neuroscience",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"NEUR3112": {
+"title": "Systems Neuroscience",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PASI1011": {
+"title": "Pacific Encounters: An introduction to Pacific Studies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PASI1012": {
+"title": "Pacific Worlds: critical inquiry in Oceania",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PASI2001": {
+"title": "Pacific Studies in a Globalising World",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PASI2002": {
+"title": "Australia in Oceania in the 19th and 20th Centuries",
+"units": 6.0,
+"sessions": []
+},
+"PASI2007": {
+"title": "War in the Islands: The Second World War in the Pacific",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PASI2030": {
+"title": "Study Tour: Regional Policymaking for Pacific Development",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"PASI3001": {
+"title": "Politics and Development in the Contemporary Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PASI3002": {
+"title": "Gender and Sexuality in the Pacific",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PASI3005": {
+"title": "Pacific Islands Field School",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"PASI3012": {
+"title": "Readings in Indigenous Studies",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PASI3013": {
+"title": "Environment and Development in the Pacific",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PERS1001": {
+"title": "Introductory Persian A",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PERS1002": {
+"title": "Introductory Persian B",
+"units": 6.0,
+"sessions": []
+},
+"PERS2003": {
+"title": "Intermediate Persian A",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PERS2004": {
+"title": "Intermediate Persian B",
+"units": 6.0,
+"sessions": []
+},
+"PERS3002": {
+"title": "Advanced Functional Persian",
+"units": 6.0,
+"sessions": []
+},
+"PERS3005": {
+"title": "Advanced Persian A",
+"units": 6.0,
+"sessions": []
+},
+"PERS3006": {
+"title": "Advanced Persian B",
+"units": 6.0,
+"sessions": []
+},
+"PHIL1004": {
+"title": "Fundamental Ideas in Philosophy: An Introduction",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHIL1005": {
+"title": "Logic and Critical Thinking",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHIL2012": {
+"title": "Buddhist Philosophy",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2014": {
+"title": "Topics in Analytic Philosophy",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2020": {
+"title": "Theories of Social Justice",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2057": {
+"title": "Philosophy of Science",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2061": {
+"title": "Philosophy of Mind",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHIL2074": {
+"title": "Modern Theories of Knowledge",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2082": {
+"title": "Topics in the Philosophy of Biology",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2122": {
+"title": "Philosophy and Public Policy",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2125": {
+"title": "Rationality and Social Cooperation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHIL2126": {
+"title": "Science in Society: Ethics, Public Policy and Scientific Practice",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHIL2127": {
+"title": "The Philosophy of Time",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2128": {
+"title": "Philosophy of Physics",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2129": {
+"title": "Normative Ethical Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHIL2150": {
+"title": "Symbolic Logic",
+"units": 6.0,
+"sessions": []
+},
+"PHIL2290": {
+"title": "Philosophy, AI and Society",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHIL3073": {
+"title": "Topics in Advanced Ethics, Social and Political Philosophy",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHIL3074": {
+"title": "Advanced Philosophical Topics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHIL3075": {
+"title": "The Philosophy of Gender: Knowledge, Power, Bodies",
+"units": 6.0,
+"sessions": []
+},
+"PHIL3076": {
+"title": "Philosophy of the Life Sciences",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHIL3077": {
+"title": "The Metaphysics of David Lewis",
+"units": 6.0,
+"sessions": []
+},
+"PHIL3078": {
+"title": "The Philosophy of Emotions",
+"units": 6.0,
+"sessions": []
+},
+"PHIL3079": {
+"title": "Evolution and Human Nature",
+"units": 6.0,
+"sessions": []
+},
+"PHIL4009": {
+"title": "Research Design in Philosophy",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHIL4010": {
+"title": "Honours Seminar in Philosophy",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHIL4011": {
+"title": "Advanced Topics in Philosophy",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHIL4012": {
+"title": "Advanced Topics in Philosophy 2",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHYS1001": {
+"title": "Foundations of Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS1004": {
+"title": "Life Physics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS1101": {
+"title": "Physics I",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHYS1201": {
+"title": "Physics 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS2013": {
+"title": "Quantum Mechanics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS2016": {
+"title": "Electromagnetism",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS2020": {
+"title": "Thermal and Statistical Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS2101": {
+"title": "Nuclear and Radiation Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS2201": {
+"title": "Classical Mechanics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS2205": {
+"title": "Physics for Future Leaders",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3032": {
+"title": "Solid State Physics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3039": {
+"title": "Climate Dynamics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS3042": {
+"title": "Research Topics Physics",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"PHYS3051": {
+"title": "Applied Optics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3057": {
+"title": "Optical Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS3070": {
+"title": "Physics of the Earth",
+"units": 6.0,
+"sessions": []
+},
+"PHYS3101": {
+"title": "Advanced Quantum Mechanics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS3102": {
+"title": "Advanced Electromagnetism",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS3103": {
+"title": "Advanced Statistical Mechanics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3104": {
+"title": "Physics Advanced Laboratory",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHYS3106": {
+"title": "Nuclear Technologies and Applications",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3201": {
+"title": "Quantum Field Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3203": {
+"title": "General Relativity",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PHYS3208": {
+"title": "Nuclear and Particle Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS3711": {
+"title": "Fundamentals of Noise and Measurement",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS4110": {
+"title": "Honours Research Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PHYS4301": {
+"title": "Applied Mathematical Methods in Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS4303": {
+"title": "Nonlinear Dynamics in Physics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PHYS4304": {
+"title": "Quantum Scattering",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PNPI1001": {
+"title": "Introduction to Philosophy, Neuroscience, and Psychology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PNPI2001": {
+"title": "Topics in Philosophy, Neuroscience, and Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PNPI3001": {
+"title": "Research Project in Philosophy, Neuroscience, and Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS1002": {
+"title": "Introduction to Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS1005": {
+"title": "Introduction to International Relations Foundations and Concepts",
+"units": 6.0,
+"sessions": []
+},
+"POLS1009": {
+"title": "Introduction to Data and Methods for Political Science and International Relations",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS2002": {
+"title": "Public Policy: Theory and Practice",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS2010": {
+"title": "Comparative Politics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS2017": {
+"title": "International Relations Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS2031": {
+"title": "Politics in the Middle East",
+"units": 6.0,
+"sessions": []
+},
+"POLS2044": {
+"title": "Quantitative Methods in Political Science and International Relations",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS2045": {
+"title": "Qualitative Methods in Political Science and International Relations Research",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS2055": {
+"title": "Pacific Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS2069": {
+"title": "Politics in Russia",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS2094": {
+"title": "International Political Economy",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS2100": {
+"title": "Genocide in the Modern World",
+"units": 6.0,
+"sessions": []
+},
+"POLS2102": {
+"title": "Political Belief and Deceit",
+"units": 6.0,
+"sessions": []
+},
+"POLS2114": {
+"title": "Australian Politics",
+"units": 6.0,
+"sessions": []
+},
+"POLS2119": {
+"title": "Ideas in Politics",
+"units": 6.0,
+"sessions": []
+},
+"POLS2130": {
+"title": "Public Choice and Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS2132": {
+"title": "War and International Relations",
+"units": 6.0,
+"sessions": []
+},
+"POLS2133": {
+"title": "Global Cooperation and Institutions",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS2137": {
+"title": "Meaning in Politics: Interpretation, Method and Critique",
+"units": 6.0,
+"sessions": []
+},
+"POLS2901": {
+"title": "Intermediate Topics in International Relations",
+"units": 6.0,
+"sessions": []
+},
+"POLS2902": {
+"title": "Intermediate Topics in Political Science",
+"units": 6.0,
+"sessions": []
+},
+"POLS3001": {
+"title": "Foreign Policy Analysis",
+"units": 6.0,
+"sessions": []
+},
+"POLS3002": {
+"title": "Comparative European Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS3004": {
+"title": "Emotions in International Politics",
+"units": 6.0,
+"sessions": []
+},
+"POLS3009": {
+"title": "Bureaucracy, Politics and Power",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS3029": {
+"title": "Sharing Power: Federalism in Comparative Perspective",
+"units": 6.0,
+"sessions": []
+},
+"POLS3032": {
+"title": "The Politics of Empire",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS3035": {
+"title": "Norms and International Law in World Politics",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS3036": {
+"title": "International Terrorism",
+"units": 6.0,
+"sessions": []
+},
+"POLS3043": {
+"title": "Pressure Groups and Political Lobbying",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS3070": {
+"title": "Politics in Central Asia",
+"units": 6.0,
+"sessions": []
+},
+"POLS3095": {
+"title": "Politics in Latin America",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS3111": {
+"title": "Elections, Political Behaviour and Public Opinion in Australia",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"POLS3113": {
+"title": "Human Rights",
+"units": 6.0,
+"sessions": []
+},
+"POLS3125": {
+"title": "Game Theory and Social Sciences",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS3126": {
+"title": "Democracy and Dictatorship",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS3127": {
+"title": "U.S. Politics",
+"units": 6.0,
+"sessions": []
+},
+"POLS3134": {
+"title": "The Politics of Gender, Race and Identity",
+"units": 6.0,
+"sessions": [
+"Winter Session",
+"Second Semester"
+]
+},
+"POLS3136": {
+"title": "Power and influence in world politics",
+"units": 6.0,
+"sessions": [
+"Spring Session"
+]
+},
+"POLS3901": {
+"title": "Advanced Topics in International Relations",
+"units": 6.0,
+"sessions": []
+},
+"POLS3902": {
+"title": "Advanced Topics in Political Science",
+"units": 6.0,
+"sessions": []
+},
+"POLS4011": {
+"title": "Research Training: Scope and Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS4013": {
+"title": "International Relations Theory",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS4019": {
+"title": "Democracy and its Discontents",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POLS4027": {
+"title": "Terrorism and Counter Terrorism",
+"units": 6.0,
+"sessions": []
+},
+"POLS4032": {
+"title": "Globalisation: the Interaction of Economics and Politics",
+"units": 6.0,
+"sessions": []
+},
+"POLS4038": {
+"title": "Comparative Political Institutions",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS4039": {
+"title": "Comparative Political Behavior",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POLS4041": {
+"title": "Special Topics in Comparative Politics",
+"units": 6.0,
+"sessions": []
+},
+"POLS4043": {
+"title": "State Formation and Contested Political Orders",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS4044": {
+"title": "Qualitative Research in Politics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POLS4047": {
+"title": "Interpretation, Method, Critique: Interpretivist Methods in the Social Sciences",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POPH3000": {
+"title": "Introduction to Population Health",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POPH3102": {
+"title": "Global Population Health",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"POPH4005": {
+"title": "Population Health Honours project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"POPH4100": {
+"title": "Fundamentals of Epidemiology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POPH4101": {
+"title": "Biostatistics in Population Health",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"POPH4315": {
+"title": "Research Design and Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PORT1001": {
+"title": "Introductory Portuguese Studies I",
+"units": 6.0,
+"sessions": []
+},
+"PORT1002": {
+"title": "Introductory Portuguese Studies II",
+"units": 6.0,
+"sessions": []
+},
+"PPEI1001": {
+"title": "PPE Integration 1",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PPEI2001": {
+"title": "PPE Integration 2",
+"units": 6.0,
+"sessions": []
+},
+"PPEI3001": {
+"title": "PPE Integration 3: Classic Literature in Politics, Philosophy and Economics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PPEI4000": {
+"title": "PPE Honours Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC1003": {
+"title": "Psychology 1: Understanding Mind, Brain and Behaviour",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC1004": {
+"title": "Psychology 2: Understanding People in Context",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC1005": {
+"title": "The Wellbeing Formula: The Science and Practice of Making a Good Life",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC2001": {
+"title": "Social Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC2002": {
+"title": "Developmental Psychology",
+"units": 6.0,
+"sessions": []
+},
+"PSYC2007": {
+"title": "Biological Basis of Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC2008": {
+"title": "Cognition",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC2009": {
+"title": "Quantitative Methods in Psychology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC2011": {
+"title": "Introduction to Forensic and Criminal Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC2012": {
+"title": "Culture and Psychology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC3002": {
+"title": "The Social Psychology of Group Processes and Social Change",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC3015": {
+"title": "Visual and Cognitive Neuroscience",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC3016": {
+"title": "Neuropsychology and Cognitive Neuroscience",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC3018": {
+"title": "Advanced Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC3020": {
+"title": "Health Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC3023": {
+"title": "Special Topics in Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC3025": {
+"title": "Psychopathology Across the Lifespan",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC3026": {
+"title": "Personality Psychology",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC3028": {
+"title": "Industrial and Organisational Psychology",
+"units": 6.0,
+"sessions": []
+},
+"PSYC3030": {
+"title": "Psychology Undergraduate Research Experience",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Second Semester"
+]
+},
+"PSYC3202": {
+"title": "Developmental Psychology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC4011": {
+"title": "Psychology Honours",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PSYC4200": {
+"title": "Psychology Honours Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"PSYC4201": {
+"title": "Evidence-Based Assessment and Intervention",
+"units": 12.0,
+"sessions": [
+"Second Semester"
+]
+},
+"PSYC4202": {
+"title": "Theory and Practice in Psychology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"PSYC4203": {
+"title": "Research Methods and Statistics in Psychology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"RUSS1101": {
+"title": "Introductory Russian Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"RUSS1102": {
+"title": "Introductory Russian Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCNC1002": {
+"title": "Global Experiences in Science",
+"units": 0.0,
+"sessions": [
+"Summer Session"
+]
+},
+"SCNC1022": {
+"title": "Special Topics in Science",
+"units": 6.0,
+"sessions": []
+},
+"SCNC2000": {
+"title": "Science Internship",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCNC2021": {
+"title": "Science Research Project",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCNC2022": {
+"title": "Special Topics in Science",
+"units": 6.0,
+"sessions": []
+},
+"SCNC2101": {
+"title": "Advanced Studies Course",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCNC2201": {
+"title": "Optimism and Agency in Times of Change",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCNC3000": {
+"title": "Science Internship",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCNC3021": {
+"title": "Science Research Project",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCNC3022": {
+"title": "Special Topics in Science",
+"units": 6.0,
+"sessions": []
+},
+"SCNC3101": {
+"title": "Advanced Studies Course",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCNC4000": {
+"title": "Science Honours",
+"units": 6.0,
+"sessions": []
+},
+"SCNC5920": {
+"title": "Exchange Program for Science Students",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Winter Session",
+"Second Semester"
+]
+},
+"SCOM1001": {
+"title": "Science Communication 1: Introduction to Science Communication",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SCOM1002": {
+"title": "Science Communication 2: Evidence and Social Change",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCOM2003": {
+"title": "Science in Film and Fiction",
+"units": 6.0,
+"sessions": [
+"Summer Session"
+]
+},
+"SCOM2006": {
+"title": "Science, Humour and Popular Culture",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"SCOM2015": {
+"title": "Public Speaking About Science",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCOM2016": {
+"title": "Science, Journalism and Society",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"SCOM2031": {
+"title": "Science, Risk, and Misinformation",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SCOM3003": {
+"title": "Science Communication Research Project",
+"units": 6.0,
+"sessions": []
+},
+"SCOM3004": {
+"title": "Science Communication Internship",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCOM3005": {
+"title": "Special Topics in Science Communication",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCOM3008": {
+"title": "Science Communication Special Project",
+"units": 6.0,
+"sessions": [
+"Summer Session",
+"First Semester",
+"Autumn Session",
+"Winter Session",
+"Second Semester",
+"Spring Session"
+]
+},
+"SCOM3012": {
+"title": "Communicating Science Online",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"SCOM3027": {
+"title": "Science Politics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCOM3028": {
+"title": "Responsible Innovation",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"SCOM3029": {
+"title": "Science Communication and Planetary Crises",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCOM3032": {
+"title": "Making Modern Science",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SCOM3033": {
+"title": "Health Promotion Principles and Practice",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCOM3088": {
+"title": "Science in Government",
+"units": 6.0,
+"sessions": [
+"Winter Session"
+]
+},
+"SCOM3501": {
+"title": "Science Communication Strategy and Leadership",
+"units": 6.0,
+"sessions": []
+},
+"SCOM4005": {
+"title": "Thesis and Seminar in Science Communication",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"SCOM4014": {
+"title": "Communicating Science with the Public",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SCOM4019": {
+"title": "Research Methods for Science Communication",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SCRN2005": {
+"title": "Screen Cultures",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SCRN2107": {
+"title": "Picturing Latin America and Spain",
+"units": 6.0,
+"sessions": []
+},
+"SCRN3001": {
+"title": "Transnational Screens: Crossing Borders and Identities",
+"units": 6.0,
+"sessions": []
+},
+"SCRN3003": {
+"title": "Screen Studies Capstone Project",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SKRT1002": {
+"title": "Sanskrit 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SKRT1003": {
+"title": "Sanskrit 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SKRT2103": {
+"title": "Sanskrit 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SKRT2104": {
+"title": "Sanskrit 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SKRT3004": {
+"title": "Sanskrit 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SKRT3005": {
+"title": "Sanskrit 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCR1001": {
+"title": "Foundations of Social Research",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCR3001": {
+"title": "Data for Decision Making",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCR4001": {
+"title": "Statistics for Social Scientists",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCR4002": {
+"title": "Survey Data Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCR4006": {
+"title": "Online Research Methods",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCR4008": {
+"title": "Qualitative Social Research",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY1002": {
+"title": "Self and Society",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY1004": {
+"title": "Economy and Society",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY2022": {
+"title": "Environmental Sociology",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY2026": {
+"title": "Excessive Appetites: Sociocultural Perspectives on Addiction and Drug Use",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY2030": {
+"title": "Social Inequalities and Development",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY2035": {
+"title": "Cities and Urban Transformation",
+"units": 6.0,
+"sessions": []
+},
+"SOCY2038": {
+"title": "Introduction to Quantitative Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY2040": {
+"title": "Classical Social Theory",
+"units": 6.0,
+"sessions": []
+},
+"SOCY2043": {
+"title": "Introduction to Qualitative Research Methods",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY2101": {
+"title": "Social Policy: Principles and Practice",
+"units": 6.0,
+"sessions": [
+"Autumn Session"
+]
+},
+"SOCY2157": {
+"title": "Surveillance and Society",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY2161": {
+"title": "Contemporary Social Theory",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY2166": {
+"title": "Social Science of the Internet",
+"units": 6.0,
+"sessions": []
+},
+"SOCY2170": {
+"title": "The Social Life of Algorithms",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY3001": {
+"title": "Research Internship",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY3005": {
+"title": "Quantitative Projects for Inclusion and Diversity",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY3007": {
+"title": "Understanding Neoliberalism",
+"units": 6.0,
+"sessions": []
+},
+"SOCY3010": {
+"title": "Posthuman Bodies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY3032": {
+"title": "Stigma, Power and Resistance",
+"units": 6.0,
+"sessions": []
+},
+"SOCY3050": {
+"title": "Education and Society",
+"units": 6.0,
+"sessions": []
+},
+"SOCY3057": {
+"title": "Relationships, Marriage and Family",
+"units": 6.0,
+"sessions": []
+},
+"SOCY3124": {
+"title": "Transforming Society",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"SOCY3167": {
+"title": "Populism: Gender, Race, Class and Backlash",
+"units": 6.0,
+"sessions": []
+},
+"SOCY3169": {
+"title": "Online Research Methods",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SOCY4009": {
+"title": "Sociology Honours Theory Seminar",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY4010": {
+"title": "Sociology Honours Methods Seminar",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"SOCY4020": {
+"title": "Qualitative Research Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SPAN1001": {
+"title": "Introductory Spanish Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SPAN1002": {
+"title": "Introductory Spanish Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SPAN2001": {
+"title": "Continuing Spanish Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SPAN2002": {
+"title": "Continuing Spanish Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SPAN2102": {
+"title": "Más que palabras: A Journey around the Hispanic World",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SPAN2107": {
+"title": "Picturing Latin America and Spain",
+"units": 6.0,
+"sessions": []
+},
+"SPAN3001": {
+"title": "Intermediate Spanish Studies I",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SPAN3012": {
+"title": "Intermediate Spanish Studies II",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"SPAN3030": {
+"title": "Advanced Spanish topics in Language and Culture",
+"units": 6.0,
+"sessions": []
+},
+"SPAN3100": {
+"title": "Spanish World Literature: Reading Latin America and Spain",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"SPAN3603": {
+"title": "History of the Spanish language. A linguistic time travel",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT1003": {
+"title": "Statistical Techniques",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT1008": {
+"title": "Quantitative Research Methods",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT2001": {
+"title": "Introductory Mathematical Statistics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT2005": {
+"title": "Introduction to Stochastic Processes",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT2008": {
+"title": "Regression Modelling",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT2013": {
+"title": "Introductory Mathematical Statistics for Actuarial Studies",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT2014": {
+"title": "Regression Modelling for Actuarial Studies",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT2032": {
+"title": "Financial Mathematics",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT3004": {
+"title": "Stochastic Processes",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3006": {
+"title": "Advanced Stochastic Processes",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3011": {
+"title": "Graphical Data Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT3012": {
+"title": "Design of Experiments and Surveys",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3013": {
+"title": "Statistical Inference",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3015": {
+"title": "Generalised Linear Models",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3016": {
+"title": "Introduction to Bayesian Data Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3017": {
+"title": "Big Data Statistics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3023": {
+"title": "Introduction to General Insurance",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3032": {
+"title": "Survival Models",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3037": {
+"title": "Life Contingencies",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3038": {
+"title": "Actuarial Techniques",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3040": {
+"title": "Statistical Learning",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3050": {
+"title": "Advanced Statistical Learning",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3056": {
+"title": "Advanced Mathematical Statistics",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3057": {
+"title": "Risk Modelling 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT3058": {
+"title": "Risk Modelling 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT3065": {
+"title": "Advanced General Insurance",
+"units": 6.0,
+"sessions": []
+},
+"STAT4018": {
+"title": "Stochastic Processes",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT4026": {
+"title": "Graphical Data Analysis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT4027": {
+"title": "Statistical Inference",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT4029": {
+"title": "Design of Experiments and Surveys",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT4030": {
+"title": "Generalised Linear Models",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT4040": {
+"title": "Statistical Learning",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STAT4050": {
+"title": "Advanced Statistical Learning",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT4072": {
+"title": "Survival Models",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STAT4102": {
+"title": "Applied Time Series Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT4116": {
+"title": "Introduction to Bayesian Data Analysis",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STAT4500": {
+"title": "Statistics Honours Thesis",
+"units": 24.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STST1001": {
+"title": "Introduction to International Security Studies",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STST1004": {
+"title": "How Nations Fight: From Tsushima to Taiwan",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STST2001": {
+"title": "Security Concepts in the Asia-Pacific",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STST2003": {
+"title": "Australia and Security in the Pacific Islands",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STST2005": {
+"title": "Why Nations Fight: The Causes of International Conflict",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STST2020": {
+"title": "Study Tour: Southeast Asia's Security Choices",
+"units": 6.0,
+"sessions": []
+},
+"STST3002": {
+"title": "Living with Giants: Australia's Security in a Contested Asia",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"STST3003": {
+"title": "Honeypots and Overcoats: Australian Intelligence in the World",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"STST3005": {
+"title": "International Security in the 21st Century",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"STST4001": {
+"title": "Fundamentals of Research Design in Security Studies",
+"units": 12.0,
+"sessions": [
+"First Semester"
+]
+},
+"TETM1002": {
+"title": "Tetum 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TETM1003": {
+"title": "Tetum 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"TETM2004": {
+"title": "Tetum 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TETM2005": {
+"title": "Tetum 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"THAI1002": {
+"title": "Thai 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"THAI1003": {
+"title": "Thai 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"THAI2002": {
+"title": "Thai 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"THAI2003": {
+"title": "Thai 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"THAI3002": {
+"title": "Thai 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"THAI3008": {
+"title": "Thai 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"THES4102": {
+"title": "Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"THES4103": {
+"title": "Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"THES4105": {
+"title": "Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"THES4202": {
+"title": "Honours Thesis",
+"units": 6.0,
+"sessions": []
+},
+"THES4208": {
+"title": "Honours Thesis",
+"units": 6.0,
+"sessions": []
+},
+"THES4501": {
+"title": "Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"THES4502": {
+"title": "Thesis",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+},
+"TIBN1002": {
+"title": "Tibetan 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TIBN1003": {
+"title": "Tibetan 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"TIBN2004": {
+"title": "Tibetan 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TIBN2005": {
+"title": "Tibetan 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"TOKP1002": {
+"title": "Tok Pisin 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TOKP1003": {
+"title": "Tok Pisin 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"TOKP2001": {
+"title": "Tok Pisin 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TOKP2002": {
+"title": "Tok Pisin 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"TURK1001": {
+"title": "Elementary Turkish A",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"TURK1002": {
+"title": "Elementary Turkish B",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"TURK2001": {
+"title": "Intermediate Turkish A",
+"units": 6.0,
+"sessions": []
+},
+"TURK2002": {
+"title": "Intermediate Turkish B",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"VIET1002": {
+"title": "Vietnamese 1",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"VIET1003": {
+"title": "Vietnamese 2",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"VIET2002": {
+"title": "Vietnamese 3",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"VIET2003": {
+"title": "Vietnamese 4",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"VIET3002": {
+"title": "Vietnamese 5",
+"units": 6.0,
+"sessions": [
+"First Semester"
+]
+},
+"VIET3003": {
+"title": "Vietnamese 6",
+"units": 6.0,
+"sessions": [
+"Second Semester"
+]
+},
+"WILC3002": {
+"title": "Internship Project",
+"units": 6.0,
+"sessions": [
+"First Semester",
+"Second Semester"
+]
+}
+}
+}

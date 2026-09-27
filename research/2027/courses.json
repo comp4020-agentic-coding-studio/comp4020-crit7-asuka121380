@@ -8,7 +8,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 12 units of 1,000 level courses."
   },
   "ASIA3032": {
    "title": "Technology and Society in Asia",
@@ -18,7 +19,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed a minimum of 6 units from 2000- or 3000-level courses, or 24 units of ASIA coded courses, or 72 units of tertiary courses."
   },
   "COMP1100": {
    "title": "Programming as Problem Solving",
@@ -27,7 +29,8 @@
     "First Semester 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Incompatible with COMP1130 ."
   },
   "COMP1110": {
    "title": "Structured Programming",
@@ -36,7 +39,8 @@
     "First Semester 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP1100 OR COMP1130 OR COMP1730 . You are not able to enrol in this course if you have completed COMP1140 or COMP6710 or COMP7710 ."
   },
   "COMP1130": {
    "title": "Programming as Problem Solving (Advanced)",
@@ -44,7 +48,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Incompatible with COMP1100 ."
   },
   "COMP1140": {
    "title": "Structured Programming (Advanced)",
@@ -52,7 +57,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed COMP1130 . Incompatible with COMP1110 or COMP6710 or COMP7710 ."
   },
   "COMP1600": {
    "title": "Foundations of Computing",
@@ -62,13 +68,15 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: 6 units of MATH courses and COMP1100 or COMP1130 . It is incompatible with COMP6260 ."
   },
   "COMP1720": {
    "title": "Art and Interaction Computing",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Incompatible with COMP6720"
   },
   "COMP2100": {
    "title": "Software Construction",
@@ -79,7 +87,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have successfully completed: COMP1110 or COMP1140 AND 6 units of 1000-level MATH. Students enrolled in a Bachelor of Science (BSC) or Bachelor of Advanced Science (ASCAD) must have successfully completed: COMP1110 or COMP1140 AND COMP1600 AND 6 units of 1000-level MATH. You are not able to enrol in this course if you have completed COMP6442 ."
   },
   "COMP2120": {
    "title": "Software Engineering",
@@ -89,7 +98,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed or be currently studying COMP2100 . Incompatible with COMP2130 , COMP6120 and COMP6311 ."
   },
   "COMP2300": {
    "title": "Computer Architecture",
@@ -97,7 +107,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: ( COMP1100 OR COMP1130 OR COMP1730 ) AND 6 units of 1000-level MATH courses. Incompatible with COMP6300 , ENGN2219 and COMP6719 ."
   },
   "COMP2310": {
    "title": "Systems, Networks, and Concurrency",
@@ -105,7 +116,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP1110 or COMP1140 AND COMP2300 or ENGN2219 . Incompatible with COMP6310 ."
   },
   "COMP2400": {
    "title": "Relational Databases",
@@ -116,7 +128,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed: COMP1100 or COMP1130 or INFS1001 or COMP1730 You are not able to enrol in this course if you have successfully completed COMP6240 ."
   },
   "COMP2550": {
    "title": "Computing R&D Methods",
@@ -126,7 +139,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must be enrolled in the Bachelor of Advanced Computing (Research and Development) (Honours) AND have completed COMP1110 or COMP1140 . Incompatible with COMP4450 ."
   },
   "COMP2610": {
    "title": "Information Theory",
@@ -134,7 +148,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "You cannot enrol in this course if you have completed COMP6261 or ENGN8534 ."
   },
   "COMP2620": {
    "title": "Logic",
@@ -142,7 +157,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 6 units of MATH courses OR COMP1600 . Incompatible with PHIL2080 or COMP6262 ."
   },
   "COMP2700": {
    "title": "Cyber Security Foundations",
@@ -150,7 +166,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: ( COMP1100 or COMP1130 ) AND ( COMP1600 or 6 units MATH code course)"
   },
   "COMP3242": {
    "title": "Deep Learning",
@@ -158,7 +175,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed: 6 units of ( COMP3670 or MATH1013 or MATH1014 or MATH1115 or MATH1116 ) and ( COMP1110 or COMP1140 ). Incompatible with COMP6242 ."
   },
   "COMP3300": {
    "title": "Operating Systems Implementation",
@@ -166,7 +184,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed COMP2310 . Incompatible with COMP6330 ."
   },
   "COMP3310": {
    "title": "Computer Networks",
@@ -174,7 +193,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP2100 or COMP2300 . AND 6 units of COMP2000 -level courses. Incompatible with COMP6331 , ENGN3539 and ENGN6539 ."
   },
   "COMP3320": {
    "title": "High Performance Scientific Computation",
@@ -182,13 +202,15 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: ( COMP2100 or COMP2300 or ENGN2219 ) AND ( COMP1600 or 6 units of MATH courses (excluding MATH1003 )) Incompatible with COMP6464 ."
   },
   "COMP3425": {
    "title": "Data Mining",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 6 units from COMP1100 or COMP1130 or COMP1730 ; AND COMP2400 Incompatible with COMP3420 , COMP8400 , COMP8410 and COMP8910 ."
   },
   "COMP3430": {
    "title": "Data Wrangling",
@@ -196,7 +218,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Students are required to have completed introductory courses on databases, programming and algorithms. To enrol in this course you must have completed 6 units from COMP 1030 or COMP1100 or COMP1130 or COMP1730 ; AND 6 units from COMP 1040 or COMP1110 or COMP1140 ; AND COMP2400 Incompatible with COMP8430 and COMP8930 ."
   },
   "COMP3500": {
    "title": "Software Engineering Project",
@@ -207,13 +230,16 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must meet the eligibility criteria, which includes membership of a student project group before the end of week 1, where the project has been approved by the convener. You must also be studying: Bachelor of Engineering (Honours) in Software Engineering (AENSE) OR Bachelor of Computing (BCOMP) AND have completed: COMP2100 AND COMP2120 You are not able to enrol in this course if you have previously completed COMP3100 or if you have previously or are currently enrolled in COMP3820 or COMP4500 or COMP4820 .",
+   "twoSemesterEvidence": "COMP3500 must be taken in two consecutive semesters."
   },
   "COMP3540": {
    "title": "Game Development",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 12 units of 2000 level COMP courses."
   },
   "COMP3600": {
    "title": "Algorithms",
@@ -221,7 +247,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed the following: 24 units of COMP coded courses AND (6 units of MATH OR COMP1600 ) You are not able to enrol in this course if you have successfully completed COMP6466 ."
   },
   "COMP3610": {
    "title": "Principles of Programming Languages",
@@ -229,7 +256,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP2100 and ( COMP1600 or 6 units of MATHS excluding MATH1003 ) Incompatible with COMP6361 ."
   },
   "COMP3620": {
    "title": "Artificial Intelligence",
@@ -237,7 +265,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP1110 /1140 AND have completed or be currently enrolled in COMP2620 . Incompatible with COMP6320 ."
   },
   "COMP3630": {
    "title": "Theory of Computation",
@@ -245,7 +274,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: 24 units of COMP coded courses AND (6 units of MATH OR COMP1600 ) Incompatible with COMP6363 ."
   },
   "COMP3670": {
    "title": "Introduction to Machine Learning",
@@ -253,7 +283,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP1110 or COMP1140 . Incompatible with COMP6670 ."
   },
   "COMP3704": {
    "title": "Network Security",
@@ -261,7 +292,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed: COMP2700 AND COMP3310 or ENGN3539 . Incompatible with COMP6034 ."
   },
   "COMP3770": {
    "title": "Computing Research Project (R&D)",
@@ -270,7 +302,9 @@
     "First Semester 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol you must: be studying Bachelor of Advanced Computing (Research and Development) AND have successfully completed COMP2550 AND find a project/supervisor AND have received a permission code by having completed all the steps required for Enrolling in student projects including completing the Student Project Registration Form. Finding a project/supervisor is best done before the start of the semester you are intending to do this course. You will need to contact the School of Computing to request a permission code to enrol in this course.",
+   "twoSemesterEvidence": "Annual Course."
   },
   "COMP3900": {
    "title": "Human-Computer Interaction",
@@ -281,7 +315,8 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 12 units of 2000 level COMP courses. Incompatible with COMP6390 ."
   },
   "COMP4011": {
    "title": "Advanced Topics in Formal Methods and Programming Languages",
@@ -289,7 +324,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "12 units of 3000 and/or 4000 level COMP courses. Additional Prerequisite courses for the Advanced Topic will be listed on the SoCo website when the course topic is announced. Students who meet the pre-requisites can request a permission code following the instructions Enrolling in CECC courses . You will need to contact the School of Computing to request a permission code to enrol in this course."
   },
   "COMP4020": {
    "title": "Advanced Topics in Human-Centred and Creative Computing",
@@ -297,7 +333,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed COMP3900 . Additional Prerequisite courses for the Advanced Topic will be listed on the SoCo website when the course topic is announced. Students who meet the prerequisites can request a permission code from the College. You will need to contact the School of Computing to request a permission code to enrol in this course."
   },
   "COMP4045": {
    "title": "Advanced Topics in Computer Systems",
@@ -305,7 +342,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "12 units of 3000 and/or 4000 level COMP coded courses. Additional Prerequisite courses for the Advanced Topic will be listed on the SoCo website when the course topic is announced. Students who meet the pre-requisites can request a permission code following the instructions Enrolling in CECC courses. You will need to contact the School of Computing to request a permission code to enrol in this course."
   },
   "COMP4130": {
    "title": "Managing Software Quality and Process",
@@ -313,7 +351,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed: COMP2120 AND 12 units of 2000-level COMP courses. Incompatible with COMP8131 ."
   },
   "COMP4300": {
    "title": "Parallel Systems",
@@ -321,7 +360,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP2310 . Incompatible with COMP8300 ."
   },
   "COMP4350": {
    "title": "Sound and Music Computing",
@@ -329,7 +369,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have either: completed 12 units of 2000-level COMP courses or have completed 12 units of 2000-level MUSI, DESN or ARTV courses and have completed COMP1720 Incompatible with COMP8350 ."
   },
   "COMP4425": {
    "title": "Data Mining",
@@ -337,7 +378,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 6 units of ( COMP1100 or COMP1130 or COMP1730 ) AND COMP2400 Incompatible with COMP3425 , COMP8400 , COMP8410 and COMP8910 ."
   },
   "COMP4450": {
    "title": "Computing Research Methods",
@@ -347,7 +389,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must be enrolled in the: Bachelor of Computing (Honours) (HCOMP) OR Bachelor of Applied Data Analytics (Honours) (HADAN) OR Computer Science Honours Specialisation (COMP-HSPC) OR (Bachelor of Advanced Computing (AACOM) AND have successfully completed 24 units of COMP coded courses) Incompatible with COMP2550 and COMP6445 ."
   },
   "COMP4500": {
    "title": "Software Engineering Team Project",
@@ -359,7 +402,9 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must meet the eligibility criteria, which includes membership of a student project group before the end of week 1, where the project has been approved by the convener. You also must be studying: Bachelor of Advanced Computing (AACOM) AND have completed: COMP2120 AND 12 units of 3000 and/or 4000 level courses. OR Bachelor of Engineering (Honours) in Software Engineering (AENSE) AND have completed: COMP3500 . Incompatible with COMP4540 and COMP4550 and COMP4810 and COMP4820 .",
+   "twoSemesterEvidence": "COMP4500 must be taken in two consecutive semesters."
   },
   "COMP4528": {
    "title": "Computer Vision",
@@ -369,7 +414,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed either ENGN2228 or COMP2120 or COMP3600 or COMP3670 . Incompatible with ENGN6528 and ENGN4528 ."
   },
   "COMP4550": {
    "title": "Computing Research Project",
@@ -380,13 +426,16 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must: have completed COMP2550 OR have completed or be currently enrolled in COMP4450 AND find a project/supervisor AND have a weighted average mark equivalent to an ANU 70 per cent calculated from the 36 units of courses with the highest marks in cognate disciplines (excluding 1000-level courses) AND have received a permission code by having completed all the steps required for Enrolling in student projects including completing the Student Project Registration Form. Incompatible with COMP4500 and COMP4560 and COMP4810 and COMP4820 . You will need to contact the School of Computing to request a permission code to enrol in this course.",
+   "twoSemesterEvidence": "Annual Course."
   },
   "COMP4600": {
    "title": "Advanced Algorithms",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP3600 and 18 units of 3000 level COMP courses. Incompatible with COMP8460 ."
   },
   "COMP4610": {
    "title": "Computer Graphics",
@@ -394,7 +443,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP2100 AND 6 units of ( COMP3600 OR COMP3540 OR COMP3900 OR COMP3320 ). You are not able to enrol in this course if you have successfully completed COMP6461 or COMP8610 ."
   },
   "COMP4620": {
    "title": "Advanced Topics in Artificial Intelligence",
@@ -402,7 +452,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "12 units of 3000 and/or 4000 level COMP courses. Additional Prerequisite courses for the Advanced Topic will be listed on the SoCo website (Special Topics in Computing page) when the course topic is announced. Students who meet the pre-requisites can request a permission code following the instructions for Enrolling in CSS courses . Incompatible with COMP8620 . You will need to contact the School of Computing to request a permission code to enrol in this course."
   },
   "COMP4650": {
    "title": "Document Analysis",
@@ -410,7 +461,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed : ( COMP1600 OR COMP2100 ) AND 12 units of 3000/4000 level (COMP OR INFS courses). Incompatible with COMP6490 ."
   },
   "COMP4670": {
    "title": "Statistical Machine Learning",
@@ -418,7 +470,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP3670 OR ( COMP1110 / COMP1140 AND MATH1014 OR MATH1115 OR MATH1116 ) Incompatible with COMP8600 and COMP8960 ."
   },
   "COMP4680": {
    "title": "Advanced Topics in Machine Learning",
@@ -426,13 +479,15 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "12 units of 3000 and/or 4000 level COMP courses. Additional Prerequisite courses for the Advanced Topic will be listed on the SoCo website (Special Topics in Computing page ) when the course topic is announced. Students who meet the pre-requisites can request a permission code following the instructions for Enrolling in CECC courses. Incompatible with COMP8650 ."
   },
   "COMP4691": {
    "title": "Optimisation",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP3620 and have completed MATH1013 or MATH1115 . Incompatible with COMP8691 ."
   },
   "COMP4703": {
    "title": "Vulnerability Research and Exploit Mitigation",
@@ -440,7 +495,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP2310 and COMP2700 . Incompatible with COMP2710 , COMP3703 and COMP8703 ."
   },
   "COMP4712": {
    "title": "Compiler Construction",
@@ -448,7 +504,8 @@
    "offered": [],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: COMP2100 AND COMP2310 AND 6 units of 3000 and/or 4000 level COMP courses. Incompatible with COMP3710 Students who have previously completed COMP3710 - please contact CECC Student Services for a Permission Code."
   },
   "COMP4820": {
    "title": "Advanced Computing Internship",
@@ -460,13 +517,15 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must be studying a Bachelor of Advanced Computing AND have successfully completed: COMP2100 AND 12 units of 3000 level COMP courses. Incompatible with COMP4500 , COMP4550 , COMP4560 and COMP4810 . Competitive entry based on application and interviews with Hosts. You will need to contact the School of Computing to request a permission code to enrol in this course."
   },
   "COMP4880": {
    "title": "Computational Methods for Network Science",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed COMP3670 , or you must have completed all of the following: COMP1110 or COMP1140 and MATH1014 or MATH1115 . Incompatible with COMP8880 ."
   },
   "CRIM2010": {
    "title": "Cybercrime: an introduction",
@@ -474,7 +533,8 @@
    "offered": [
     "Winter Session 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course, students must have completed at least 24 units of courses at the 1000 or 2000 level."
   },
   "DESN2002": {
    "title": "Foundations of Creative Code",
@@ -482,7 +542,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "You are not able to enrol in this course if you have previously completed any of the following courses: COMP1720 , COMP6720 or DESN6002 ."
   },
   "DESN2004": {
    "title": "Autonomous Agents: Natural and Algorithmic Systems in Art and Design",
@@ -490,7 +551,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 24 units of courses towards an ANU degree, and you must have completed DESN2002 or DESN2010 . You are not able to enrol in this course if you have previously completed DESN2004 or DESN6004 (Dynamic Design)."
   },
   "DESN2006": {
    "title": "Front-End Web: Crafting Online Experience",
@@ -498,7 +560,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "You are not able to enrol in this course if you have previously completed DESN6006 ."
   },
   "DESN2008": {
    "title": "Design Thinking: Human-Centred Design Methodologies",
@@ -508,7 +571,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 36 units of tertiary study, including completion of DESN1003 ."
   },
   "DESN2010": {
    "title": "Making Creative and Critical Technologies: Physical Computing for Design and Art",
@@ -516,7 +580,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": ""
   },
   "ENGN1211": {
    "title": "Engineering Design 1: Discovering Engineering",
@@ -524,7 +589,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": ""
   },
   "ENGN1217": {
    "title": "Introduction to Mechanics",
@@ -532,7 +598,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": ""
   },
   "ENGN1218": {
    "title": "Introduction to Electronics",
@@ -540,7 +607,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": ""
   },
   "ENGN2218": {
    "title": "Electronic Systems and Design",
@@ -548,7 +616,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed ENGN1218 ."
   },
   "ENGN2300": {
    "title": "Engineering Design 2: Systems Approaches for Design",
@@ -558,7 +627,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed ENGN1211 . Incompatible with ENGN2225 ."
   },
   "ENGN2301": {
    "title": "Engineering Design 3: Systems Approaches for Analysis",
@@ -568,7 +638,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed ENGN2300 . You cannot enrol in this course if you have completed ENGN2226 ."
   },
   "ENGN3100": {
    "title": "Practical Experience",
@@ -579,7 +650,8 @@
     "Winter Session 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed at least 48 units of university courses."
   },
   "ENGN3300": {
    "title": "Engineering Design 4A: Systems Approaches for Management",
@@ -587,7 +659,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed ENGN2301 . You cannot enrol in this course if you have completed ENGN3221 ."
   },
   "ENGN3301": {
    "title": "Engineering Design 4B: Systems Approaches for Operations",
@@ -597,7 +670,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed ENGN3300 . You cannot enrol in ENGN3301 if you have completed ENGN3230 ."
   },
   "ENGN4213": {
    "title": "Digital Systems and Microprocessors",
@@ -607,7 +681,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed ENGN2218 or ENGN2219 or COMP2300 . It should be noted that students who have done COMP2300 and have no engineering background may need to undertake some independent review of introductory electrical knowledge such as basic physics and circuit theory. Incompatible with ENGN6213 ."
   },
   "ENGN4300": {
    "title": "Capstone Design Project",
@@ -619,7 +694,9 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "You must enrol in this course over two consecutive semesters. To enrol in this course, you must have completed ENGN3300 and at least a further 18 units of ENGN3000 /4000 courses. Incompatible with ENGN4221 .",
+   "twoSemesterEvidence": "You must enrol in this course over two consecutive semesters."
   },
   "ENGN4350": {
    "title": "Individual Project",
@@ -631,7 +708,9 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course, you must • have a current minimum average mark (simple average of actual mark of all ANU courses completed at the time of enrolling in ENGN4350 ) of 70%; AND • at the commencement of the project, have completed ENGN3300 and at least a further 18 units of ENGN3000 /4000 courses. Incompatible with ENGN4712 . We recommend all students to do ENGN4300 as it is the industry-relevant option, while ENGN4350 is the research-impact option. All ENGN4350 students must be engaged in a suitable project under the supervision of a competent supervisor. This requisite is evaluated through a project registration early in the commencement semester. Students who are unable to register a viable project may be unable to enrol in the course or may be excluded from the course. It is therefore strongly encouraged that students seek out a project and supervisor well ahead of their proposed commencement semester, to avoid disappointment. You will need to contact the School of Engineering to request a permission code to enrol in this course.",
+   "twoSemesterEvidence": "Students are expected to engage in their individual project work for no less than 10 hours a week on average, for an overall 250-300 hours over two semesters"
   },
   "ENVS2015": {
    "title": "GIS and Spatial Analysis",
@@ -639,7 +718,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 24 units towards a degree. Incompatible with ENVS6015 ."
   },
   "INFS1001": {
    "title": "Business Information Systems",
@@ -648,7 +728,8 @@
     "First Semester 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": ""
   },
   "INFS2024": {
    "title": "Information Systems Analysis",
@@ -656,7 +737,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed at least one of the following courses: INFS1001 - Business Information Systems COMP1100 - Programming as Problem Solving COMP1720 - Art and Interaction Computing COMP1730 - Programming for Scientists ."
   },
   "INFS3002": {
    "title": "Enterprise Systems in Business",
@@ -664,7 +746,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed at least one of the following courses: INFS2005 - Accounting Information Systems INFS2024 - Info Systems Analysis COMP2400 - Relational Databases ."
   },
   "INFS3024": {
    "title": "Information Systems Management",
@@ -674,7 +757,8 @@
    ],
    "graduateAttributes": [
     "Critical Thinking"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course, you must have completed at least one of the following courses: INFS2024 - Info Systems Analysis COMP2400 - Relational Databases ."
   },
   "INFS3059": {
    "title": "Information Systems Capstone Project",
@@ -685,7 +769,8 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course, you must:be enrolled in the Bachelor of Computing (BCOMP) with an Information Systems major (INFS-MAJ) and have completed both: INFS2024 - Info Systems Analysis and COMP2400 - Relational Databases or have completed at least one of the following courses: INFS3002 - Enterprise Systems in Business INFS3024 - Info Syst Management ."
   },
   "MATH1005": {
    "title": "Discrete Mathematical Models",
@@ -693,7 +778,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Incompatible: MATH6005"
   },
   "MATH1013": {
    "title": "Mathematics and Applications 1",
@@ -702,7 +788,8 @@
     "First Semester 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "You are not able to enrol in this course if you have previously completed, or are attempting to concurrently enrol in, MATH1113 or MATH1115 ."
   },
   "MATH1014": {
    "title": "Mathematics and Applications 2",
@@ -712,7 +799,8 @@
     "Second Semester 2027",
     "Spring Session 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed MATH1013 or MATH1115 or MATH1113 . You are not able to enrol in this course if you have previously completed MATH1116 ."
   },
   "MATH1115": {
    "title": "Advanced Mathematics and Applications 1",
@@ -720,7 +808,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "If you have previously completed MATH1013 or MATH1113 then you can only enrol in MATH1115 with the permission of the course convener."
   },
   "MATH1116": {
    "title": "Advanced Mathematics and Applications  2",
@@ -728,7 +817,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed MATH1115 with a mark of 60 or above or MATH1113 with a mark of 80 or above. You may not enrol in MATH1116 if you have previously completed, or are attempting to concurrently enrol in, MATH1014 . You may not enrol in MATH1116 if you have previously completed MATH1014 ."
   },
   "MATH2222": {
    "title": "Introduction to Mathematical Thinking: Problem-Solving and Proofs",
@@ -736,7 +826,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Students with excellent results in either the ACT Specialist Mathematics double major, NSW HSC Mathematics Extension 2 or equivalent may take this course together with MATH1115 in the first year. For many students taking MATH1115 in their first year, MATH1005 would be a more appropriate companion choice. If you are not sure which courses to take in your first year, please consult the MSI First-year Coordinator. All other students may enrol in this course if they have completed MATH1116 with a mark of at least 50, or MATH1113 with a mark of at least 60, or MATH1005 with a mark of at least 70, or MATH1013 or MATH1014 with a mark of at least 80. Incompatible: MATH2322 , MATH3104 , MATH2320 , MATH3116 or MATH6222 ."
   },
   "MATH2301": {
    "title": "Games, Graphs and Machines",
@@ -744,7 +835,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed MATH1005 , MATH1013 , MATH1113 , or MATH1115 ."
   },
   "MATH2307": {
    "title": "Bioinformatics and Biological Modelling",
@@ -754,7 +846,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed 12 units of 1000 levels Mathematics (MATH) courses including either MATH1014 or MATH1116 . You are not able to enrol in this course if you have completed MATH6100 ."
   },
   "MATH3301": {
    "title": "Number Theory and Cryptography",
@@ -762,7 +855,8 @@
    "offered": [
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have successfully completed: * MATH1014 with a mark of at least 80 and 72 units of tertiary study, which must include a minimum of 24 units of MATH coded courses, or * MATH1116 with a mark of at least 60 and 72 units of tertiary study, which must include a minimum of 24 units of MATH coded courses, or At least 1x 2000- or 3000- level MATH course Incompatible: MATH6114 ."
   },
   "MATH4343": {
    "title": "Foundations of Mathematics",
@@ -770,13 +864,15 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you need to be undertaking the MATH-HSPC Honours specialisation. Incompatible with MATH3343 , MATH6203 and MATH8343 . You will need to contact the Mathematical Sciences Institute to request a permission code to enrol in this course."
   },
   "MGMT2009": {
    "title": "Design Thinking: Human-Centred Innovation",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": ""
   },
   "MUSI1110": {
    "title": "Introduction to Music Technology",
@@ -785,7 +881,8 @@
     "First Semester 2027",
     "Second Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "You are not able to enrol in this course if you have previously completed MUSI6110"
   },
   "MUSI3309": {
    "title": "Digital Music: Platforms, Content and AI",
@@ -795,7 +892,8 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 72 units of tertiary courses, or with consent of the Convener. You are not able to enrol in this course if you have previously completed MUSI6009 ."
   },
   "SCOM3029": {
    "title": "Science Communication and Planetary Crises",
@@ -807,7 +905,8 @@
     "Critical Thinking",
     "Transdisciplinary",
     "Indigenous Perspectives"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 72 units of tertiary study. Incompatible with SCOM6029 ."
   },
   "SOCR3001": {
    "title": "Data for Decision Making",
@@ -815,7 +914,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed at least one of STAT1003 , STAT2001 , STAT2008 , STAT3011 , STAT3040 , POLS2044 , SOCY2038 or with permission of the convenor."
   },
   "SOCY2038": {
    "title": "Introduction to Quantitative Research Methods",
@@ -825,13 +925,15 @@
    ],
    "graduateAttributes": [
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed 24 units of tertiary study or 12 units in the relevant field/discipline."
   },
   "SOCY2166": {
    "title": "Social Science of the Internet",
    "unitValue": "6 units",
    "offered": [],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "To enrol in this course you must have completed: -12 units of Computer (COMP) or Statistics (STAT) courses , OR -12 units of Criminology (CRIM), Political Science (POLS), Social Research (SOCR) or Sociology (SOCY) courses. In addition, if SOCY2038 Introduction to Quantitative Research Methods has not been completed, then it must studied concurrently with SOCY2166 . Students not satisfying the above may request permission to enrol from the convener. You are not able to enrol in this course if you have previously completed SOCY6066 ."
   },
   "STAT1003": {
    "title": "Statistical Techniques",
@@ -839,7 +941,8 @@
    "offered": [
     "First Semester 2027"
    ],
-   "graduateAttributes": []
+   "graduateAttributes": [],
+   "requisiteAndIncompatibility": "Incompatible with STAT1008 ."
   },
   "STAT1008": {
    "title": "Quantitative Research Methods",
@@ -851,7 +954,8 @@
    "graduateAttributes": [
     "Critical Thinking",
     "Transdisciplinary"
-   ]
+   ],
+   "requisiteAndIncompatibility": "Incompatible with STAT1003 ."
   }
  }
 }

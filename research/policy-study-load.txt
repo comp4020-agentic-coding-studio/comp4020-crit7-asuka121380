@@ -1,0 +1,13 @@
+Policy: Student academic study load and progression (ANUP_002611)
+Source: https://policies.anu.edu.au/ppl/document/ANUP_002611
+Retrieved: 2026-09-27
+
+Clause 2: "Study period 1: is 1 January to 30 June including Summer Session, First Semester and Autumn Session"; "study period 2: is 1 July to 31 December, including Winter Session, Second Semester and Spring Session."
+Clause 12: "A standard study load is 24 units in a standard period."
+Clause 13: undergraduates "wishing to enrol in more than 24 units but not more than 30 units in a single study period" must meet overload criteria (units passed, averages).
+Clause 14: undergraduates "wishing to enrol in more than 30 units but not more than 36 units in a single study period" must meet stricter criteria.
+Clause 19: sessions that do not overlap the semester are not counted as overloading, provided the student takes only 24 units in the semester.
+Clause 20: "Students are not given permission to enrol in more than 36 units in a study period."
+
+How the planner uses this: more than 24 units in one study period is a warning (possible with
+overload approval); more than 36 is refused (clause 20).
