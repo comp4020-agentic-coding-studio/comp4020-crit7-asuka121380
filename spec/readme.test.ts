@@ -29,4 +29,11 @@ describe("readme", () => {
       "/readme/ doesn't carry the full text of README.md — every word of it has to be there",
     ).toBe(true);
   });
+
+  it("serves every image on /readme/", async () => {
+    const html = await (await fetch(new URL("/readme/", baseUrl))).text();
+    const srcs = [...new JSDOM(html).window.document.querySelectorAll("img")].map((img) => img.getAttribute("src") ?? "");
+    expect(srcs.length, "README.md's screenshots should appear").toBeGreaterThan(0);
+    for (const src of srcs) expect((await fetch(new URL(src, baseUrl))).status, src).toBe(200);
+  });
 });
