@@ -192,6 +192,64 @@ duplicate and incompatibility refusal, each error code, choose-one credit, and
 the headline agreeing with the total rule), and `pnpm e2e`, which drove the 15
 required scenarios through a real browser, all passing.
 
+### Correction pass: course-page rules read as what they say
+
+A third brief pointed at COMP3320: the planner said it couldn't be added
+alongside COMP2100, which is one of its prerequisites. The brief asked for the
+cause to be fixed, not the case. The cause was the model: each official
+requisite block had been flattened to a list of codes, and every code in the
+same "sentence" as the word *incompatible* was treated as incompatible. COMP3320's
+block has no full stop before "Incompatible with COMP6464", so its prerequisites
+were swallowed too.
+
+Evidence first. Every one of the 98 program courses' blocks was re-read from
+the page's HTML structure ([`ac42fc8`](https://github.com/comp4020-agentic-coding-studio/comp4020-crit7-asuka121380/commit/ac42fc8)), which keeps the line breaks
+between clauses, along with Assumed Knowledge and the separate "Co-taught
+Course" field. Comparing the old flat reading with the new one showed the error
+was systemic:
+
+- **9 courses had prerequisites wrongly marked incompatible:** COMP3320,
+  COMP3425, COMP3430, COMP3610, COMP3630, COMP4350, COMP4425, COMP4670 and
+  MATH3301.
+- **14 courses had genuine exclusions missed**, because their wording ("if you
+  have *previously* completed…") didn't match the old pattern.
+
+[`0169375`](https://github.com/comp4020-agentic-coding-studio/comp4020-crit7-asuka121380/commit/0169375) replaces the model.
+
+- **Reading.** Clauses are classified by their opening words:
+  prerequisites, incompatibilities, program restrictions, permission and
+  notes. A prerequisite becomes an AND/OR expression tree only when every token
+  is understood, covering unit counts by subject and level with exclusions,
+  co-requisite options, marks and program nodes. Anything else stays as official
+  wording, flagged. Where the parser couldn't finish, a hand reading pinned to
+  the exact text (24 courses) records decisions such as:
+  - "ENGN3000/4000 courses" is a course level, not two course codes
+  - MATH2222's mark applies to both MATH1013 and MATH1014
+  - INFS3059's grouping is ambiguous, so it stays wording-only
+- **Validation.** `spec/course-rules.test.ts` checks every course on every
+  run: incompatibilities must come from an incompatibility clause, nothing may be
+  both a prerequisite and incompatible, every prerequisite code must be in the
+  official wording, and a hand review fails if its source text changes. The
+  validator caught two of my own over-confident "complete" labels (MUSI3309 and
+  SOCR3001 include a consent alternative that can't be checked). It also caught
+  the page's own "COMP1110/1140" abbreviation.
+- **Policy.** Only data integrity is refused. Completed is history and is
+  never warned for course rules. Studying now gets notes. Planned gets
+  chronological, group-by-group warnings in the brief's wording, and "Add
+  anyway".
+- **History versus credit.** A course incompatible with one already counting
+  is recorded but credits nothing. Adding the other option of a choose-one group
+  offers to replace the counting course, done atomically on the server.
+- **Smaller fixes.** One live region instead of two; Move only offered into a
+  different semester; and "AACOM requirements" spacing.
+
+Checked by: `pnpm check` (127 tests, including the parser on representative
+structures, the all-course validator, the COMP3320 regression, status policy and
+allocation), and `pnpm e2e` (20 browser steps). The browser steps cover the
+original 15 scenarios plus the rule headings, "Add anyway", replacement, no
+same-semester Move and a single announcement. A screenshot of the COMP3320
+panel confirmed the wording reads as the brief asks.
+
 ### Checked by (first build)
 
 - `pnpm check`: 57 tests. Invariants on `/`, `/plan/` and `/readme/`, the
