@@ -1,6 +1,8 @@
 import detailed from "../../research/2027/courses.json";
 import listing from "../../research/2027/ug-catalogue.json";
+import { buildRules, type CourseRules } from "../lib/rules";
 import type { Session } from "../lib/terms";
+import { overrides } from "./rule-overrides";
 
 // The verified catalogue: every 2027 undergraduate course in the official
 // catalogue search (1,523 of them), enriched with course-page detail for the
@@ -18,8 +20,8 @@ export type CatalogueCourse = {
   semesterNote: string | null;
   // null: the planner hasn't read this course's page, so the tag is unknown
   transdisciplinary: boolean | null;
-  incompatible: string[];
-  incompatibleNote: string | null;
+  // the course page's rules; null where the planner hasn't read the page
+  rules: CourseRules | null;
   detailed: boolean;
   url: string;
 };
@@ -46,23 +48,14 @@ function unitRange(value: string): [number, number] {
   return [Number(single[1]), Number(single[1])];
 }
 
-// "Incompatible with COMP1130." / "You are not able to enrol in this course
-// if you have completed COMP1140 ..." — the official sentence, and the codes in it.
-function incompatibility(text: string): { codes: string[]; note: string | null } {
-  const sentences = text.match(
-    /[^.]*(incompatib|not able to enrol in this course if you have completed|cannot enrol in this course if you have completed)[^.]*\.?/gi,
-  );
-  if (!sentences) return { codes: [], note: null };
-  const note = sentences.map((s) => s.trim().replace(/\s+([,.])/g, "$1")).join(" ");
-  return { codes: [...new Set(note.match(/[A-Z]{4}\d{4}/g) ?? [])], note };
-}
-
 type Detail = {
   title: string;
   unitValue: string;
   offered: string[];
   graduateAttributes: string[];
-  requisiteAndIncompatibility?: string;
+  requisiteText: string;
+  assumedKnowledge: string;
+  coTaught: string[];
   twoSemesterEvidence?: string;
 };
 
@@ -82,14 +75,12 @@ export const catalogue: CatalogueCourse[] = Object.entries(
       semesters: 1,
       semesterNote: null,
       transdisciplinary: null,
-      incompatible: [],
-      incompatibleNote: null,
+      rules: null,
       detailed: false,
       url: courseUrl(code),
     };
   }
   const [unitsMin, unitsMax] = unitRange(d.unitValue);
-  const incompatible = incompatibility(d.requisiteAndIncompatibility ?? "");
   return {
     code,
     title: d.title.replace(/\s+/g, " "),
@@ -99,8 +90,7 @@ export const catalogue: CatalogueCourse[] = Object.entries(
     semesters: d.twoSemesterEvidence ? 2 : 1,
     semesterNote: d.twoSemesterEvidence ?? null,
     transdisciplinary: d.graduateAttributes.includes("Transdisciplinary"),
-    incompatible: incompatible.codes.filter((c) => c !== code),
-    incompatibleNote: incompatible.note,
+    rules: buildRules({ code, requisiteText: d.requisiteText, assumedKnowledge: d.assumedKnowledge, coTaught: d.coTaught }, overrides[code]),
     detailed: true,
     url: courseUrl(code),
   };

@@ -1,6 +1,6 @@
 import type { APIContext } from "astro";
 import { checkPlacement, type Issue } from "./checks";
-import { type Course, type EntryInput, getCatalogue, getProgram, listEntries, type PlanEntry } from "./db";
+import { type Course, type EntryInput, getCatalogue, getProgram, getProgramCode, listEntries, type PlanEntry } from "./db";
 import { bus } from "./events";
 import type { Session, Status } from "./schema";
 import { currentTerm, SESSION_IDS, STATUSES, termLabel, YEARS } from "./terms";
@@ -79,13 +79,20 @@ export const describeEntry = (e: PlanEntry) => ({
   where: `${STATUS_LABEL[e.status]} · ${termLabel(e.year, e.session)}`,
 });
 
-// Checks one placement against the student's other entries; throws on a
-// block, returns the warnings.
-export function validatePlacement(user: number, input: EntryInput, course: Course, ignoreId?: number): Issue[] {
+// Checks one placement against the student's other entries. Only data
+// integrity is refused (a duplicate record, units outside the official
+// range); every academic finding comes back as a warning or a note, and a
+// Completed or Studying now record is never refused for its course rules.
+export function validatePlacement(
+  user: number,
+  input: EntryInput,
+  course: Course,
+  opts: { ignoreId?: number; replacing?: number } = {},
+): Issue[] {
   const catalogue = getCatalogue();
-  const others = listEntries(user).filter((e) => e.id !== ignoreId);
+  const others = listEntries(user).filter((e) => e.id !== opts.ignoreId && e.id !== opts.replacing);
 
-  if (ignoreId === undefined) {
+  if (opts.ignoreId === undefined) {
     const existing = others.find((e) => e.courseCode === course.code);
     if (existing) {
       throw new ApiError(
@@ -96,28 +103,21 @@ export function validatePlacement(user: number, input: EntryInput, course: Cours
       );
     }
   }
-  const clash = others.find(
-    (e) => course.incompatible.includes(e.courseCode) || catalogue.get(e.courseCode)?.incompatible.includes(course.code),
-  );
-  if (clash) {
-    const note = course.incompatible.includes(clash.courseCode) ? course.incompatibleNote : catalogue.get(clash.courseCode)?.incompatibleNote;
-    throw new ApiError(
-      409,
-      "incompatible",
-      `${course.code} and ${clash.courseCode} are incompatible, so they can't both count. The official course page says: "${note}" ${clash.courseCode} is already in your plan (${describeEntry(clash).where}).`,
-      { existing: describeEntry(clash) },
-    );
-  }
 
   const issues = checkPlacement(
     input,
     course,
     currentTerm(),
-    others.map((e) => ({ placement: e, semesters: catalogue.get(e.courseCode)?.semesters ?? 1 })),
+    others.map((e) => ({
+      placement: e,
+      semesters: catalogue.get(e.courseCode)?.semesters ?? 1,
+      rules: catalogue.get(e.courseCode)?.rules ?? null,
+    })),
+    getProgramCode(user),
   );
   const block = issues.find((i) => i.level === "block");
-  if (block) throw new ApiError(block.code === "invalid_units" ? 400 : 422, block.code, block.message);
-  return issues.filter((i) => i.level === "warn");
+  if (block) throw new ApiError(400, block.code, block.message);
+  return issues;
 }
 
 // Only same-site paths: never an open redirect.

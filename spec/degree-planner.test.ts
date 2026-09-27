@@ -230,11 +230,11 @@ describe("one record per course", () => {
     expect(await s.entry("COMP1100")).toMatchObject({ year: 2025, session: "S1" });
   });
 
-  it("refuses a course that's officially incompatible with one already planned", async () => {
-    const clash = await s.add("COMP1130", "completed", 2025, "S1");
-    expect(clash.status).toBe(409);
-    expect(clash.body.code).toBe("incompatible");
-    expect(String(clash.body.error)).toContain("Incompatible with COMP1100");
+  it("refuses an exact duplicate whatever its status", async () => {
+    for (const status of ["completed", "current", "planned"]) {
+      const res = await s.add("COMP1100", status, 2027, "S1");
+      expect([res.status, res.body.code], status).toEqual([409, "duplicate"]);
+    }
   });
 
   it("refuses codes that aren't in the verified 2027 catalogue", async () => {
@@ -280,7 +280,8 @@ describe("editing and removing", () => {
     const units = await s.send(`/api/entries/${engn}`, { op: "update", status: "planned", year: "2028", session: "S1", units: "30" });
     expect([units.status, units.body.code]).toEqual([400, "invalid_units"]);
     const winter = await s.send(`/api/entries/${engn}`, { op: "update", status: "planned", year: "2028", session: "WIN" });
-    expect([winter.status, winter.body.code]).toEqual([422, "invalid_session"]);
+    expect(winter.status).toBe(200);
+    expect((winter.body.warnings as { code: string }[]).map((w) => w.code)).toContain("two_semester_session");
   });
 
   it("removes a course from every view, and a second removal is not found", async () => {
@@ -293,7 +294,7 @@ describe("editing and removing", () => {
     expect((await s.send(`/api/entries/${id}`, { op: "delete" })).status).toBe(404);
   });
 
-  it("warns above a 24-unit study period and refuses more than 36", async () => {
+  it("warns above a 24-unit study period, and more strongly above 36, without refusing", async () => {
     const t = await Student.signup("load");
     for (const c of ["COMP2100", "COMP2300", "COMP2400", "MATH1005"]) expect((await t.add(c, "planned", 2027, "S1")).status).toBe(200);
     const fifth = await t.add("PHIL1004", "planned", 2027, "S1");
@@ -301,7 +302,61 @@ describe("editing and removing", () => {
     expect((fifth.body.warnings as { code: string }[]).map((w) => w.code)).toContain("heavy_load");
     await t.add("STAT1003", "planned", 2027, "S1");
     const seventh = await t.add("COMP1100", "planned", 2027, "S1");
-    expect([seventh.status, seventh.body.code]).toEqual([422, "over_limit"]);
+    expect(seventh.status).toBe(200);
+    expect((seventh.body.warnings as { code: string }[]).map((w) => w.code)).toContain("over_limit");
+  });
+});
+
+describe("course rules by status", () => {
+  it("accepts a Completed course whose prerequisites aren't in the plan, without prerequisite warnings", async () => {
+    const s = await Student.signup("hist");
+    await s.program("AACOM");
+    const res = await s.add("COMP3320", "completed", 2026, "S1");
+    expect(res.status).toBe(200);
+    const warnings = res.body.warnings as { code: string; level: string }[];
+    expect(warnings.filter((w) => w.code.startsWith("prerequisite"))).toEqual([]);
+  });
+
+  it("accepts a Completed course beside an incompatible one, with a note only", async () => {
+    const s = await Student.signup("hist-incompat");
+    await s.program("AACOM");
+    await s.add("COMP1100", "completed", 2024, "S1");
+    const res = await s.add("COMP1130", "completed", 2025, "S1");
+    expect(res.status).toBe(200);
+    const w = (res.body.warnings as { code: string; level: string }[]).find((x) => x.code === "incompatible_in_plan");
+    expect(w?.level).toBe("info");
+  });
+
+  it("accepts Studying now with informational findings only", async () => {
+    const s = await Student.signup("current");
+    await s.program("AACOM");
+    const res = await s.add("COMP3320", "current", 2026, "S2");
+    expect(res.status).toBe(200);
+    expect((res.body.warnings as { level: string }[]).filter((w) => w.level === "warn")).toEqual([]);
+  });
+
+  it("gives a Planned course group-by-group warnings, and saves it anyway", async () => {
+    const s = await Student.signup("planned");
+    await s.program("AACOM");
+    await s.add("COMP2100", "completed", 2026, "S1");
+    const res = await s.add("COMP3320", "planned", 2027, "S1");
+    expect(res.status).toBe(200);
+    const warnings = res.body.warnings as { code: string; level: string; message: string }[];
+    expect(warnings.find((w) => w.code === "prerequisite_group_shown")?.message).toMatch(/COMP2100/);
+    expect(warnings.find((w) => w.code === "prerequisite_group_not_shown")?.message).toMatch(/second prerequisite group/);
+    expect(warnings.some((w) => w.code === "incompatible_in_plan")).toBe(false);
+    expect(await s.entry("COMP3320")).toMatchObject({ status: "planned" });
+  });
+
+  it("replaces one choose-one option with the other in one step", async () => {
+    const s = await Student.signup("replace");
+    await s.program("AACOM");
+    await s.add("COMP1100", "completed", 2025, "S1");
+    const old = await s.entry("COMP1100");
+    const res = await s.add("COMP1130", "completed", 2025, "S1", { replace: String(old?.id) });
+    expect(res.status).toBe(200);
+    expect(res.body.replaced).toMatchObject({ course: "COMP1100" });
+    expect((await s.state()).entries.map((e) => e.course)).toEqual(["COMP1130"]);
   });
 });
 
@@ -330,7 +385,16 @@ describe("requirements and progress", () => {
     expect((await s.state()).selections).toEqual({ maths: "MATH2222" });
 
     expect((await s.send("/api/selections", { node: "maths", course: "COMP1100" })).body.code).toBe("not_an_option");
-    expect((await s.send("/api/selections", { node: "prog1", course: "COMP1130" })).body.code).toBe("not_in_plan");
+
+    await s.add("COMP1100", "completed", 2024, "S1");
+    await s.add("COMP1130", "completed", 2025, "S1");
+    tree = await s.page("/");
+    const prog1 = tree.querySelector('details[data-node="prog1"]');
+    expect(prog1?.querySelector('[data-course="COMP1100"]')?.getAttribute("data-counts")).toBe("here");
+    expect(prog1?.querySelector('[data-course="COMP1130"]')?.getAttribute("data-counts")).toBe("none");
+    expect(prog1?.querySelector('[data-course="COMP1130"]')?.textContent).toContain("Recorded in your study history · 0 units currently counted toward this degree");
+    expect(prog1?.querySelector(".group__fraction")?.textContent?.replace(/\s/g, "")).toBe("6/6");
+    expect((await s.send("/api/selections", { node: "prog1", course: "COMP1730" })).body.code).toBe("not_an_option");
   });
 
   it("never lets the headline exceed the program, and agrees with the whole-program total", async () => {
@@ -345,6 +409,9 @@ describe("requirements and progress", () => {
     expect(tree.querySelector("[data-counting]")?.textContent?.trim()).toBe("48");
     const totalRule = tree.querySelector('[data-rule="total"] .rule__value')?.textContent?.trim();
     expect(totalRule).toBe("48");
+    const planText = (await s.page("/plan/")).body.textContent ?? "";
+    expect(planText).not.toMatch(/\b(?:BCOMP|AACOM|AACRD|AENSE)[a-z]/);
+    expect(planText).toContain("AACOM requirements");
   });
 
   it("starts with every requirement group collapsed and quotes the official rules", async () => {

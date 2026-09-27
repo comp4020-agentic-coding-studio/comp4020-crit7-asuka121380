@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import { int, primaryKey, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqlite-core";
 import type { Constraint, Program, ReqNode } from "./requirements";
+import type { CourseRules } from "./rules";
 import type { Session, Status } from "./terms";
 
 // The schema is the ground truth for the database. To change it: edit here,
@@ -20,8 +21,8 @@ export const courses = sqliteTable("courses", {
   semesterNote: text("semester_note"),
   // null when the planner hasn't read the course page, so the tag is unknown
   transdisciplinary: int({ mode: "boolean" }),
-  incompatible: text({ mode: "json" }).$type<string[]>().notNull().default(sql`'[]'`),
-  incompatibleNote: text("incompatible_note"),
+  // the course page's rules, structured where reliable (see src/lib/rules.ts)
+  rules: text({ mode: "json" }).$type<CourseRules>(),
   detailed: int({ mode: "boolean" }).notNull().default(false),
   url: text().notNull(),
 });

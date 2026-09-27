@@ -20,10 +20,12 @@ interface Props {
   // this leaf sits in a "choose one" list, so the student can pick it
   chooseOne?: boolean;
   alternativesInPlan?: number;
+  // counted nowhere because an incompatible course is already counting
+  withheldBy?: string;
   listedAs?: string;
   target?: number;
 }
-const { code, course, entry, nodeId, credit, preview, chooseOne, alternativesInPlan = 0, listedAs, target } = Astro.props;
+const { code, course, entry, nodeId, credit, preview, chooseOne, alternativesInPlan = 0, withheldBy, listedAs, target } = Astro.props;
 const title = course?.title ?? code;
 const semesters = course?.semesters ?? 1;
 const here = credit?.nodeId === nodeId;
@@ -35,7 +37,9 @@ if (entry) {
   if (here && preview) note = "Would count here if you choose this pathway";
   else if (here && chooseOne && alternativesInPlan > 1) note = "Counts here";
   else if (!here && credit) note = preview ? `Counts toward ${credit.title} for now` : `Counts toward ${credit.title} instead`;
-  else if (!here) note = preview ? "Choose this pathway to use it here" : "Doesn't count toward any requirement";
+  else if (!here && preview) note = "Choose this pathway to use it here";
+  else if (!here)
+    note = `Recorded in your study history · 0 units currently counted toward this degree${withheldBy ? ` (the 2027 course pages list it as incompatible with ${withheldBy}, which is counting)` : ""}`;
 }
 ---
 

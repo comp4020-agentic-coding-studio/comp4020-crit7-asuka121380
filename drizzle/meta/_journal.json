@@ -43,6 +43,20 @@
       "when": 1790511332107,
       "tag": "0005_one_record_per_course",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1790516018953,
+      "tag": "0006_structured_course_rules",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1790516019703,
+      "tag": "0007_drop_flat_incompatibility",
+      "breakpoints": true
     }
   ]
 }

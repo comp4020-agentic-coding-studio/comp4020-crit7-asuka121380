@@ -94,11 +94,34 @@ Rules from my brief for this week, held for every session on this repo:
 - Progress is calculated in one place, `src/lib/progress.ts`: each record
   credits at most one requirement, within every enclosing cap. Pages read its
   result; they never recompute totals themselves.
-- Refuse what's impossible (duplicates, official incompatibilities, the 36-unit
-  policy maximum, units outside the official range); warn about what's merely
-  unusual. `src/lib/checks.ts` holds those rules for server and client alike.
+- Refuse only data-integrity problems: a duplicate record, an unknown course,
+  units outside the official range, malformed input, an unauthenticated or
+  unowned request. Everything academic is a warning (Planned) or a note
+  (Completed, Studying now). `src/lib/checks.ts` holds these for server and
+  client alike.
 - API failures answer with a specific status and `code`, and the client shows
   the server's message. Never collapse them into one generic error.
 - In client templates, never name a form field `action`, `method` or another
   form property: it shadows the DOM property (this broke Edit and Remove once).
   Read the URL with `form.getAttribute("action")`.
+
+## Course-page rules
+
+- Never infer a relationship from a course code's mere presence in a
+  requisite block. Codes become incompatibilities only from an incompatibility
+  clause; prerequisites keep their AND/OR structure, unit counts, exclusions
+  and marks; program restrictions, permission, co-requisites, assumed
+  knowledge and co-taught courses are each their own kind.
+- Parse only what can be read reliably; otherwise keep the official wording
+  and mark the rule partial. An uncertain prerequisite is never turned into a
+  hard rule.
+- Hand readings live in `src/data/rule-overrides.ts`, each pinned to the exact
+  official text. After any data refresh run `pnpm rules:audit` and `pnpm check`;
+  `spec/course-rules.test.ts` fails if a review is stale or a relationship
+  isn't backed by its clause.
+- Completed is history and is never refused or warned for course rules;
+  degree choose-one groups are enforced by allocation, not by refusing
+  records.
+- Warning copy says what the plan appears to show and what it doesn't
+  ("The plan does not yet show…"); never "can't be added", "not eligible" or
+  "requirements satisfied" unless the structure supports it.

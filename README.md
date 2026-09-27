@@ -35,7 +35,9 @@ The plain-text extracts, each with its source URL, are committed in
   - the unit value
   - the 2027 offerings
   - the graduate attributes
-  - the official incompatibility sentence
+  - the official requisite and incompatibility text, read into structured
+    rules (see "Course rules" below)
+  - assumed knowledge and co-taught courses
   - whether the page says the course runs over two consecutive semesters
 
 Every requirement group shows its official sentence word for word, and the short
@@ -100,9 +102,12 @@ splits across two. In a choose-one list such as "Choose 1 of 2 · MATH1005 /
 MATH2222", only one course counts, and the other shows "Counts toward Electives
 instead". The student can switch which one counts ("Count this one here"); the
 server checks the requirement, the option and that the course is in their plan.
-Where the official course pages say two alternatives are incompatible (COMP1100
-and COMP1130, for example), the second can't be added at all, and the panel
-quotes the page's sentence and points to the course already in the plan.
+Adding the other option of a choose-one list offers to replace the course that
+currently counts, or to record both. Where the official pages list the two as
+incompatible (COMP1100 and COMP1130, for example), the second is recorded but
+counts nowhere: "Recorded in your study history · 0 units currently counted
+toward this degree". Course history and requirement allocation are separate
+things, and a record is never refused as a way of fixing a count.
 
 **Whole-program rules sit beside the tree.** Total units, the 1000-level
 maximum, the COMP level minimums and the Transdisciplinary Problem-Solving
@@ -110,29 +115,92 @@ minimum are quoted in full and measured against the units that count toward the
 degree. Rules the planner deliberately doesn't evaluate are listed separately:
 the AACRD 75%/80% WAM progression rules and the honours calculations.
 
-### What's refused, and what's only flagged
+### Course rules
 
-| Refused (a data-integrity or policy impossibility) | Flagged, still saved (possible with approval, or a slip) |
+Each program course's official "Requisite and Incompatibility" block mixes
+different kinds of statement:
+- prerequisites, with nested AND/OR groups, unit counts, exclusions and marks
+- co-requisites ("completed or be currently studying")
+- program restrictions
+- permission requirements
+- incompatibilities
+- plain advice
+
+An earlier version flattened each block into a list of codes and treated them
+all as incompatible. COMP3320's block, for example, was read as saying it was
+incompatible with its own prerequisites. That model is gone.
+
+`src/lib/rules.ts` now reads a block in three conservative steps:
+1. It splits the block into clauses by their opening words ("To enrol…",
+   "Incompatible with…", "You are not able to enrol…", "You must also be
+   studying…", permission wording), taken from the page's own line structure.
+2. It reads a prerequisite into an expression tree only if every token is
+   understood. The tree holds courses, co-requisite options, marks, "N units of
+   subject X at level Y excluding Z", and program nodes.
+3. Anything else is kept word for word, flagged, and never turned into a harder
+   rule than the page states.
+
+Rules the parser can't read completely have a hand-reviewed reading in
+`src/data/rule-overrides.ts` (24 of 98), each pinned to the exact official
+text it was checked against. Where the wording is genuinely ambiguous (INFS3059
+doesn't say which alternative its enrolment condition covers), the planner
+shows the wording instead of choosing a reading. The result is:
+
+- 73 of the 98 courses fully structured
+- 18 partly structured (marks, eligibility steps and unmapped programs stay as
+  flagged wording)
+- 1 wording-only
+- 6 with no rules
+
+Two things keep this from regressing:
+
+- `spec/course-rules.test.ts` validates every course on every `pnpm check`:
+  - an incompatibility must be named in an incompatibility clause
+  - no course may be both a prerequisite and incompatible
+  - every code in a prerequisite must appear in the official wording
+  - "complete" readings contain no leftover wording
+  - a hand review whose source text has changed fails loudly
+- `node scripts/audit-rules.ts` prints every official block beside its reading,
+  for a person to review after a data refresh.
+
+The course panel shows the rules under their own headings: Prerequisites (as
+groups), Co-requisites, Incompatibilities, Other enrolment conditions, Assumed
+knowledge (advice, not a requirement), Co-taught with, and the Official wording,
+with a note when some conditions couldn't be interpreted.
+
+### How rules are applied
+
+Rules depend on the record's status:
+
+- **Completed** is a historical fact. It's always accepted, whatever its 2027
+  prerequisites or incompatibilities say, because earlier years' rules, credit,
+  substitutions and permissions all exist. It's never warned about its course
+  rules.
+- **Studying now** is accepted, with course-rule findings shown only as notes.
+- **Planned** gets planning checks, group by group, and chronological: a
+  prerequisite counts only if it ends before the planned course starts. For
+  COMP3320 planned after COMP2100 the panel says "Your plan shows COMP2100
+  (Completed · 2026 S1), which appears to satisfy the first prerequisite group",
+  and warns that the plan does not yet show the second group before 2027
+  Semester 1. Warnings never block; the button becomes "Add anyway".
+
+| Refused (data integrity) | Planning warnings, for Planned courses (notes otherwise) |
 | --- | --- |
-| A second record for a course already in the plan | Completed, but placed in a semester that hasn't finished |
-| A course officially incompatible with one in the plan | Planned for a semester that has passed |
-| A code that isn't in the 2027 undergraduate catalogue | Studying now, but not in the current semester |
-| Units outside the course's official range | More than 24 units in a study period (the standard load; overload needs approval) |
-| A two-semester course starting outside Semester 1 or 2 | A 2027 session the catalogue doesn't list for the course |
-| More than 36 units in one study period (ANU policy never permits it) | |
+| A second record for a course already in the plan | A prerequisite group the plan doesn't show before the course |
+| A code that isn't in the 2027 undergraduate catalogue | An official incompatibility with a course in the plan |
+| Units outside the course's official range | More than 24 units in a study period (overload needs approval); more than 36, which ANU policy says is never permitted |
+| Malformed input, an ended session, or an entry that isn't yours | A 2027 session the catalogue doesn't list; a two-semester course starting outside a semester |
+| | Status that contradicts the calendar (planned in the past, completed in the future) |
 
-The load limits come from the ANU *Student academic study load and progression*
-policy (`research/policy-study-load.txt`): clause 12 sets a standard load of 24
-units in a study period, and clause 20 says permission is never given for more
-than 36. The server returns each refusal with its own status and a plain
-message, and the course panel shows the same checks live as the student
-edits:
+The load figures come from the ANU *Student academic study load and progression*
+policy (`research/policy-study-load.txt`, clauses 12 and 20). The server
+returns each refusal with its own status and code, and each save with its
+warnings and notes:
 
 - 400 for invalid input
 - 401 when the session has ended
 - 404 for an unknown course, or an entry that isn't in your plan
-- 409 for a duplicate or an incompatible course
-- 422 for a policy block
+- 409 for a duplicate
 
 ### Accounts and privacy
 
@@ -164,8 +232,8 @@ of that production data before deploying.
 - local rules inside majors and specialisations ("a maximum of 18 units may come
   from 1000-level courses", incompatibilities between a major and a
   specialisation) are shown as notes, not checked
-- detail such as the Transdisciplinary attribute, incompatibilities and
-  variable unit ranges is only known for the 98 courses whose pages were read.
+- detail such as course rules, the Transdisciplinary attribute and variable
+  unit ranges is only known for the 98 courses whose pages were read.
   For the rest the catalogue listing gives title, units and sessions, and the
   Transdisciplinary count says when a tag is unknown
 - study history is entered by hand
@@ -192,7 +260,7 @@ terms and keeping neither the document nor the marks. That is not built.
     each other's entries, reset only their own plan, and receive only their own
     live updates
   - one record per course: a duplicate gets 409 and says where the original is;
-    moving it works; incompatible courses and unknown codes are refused
+    moving it works; unknown codes are refused
   - editing between statuses and removing update both views, and each bad edit
     gets its own status and code
   - study-load warning and limit
@@ -200,9 +268,12 @@ terms and keeping neither the document nor the marks. That is not built.
   - the headline equals the whole-program total
   - collapsed groups, official links on every course in all four trees, and an
     accessibility floor on the populated pages
+- `spec/course-rules.test.ts` checks the rule reader on representative
+  official structures, validates all 98 courses as above, pins the COMP3320
+  regression, and covers status policy and the history/credit split
 - `spec/requirements.test.ts` checks, without a server:
   - the verified catalogue: 1,523 courses, two-semester evidence,
-    incompatibilities, and whole quotes
+    and the full catalogue
   - the transcription arithmetic: each program adds up to 144 or 192 units, and
     every fixed group to its official units
   - the allocation rules above
@@ -213,8 +284,9 @@ terms and keeping neither the document nor the marks. That is not built.
 
 `pnpm e2e` (`e2e/planner.e2e.mjs`) drives a real browser against a running
 server through the flows only a browser can show: two accounts, duplicate
-then move, editing, Remove with Undo, choose-one switching, incompatible and
-unknown courses, an offline save, focus returning after Escape, the program
+then move (never into the semester it's already in), editing, Remove with
+Undo, choose-one switching and replacement, "Add anyway", COMP3320's rules
+under the right headings, one announcement per action, unknown courses, an offline save, focus returning after Escape, the program
 switcher's accessible names, a scoped reset, logging out and back in, and the
 mobile drill-down with reduced motion.
 

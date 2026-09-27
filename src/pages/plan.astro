@@ -81,8 +81,8 @@ const inPlan = summary?.inPlan ?? {
       {
         program && summary && (
           <p class="hero__extra">
-            <strong data-counting>{filled(summary.counting)}</strong> of {program.units} units count toward the {program.code}
-            requirements
+            <strong data-counting>{filled(summary.counting)}</strong> of {program.units} units count toward the{" "}
+            {program.code} requirements
             {filled(summary.notCounting) > 0 && `; ${filled(summary.notCounting)} don't count toward any requirement`}.
           </p>
         )
@@ -139,7 +139,7 @@ const inPlan = summary?.inPlan ?? {
                                 <span class={`entry__toward${credit ? "" : " entry__toward--none"}`}>
                                   {credit
                                     ? `Counts toward ${credit.title}${credit.units < e.units * of ? ` (${credit.units} of ${e.units * of} units)` : ""}`
-                                    : "Doesn't count toward any requirement"}
+                                    : `Recorded in your study history · 0 units currently counted toward this degree${evaluation?.withheld.get(e.id) ? ` (incompatible with ${evaluation.withheld.get(e.id)}, which is counting)` : ""}`}
                                 </span>
                               )}
                               {issues.map((i) => (

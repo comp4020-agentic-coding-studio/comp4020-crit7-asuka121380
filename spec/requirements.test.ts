@@ -30,20 +30,6 @@ describe("verified catalogue", () => {
     const twoSemester = [...catalogue.values()].filter((c) => c.semesters === 2).map((c) => c.code);
     expect(twoSemester.sort()).toEqual(["COMP3500", "COMP3770", "COMP4500", "COMP4550", "ENGN4300", "ENGN4350"]);
   });
-
-  it("reads official incompatibilities from the course pages", () => {
-    expect(catalogue.get("COMP1100")?.incompatible).toContain("COMP1130");
-    expect(catalogue.get("COMP1130")?.incompatible).toContain("COMP1100");
-    expect(catalogue.get("COMP4820")?.incompatible).toEqual(expect.arrayContaining(["COMP4500", "COMP4550"]));
-    expect(catalogue.get("COMP1100")?.incompatibleNote).toMatch(/Incompatible with COMP1130/);
-  });
-
-  it("quotes official incompatibility sentences whole, never cut off", () => {
-    for (const c of catalogue.values()) {
-      if (c.incompatibleNote) expect(c.incompatibleNote, c.code).toMatch(/(\.|[A-Z]{4}\d{4})$/);
-    }
-    expect(catalogue.get("MATH2222")?.incompatibleNote).toContain("MATH3116 or MATH6222");
-  });
 });
 
 describe("transcribed requirements", () => {
@@ -171,7 +157,8 @@ describe("allocation", () => {
   });
 
   it("flags a whole-program maximum when the plan exceeds it", () => {
-    const codes = ["COMP1100", "COMP1110", "COMP1600", "MATH1005", "MATH1013", "MATH1014", "MATH1115", "MATH1116", "STAT1003", "STAT1008", "ENGN1211"];
+    // eleven 1000-level courses, none incompatible with another
+    const codes = ["COMP1100", "COMP1110", "COMP1600", "COMP1720", "MATH1005", "MATH1013", "MATH1014", "STAT1003", "ENGN1211", "INFS1001", "PHIL1004"];
     const entries = codes.map((c, i) => entry(c, "completed", 2020 + Math.floor(i / 4), i % 2 ? "S2" : "S1"));
     const cap = run("AACOM", entries).constraints.find((c) => c.constraint.id === "level1");
     expect(cap?.completed).toBeGreaterThan(60);
@@ -196,12 +183,12 @@ describe("consistency checks", () => {
     expect(checkPlacement(at("COMP1100", "current", 2026, "S2"), facts("COMP1100"), now, []).every((i) => i.level === "warn")).toBe(true);
   });
 
-  it("warns above the standard 24-unit load and blocks above the 36-unit policy maximum", () => {
+  it("warns above the standard 24-unit load, and more strongly above the 36-unit policy maximum", () => {
     const others = (n: number) =>
       Array.from({ length: n }, (_, i) => ({ placement: at(`COMP${2100 + i}`, "planned", 2027, "S1"), semesters: 1 }));
     expect(codes(checkPlacement(at("COMP1100", "planned", 2027, "S1"), facts("COMP1100"), now, others(4)))).toContain("heavy_load");
     const over = checkPlacement(at("COMP1100", "planned", 2027, "S1"), facts("COMP1100"), now, others(6));
-    expect(over.find((i) => i.code === "over_limit")?.level).toBe("block");
+    expect(over.find((i) => i.code === "over_limit")?.level).toBe("warn");
   });
 
   it("warns when a 2027 session isn't one the course is listed for", () => {
@@ -210,9 +197,9 @@ describe("consistency checks", () => {
     expect(codes(checkPlacement(at("COMP1600", "planned", 2027, "S1"), c, now, []))).toContain("not_offered");
   });
 
-  it("blocks units outside the official range and two-semester courses outside a semester", () => {
+  it("blocks units outside the official range, and only warns about a two-semester course outside a semester", () => {
     expect(checkPlacement(at("ENGN4300", "planned", 2027, "S1", 13), facts("ENGN4300"), now, []).find((i) => i.code === "invalid_units")?.level).toBe("block");
-    expect(checkPlacement(at("COMP4550", "planned", 2027, "WIN", 12), facts("COMP4550"), now, []).find((i) => i.code === "invalid_session")?.level).toBe("block");
+    expect(checkPlacement(at("COMP4550", "planned", 2027, "WIN", 12), facts("COMP4550"), now, []).find((i) => i.code === "two_semester_session")?.level).toBe("warn");
   });
 });
 

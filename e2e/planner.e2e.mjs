@@ -80,8 +80,17 @@ await step("3. the other account doesn't see it, and wasn't refreshed by it", as
   assert.equal(await status(B.page, "COMP1100"), "none");
 });
 
-await step("5–6. a second COMP1100 is refused; the existing one moves instead", async () => {
+await step("5–6. no Move is offered into the semester a course is already in", async () => {
   await A.page.goto(`${BASE}/plan/`);
+  await A.page.click('[data-term="2025-S1"] [data-add-course]');
+  await A.page.fill("[data-code-input]", "COMP1100");
+  await A.page.waitForFunction(() => document.querySelector("[data-code-status]")?.textContent?.includes("already in your plan"));
+  assert.equal(await A.page.$("[data-move-existing]"), null);
+  assert.match(await A.page.textContent("[data-code-status]"), /already in 2025 Semester 1/);
+  await A.page.keyboard.press("Escape");
+});
+
+await step("5–6. a second COMP1100 is refused; the existing one moves instead", async () => {
   await A.page.click('[data-term="2026-S1"] [data-add-course]');
   await A.page.fill("[data-code-input]", "COMP1100");
   await A.page.waitForSelector("[data-move-existing]");
@@ -137,14 +146,38 @@ await step("9–10. both options of a choose-one list: only one counts, and the 
   assert.equal(await counts("MATH1005"), "elsewhere");
 });
 
-await step("9. an officially incompatible alternative is explained, not added", async () => {
+await step("9. the other choose-one option: planning warning, Add anyway, and an offer to replace", async () => {
   await A.page.click('details[data-node="prog1"] [data-open-course="COMP1130"]');
-  assert.match(await A.page.textContent(".conflict"), /can't be added alongside COMP1100/);
-  assert.equal(await A.page.$("[data-panel-form]"), null);
+  await A.page.waitForSelector("[data-replace]:not([hidden])");
+  assert.match(await A.page.textContent("[data-replace]"), /COMP1100 currently satisfies Programming as Problem Solving/);
+  assert.match(await A.page.textContent("[data-issues]"), /lists COMP1100 as incompatible/);
+  assert.equal((await A.page.textContent("[data-submit]")).trim(), "Add anyway");
+  assert.equal(await A.page.isDisabled("[data-submit]"), false);
   await A.page.keyboard.press("Escape");
 });
 
+await step("course rules appear under the right headings (COMP3320)", async () => {
+  await A.page.goto(`${BASE}/plan/`);
+  await A.page.click('[data-term="2027-S1"] [data-add-course]');
+  await A.page.fill("[data-code-input]", "COMP3320");
+  await A.page.waitForSelector("[data-rules] .rules-panel__block");
+  const blocks = await A.page.$$eval("[data-rules] .rules-panel__block", (els) =>
+    Object.fromEntries(els.map((e) => [e.querySelector("h4").textContent, e.textContent])),
+  );
+  assert.match(blocks.Prerequisites, /COMP2100 or COMP2300 or ENGN2219/);
+  assert.match(blocks.Incompatibilities, /COMP6464/);
+  assert.equal(blocks.Incompatibilities.includes("COMP2100"), false);
+  assert.match(await A.page.textContent("[data-issues]"), /second prerequisite group/);
+  await A.page.keyboard.press("Escape");
+});
+
+await step("one successful action, one announcement", async () => {
+  const regions = await A.page.$$eval('[role="status"], [aria-live]:not([aria-live="off"])', (els) => els.filter((e) => !e.closest("dialog")).length);
+  assert.equal(regions, 1);
+});
+
 await step("11. duplicates can't inflate the total: headline matches the whole-program rule", async () => {
+  await A.page.goto(`${BASE}/`);
   const headline = await A.page.textContent("[data-counting]");
   const rule = await A.page.textContent('[data-rule="total"] .rule__value');
   assert.equal(headline.trim(), rule.trim());
@@ -191,6 +224,18 @@ await step("11. program switcher options have screen-reader names", async () => 
   const labels = await A.page.$$eval(".switcher__option", (els) => els.map((e) => e.getAttribute("aria-label")));
   assert.equal(labels.length, 4);
   for (const l of labels) assert.match(l, /^(Switch to .+ \((BCOMP|AACOM|AACRD|AENSE)\)|.+ \((BCOMP|AACOM|AACRD|AENSE)\), your current program)$/);
+});
+
+await step("choose-one replacement swaps the course that counts, in one step", async () => {
+  await A.page.goto(`${BASE}/`);
+  if (!(await A.page.$eval('details[data-node="prog1"]', (d) => d.open))) await A.page.click('details[data-node="prog1"] > summary');
+  await A.page.click('details[data-node="prog1"] [data-open-course="COMP1130"]');
+  await A.page.waitForSelector("[data-replace]:not([hidden])");
+  await A.page.click('[data-replace] button[name="replace"]');
+  await settle(A.page);
+  assert.match(await toast(A.page), /Replaced COMP1100 with COMP1130/);
+  assert.equal(await status(A.page, "COMP1100"), "none");
+  assert.equal(await A.page.getAttribute('details[data-node="prog1"] [data-course="COMP1130"]', "data-counts"), "here");
 });
 
 await step("15. Reset clears only the signed-in account", async () => {

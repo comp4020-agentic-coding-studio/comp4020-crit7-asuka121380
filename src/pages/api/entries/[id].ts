@@ -20,7 +20,7 @@ export const POST: APIRoute = (ctx) =>
     const course = getCatalogue().get(entry.courseCode);
     if (!course) throw new ApiError(404, "unknown_course", `${entry.courseCode} is no longer in the catalogue.`);
     const input = { ...parseTerm(form), units: parseUnits(form, course) };
-    const warnings = validatePlacement(user, { courseCode: entry.courseCode, ...input }, course, entry.id);
+    const warnings = validatePlacement(user, { courseCode: entry.courseCode, ...input }, course, { ignoreId: entry.id });
     const updated = updateEntry(user, entry.id, input);
     if (!updated) throw new ApiError(404, "not_found", "That enrolment isn't in your plan any more.");
     return { entry: describeEntry(updated), warnings };

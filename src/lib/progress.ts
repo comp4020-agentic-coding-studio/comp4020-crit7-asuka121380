@@ -29,6 +29,8 @@ export type Evaluation = {
   previewCredit: Map<number, Credit>;
   bestOption: Map<string, string>;
   byCode: Map<string, PlanEntry>;
+  // recorded, but not counted: an incompatible course is already counting
+  withheld: Map<number, string>;
   selections: Record<string, string>;
   unassigned: PlanEntry[];
   constraints: {
@@ -63,7 +65,12 @@ type Slot =
   | { kind: "pick"; cls: 1 | 2 | 3; node: PickNode; codes: string[]; room: number; chain: Group[] }
   | { kind: "open"; cls: 4 | 5; node: OpenNode; room: number; chain: Group[] };
 
-type Allocation = { credit: Map<number, Credit>; tally: Map<string, Tally> };
+type Allocation = { credit: Map<number, Credit>; tally: Map<string, Tally>; withheld: Map<number, string> };
+
+// Two courses whose official 2027 pages list each other (either way) as
+// incompatible: only the first to be credited counts.
+export const incompatiblePair = (a: string, b: string, catalogue: Map<string, Course>) =>
+  Boolean(catalogue.get(a)?.rules?.incompatible.includes(b) || catalogue.get(b)?.rules?.incompatible.includes(a));
 
 function allocate(
   roots: ReqNode[],
@@ -133,12 +140,20 @@ function allocate(
   collect(roots, []);
 
   const credit = new Map<number, Credit>();
+  const withheld = new Map<number, string>();
+  const credited: PlanEntry[] = [];
   const own = new Map<string, Units>();
   const available = (slot: Slot) =>
     Math.min(slot.room, ...slot.chain.map((g) => room.get(g.id) ?? Number.POSITIVE_INFINITY));
   const give = (slot: Slot, e: PlanEntry) => {
+    const clash = credited.find((c) => incompatiblePair(c.courseCode, e.courseCode, catalogue));
+    if (clash) {
+      withheld.set(e.id, clash.courseCode);
+      return;
+    }
     const units = Math.min(entryUnits(e, catalogue), available(slot));
     if (units <= 0) return;
+    credited.push(e);
     slot.room -= units;
     for (const g of slot.chain) if (room.has(g.id)) room.set(g.id, (room.get(g.id) ?? 0) - units);
     credit.set(e.id, { nodeId: slot.node.id, title: slot.node.title, units });
@@ -175,7 +190,7 @@ function allocate(
   // A course goes whole into the first open requirement with room for all of
   // it; only if none has room does it take a partial place (a course never
   // splits across requirements).
-  for (const e of entries.filter((x) => !credit.has(x.id)).sort(order)) {
+  for (const e of entries.filter((x) => !credit.has(x.id) && !withheld.has(x.id)).sort(order)) {
     const fits = buckets.filter((b) => matches(b.node.filter, e.courseCode, tps(e.courseCode)));
     const slot = fits.find((b) => available(b) >= entryUnits(e, catalogue)) ?? fits.find((b) => available(b) > 0);
     if (slot) give(slot, e);
@@ -211,7 +226,7 @@ function allocate(
     return t;
   };
   roots.forEach(score);
-  return { credit, tally };
+  return { credit, tally, withheld };
 }
 
 function openIds(nodes: ReqNode[]): Set<string> {
@@ -313,6 +328,7 @@ export function evaluate(
     previewCredit,
     bestOption,
     byCode: new Map(entries.map((e) => [e.courseCode, e])),
+    withheld: new Map([...main.withheld].filter(([id]) => !main.credit.has(id))),
     selections: effective,
     unassigned: entries.filter((e) => !main.credit.has(e.id)),
     constraints,

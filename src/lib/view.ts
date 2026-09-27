@@ -10,8 +10,8 @@ import {
   listPrograms,
   type PlanEntry,
 } from "./db";
-import { courseCodes, type Program } from "./requirements";
-import { type Evaluation, evaluate } from "./progress";
+import { courseCodes, type Program, walk } from "./requirements";
+import { type Evaluation, evaluate, isChooseOne } from "./progress";
 import { currentTerm } from "./terms";
 
 // Everything a page needs for one signed-in student, read in one place and
@@ -45,9 +45,13 @@ export function loadView(user: number): PlannerView {
     const others = entries
       .filter((o) => o.id !== e.id)
       .map((o) => ({ placement: o, semesters: catalogue.get(o.courseCode)?.semesters ?? 1 }));
-    // an existing entry can't be blocked after the fact; show everything
-    // that's off about it as a warning
-    const issues = checkPlacement(e, course, now, others);
+    const issues = checkPlacement(
+      e,
+      course,
+      now,
+      others.map((o) => ({ ...o, rules: catalogue.get(o.placement.courseCode)?.rules ?? null })),
+      program?.code ?? null,
+    ).filter((i) => i.level === "warn");
     if (issues.length) warnings.set(e.id, issues);
   }
 
@@ -67,6 +71,14 @@ export function loadView(user: number): PlannerView {
 // The client script gets the same facts the server rendered from, for the
 // courses on this page; the full catalogue is fetched only for search.
 export function clientData(view: PlannerView) {
+  const chooseOne: { node: string; title: string; codes: string[] }[] = [];
+  if (view.program) {
+    walk(view.program.requirements, (n) => {
+      if (isChooseOne(n, view.catalogue) && n.kind === "pick") {
+        chooseOne.push({ node: n.id, title: n.title, codes: n.children.flatMap((c) => (c.kind === "course" ? [c.code] : [])) });
+      }
+    });
+  }
   const codes = new Set([...(view.program ? courseCodes(view.program.requirements) : []), ...view.entries.map((e) => e.courseCode)]);
   return {
     program: view.program?.code ?? null,
@@ -79,7 +91,10 @@ export function clientData(view: PlannerView) {
       session: e.session,
       units: e.units,
       counts: view.evaluation?.credit.get(e.id)?.title ?? null,
+      node: view.evaluation?.credit.get(e.id)?.nodeId ?? null,
+      withheldBy: view.evaluation?.withheld.get(e.id) ?? null,
     })),
+    chooseOne,
     courses: Object.fromEntries(
       [...codes].flatMap((code) => {
         const c = view.catalogue.get(code);
@@ -95,8 +110,7 @@ export function clientData(view: PlannerView) {
                   semesterNote: c.semesterNote,
                   offered: c.offered,
                   tps: c.transdisciplinary,
-                  incompatible: c.incompatible,
-                  incompatibleNote: c.incompatibleNote,
+                  rules: c.rules,
                   detailed: c.detailed,
                 },
               ],

@@ -155,8 +155,7 @@ const path = Astro.url.pathname;
       </div>
     </footer>
 
-    <p class="visually-hidden" role="status" aria-live="polite" id="announcer"></p>
-    <div class="toast" id="toast" hidden></div>
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
 
     {
       view && (

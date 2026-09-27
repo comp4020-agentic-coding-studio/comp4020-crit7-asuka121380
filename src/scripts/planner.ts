@@ -1,5 +1,6 @@
 import { Idiomorph } from "idiomorph";
 import { type CourseFacts, checkPlacement, type Issue, termsOccupied } from "../lib/checks";
+import { type CourseRules, describe, type Req } from "../lib/rules";
 import { type Session, SESSIONS, STATUS_LABEL, type Status, termLabel, termOrder } from "../lib/terms";
 
 // Progressive enhancement over server-rendered pages. Everything here is
@@ -8,7 +9,17 @@ import { type Session, SESSIONS, STATUS_LABEL, type Status, termLabel, termOrder
 // link between the signed-in student's own open tabs. The server remains
 // the authority: the hints here come from the same rules it enforces.
 
-type Entry = { id: number; course: string; status: Status; year: number; session: Session; units: number; counts: string | null };
+type Entry = {
+  id: number;
+  course: string;
+  status: Status;
+  year: number;
+  session: Session;
+  units: number;
+  counts: string | null;
+  node: string | null;
+  withheldBy: string | null;
+};
 type Known = {
   title: string;
   min: number;
@@ -17,14 +28,14 @@ type Known = {
   semesterNote: string | null;
   offered: Session[];
   tps: boolean | null;
-  incompatible: string[];
-  incompatibleNote: string | null;
+  rules: CourseRules | null;
   detailed: boolean;
 };
 type Data = {
   program: string | null;
   now: { year: number; session: Session };
   entries: Entry[];
+  chooseOne: { node: string; title: string; codes: string[] }[];
   courses: Record<string, Known>;
 };
 type Existing = { id: number; course: string; status: Status; year: number; session: Session; units: number; where: string };
@@ -35,6 +46,7 @@ type Result = {
   warnings?: Issue[];
   existing?: Existing;
   removed?: Existing;
+  replaced?: Existing;
   entry?: Existing;
 };
 
@@ -72,12 +84,8 @@ function readData() {
 // ---- announcements: one polite live region, and a visible toast ----
 
 let toastTimer: ReturnType<typeof setTimeout> | undefined;
+// The toast is the page's one live region, so each action is announced once.
 function announce(message: string, opts: { tone?: "ok" | "warn" | "error"; action?: { label: string; run: () => void } } = {}) {
-  const live = $("#announcer");
-  if (live) {
-    live.textContent = "";
-    requestAnimationFrame(() => (live.textContent = message));
-  }
   const toast = $("#toast");
   if (!toast) return;
   toast.className = `toast toast--${opts.tone ?? "ok"}`;
@@ -276,18 +284,11 @@ const whenOf = (e: { year: number; session: Session; course: string }) => {
     .join(" – ");
 };
 
-// An entry already in the plan that this course can't sit beside.
-function clashFor(code: string): Entry | undefined {
-  const k = data?.courses[code];
-  return data?.entries.find((e) => e.course !== code && (k?.incompatible.includes(e.course) || data?.courses[e.course]?.incompatible.includes(code)));
-}
-
 function termFields(opts: { status: Status; year: number; session: Session; units: number; known?: CourseFacts }) {
   const years = Array.from({ length: 17 }, (_, i) => 2018 + i);
   const known = opts.known;
   const variable = known ? known.unitsMin !== known.unitsMax : false;
   const twoSemester = (known?.semesters ?? 1) > 1;
-  const sessions = SESSIONS.filter((s) => !twoSemester || s.id === "S1" || s.id === "S2");
   return `
     <fieldset class="seg">
       <legend>Status</legend>
@@ -302,13 +303,86 @@ function termFields(opts: { status: Status; year: number; session: Session; unit
       <label class="field"><span>Year</span><select name="year">${years
         .map((y) => `<option ${y === opts.year ? "selected" : ""}>${y}</option>`)
         .join("")}</select></label>
-      <label class="field"><span>${twoSemester ? "Starting session" : "Session"}</span><select name="session" data-session-select>${sessions
-        .map((s) => `<option value="${s.id}" ${s.id === opts.session ? "selected" : ""}>${s.label}</option>`)
-        .join("")}</select></label>
+      <label class="field"><span>${twoSemester ? "Starting session" : "Session"}</span><select name="session" data-session-select>${SESSIONS.map(
+        (s) => `<option value="${s.id}" ${s.id === opts.session ? "selected" : ""}>${s.label}</option>`,
+      ).join("")}</select></label>
       <label class="field field--units" ${variable ? "" : "hidden"} data-units-field><span>Units${twoSemester ? " per semester" : ""}</span>
         <input type="number" name="units" value="${opts.units}" min="${known?.unitsMin ?? 0}" max="${known?.unitsMax ?? 24}" step="1" ${variable ? "" : "disabled"}></label>
     </div>
-    <ul class="issues" data-issues aria-live="polite"></ul>`;
+    <section class="checks" data-checks aria-live="polite" hidden>
+      <h3 class="panel__section">Planning checks</h3>
+      <ul class="issues" data-issues></ul>
+      <p class="checks__note" data-checks-note hidden>These are planning warnings, not an official ruling. You may still save the course.</p>
+    </section>`;
+}
+
+// The course page's rules under the right headings. Structure is shown only
+// where it was read reliably; otherwise the official wording, flagged.
+function rulesSections(code: string, k: Known | undefined): string {
+  if (!k?.rules) {
+    return `<section class="rules-panel"><p class="rules-panel__note">The planner hasn't read this course's requisites. Check them on the official course page.</p></section>`;
+  }
+  const r = k.rules;
+  const concurrent: string[] = [];
+  const walkReq = (q: Req | null) => {
+    if (!q) return;
+    if (q.type === "course" && q.concurrent) concurrent.push(q.code);
+    if (q.type === "and" || q.type === "or") q.children.forEach(walkReq);
+  };
+  walkReq(r.prerequisite);
+  const groups = r.prerequisite ? (r.prerequisite.type === "and" ? r.prerequisite.children : [r.prerequisite]) : [];
+  const incompatibleClauses = r.clauses.filter((c) => c.kind === "incompatible").map((c) => c.text);
+  const other = [...r.programRestrictions, ...r.permission, ...r.otherConditions];
+  const block = (title: string, body: string) => `<div class="rules-panel__block"><h4>${title}</h4>${body}</div>`;
+  const parts: string[] = [];
+  if (r.prerequisite) {
+    parts.push(
+      block(
+        "Prerequisites",
+        r.prerequisite.type === "text"
+          ? `<p class="rules-panel__quote">“${esc(r.prerequisite.text)}”</p>`
+          : groups.length > 1
+            ? `<p>All of these groups:</p><ol class="rules-panel__groups">${groups.map((g) => `<li>${esc(describe(g))}</li>`).join("")}</ol>`
+            : `<p>${esc(describe(r.prerequisite))}</p>`,
+      ),
+    );
+  }
+  if (concurrent.length) parts.push(block("Co-requisites", `<p>${concurrent.map((c) => `${esc(c)} may be completed earlier or studied at the same time.`).join(" ")}</p>`));
+  if (r.incompatible.length) {
+    parts.push(
+      block(
+        "Incompatibilities",
+        `<p>${esc(r.incompatible.join(", "))}</p>${incompatibleClauses.map((t) => `<p class="rules-panel__quote">“${esc(t)}”</p>`).join("")}`,
+      ),
+    );
+  }
+  if (other.length) parts.push(block("Other enrolment conditions", other.map((t) => `<p class="rules-panel__quote">“${esc(t)}”</p>`).join("")));
+  if (r.assumedKnowledge) parts.push(block("Assumed knowledge", `<p>${esc(r.assumedKnowledge)}</p><p class="rules-panel__hint">Advice, not a requirement.</p>`));
+  if (r.coTaught.length) parts.push(block("Co-taught with", `<p>${esc(r.coTaught.join(", "))}</p>`));
+  if (!parts.length) parts.push(`<p class="rules-panel__note">The official page lists no requisites or incompatibilities.</p>`);
+  const uncertain = r.confidence === "partial" || r.confidence === "wording-only";
+  return `<section class="rules-panel" aria-labelledby="rules-title">
+    <h3 class="panel__section" id="rules-title">Course rules (2027)</h3>
+    ${uncertain ? `<p class="rules-panel__note">Some conditions are shown in their official wording because the planner could not interpret every condition reliably.</p>` : ""}
+    ${parts.join("")}
+    ${
+      r.officialText
+        ? `<details class="rules-panel__official"><summary>Official wording</summary><p>${esc(r.officialText).replace(/\n/g, "<br>")}</p>
+           <a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener">2027 course page<span class="visually-hidden"> (opens in a new tab)</span> ↗</a></details>`
+        : ""
+    }
+  </section>`;
+}
+
+// A choose-one requirement where another of the student's courses is the
+// one currently counting.
+function replacementFor(code: string): { entry: Entry; title: string } | null {
+  if (!data) return null;
+  for (const g of data.chooseOne.filter((x) => x.codes.includes(code))) {
+    const current = data.entries.find((e) => e.course !== code && g.codes.includes(e.course) && e.node === g.node);
+    if (current) return { entry: current, title: g.title };
+  }
+  return null;
 }
 
 function renderPanel(code: string | null, opts: { year?: number; session?: Session } = {}) {
@@ -317,7 +391,6 @@ function renderPanel(code: string | null, opts: { year?: number; session?: Sessi
   const known = code ? data.courses[code] : undefined;
   const entry = code ? data.entries.find((e) => e.course === code) : undefined;
   const leaf = code ? $<HTMLElement>(`[data-course="${CSS.escape(code)}"]`) : null;
-  const clash = code && !entry ? clashFor(code) : undefined;
 
   const facts: string[] = [];
   if (known) {
@@ -325,18 +398,22 @@ function renderPanel(code: string | null, opts: { year?: number; session?: Sessi
     facts.push(`<div><dt>Offered in 2027</dt><dd>${known.offered.length ? esc(known.offered.map((s) => SESSIONS.find((x) => x.id === s)?.official).join(", ")) : "No 2027 offering listed"}</dd></div>`);
     if (known.semesters > 1) facts.push(`<div><dt>Length</dt><dd>Two consecutive semesters. The course page says: “${esc(known.semesterNote)}”</dd></div>`);
     if (known.tps) facts.push("<div><dt>Graduate attributes</dt><dd>Transdisciplinary</dd></div>");
-    if (known.incompatibleNote) facts.push(`<div><dt>Incompatibility</dt><dd>“${esc(known.incompatibleNote)}”</dd></div>`);
   }
   if (leaf?.dataset.listed) facts.push(`<div><dt>On the program page</dt><dd>Listed as “${esc(leaf.dataset.listed)}”</dd></div>`);
 
   let body = "";
   if (entry) {
+    const counted = entry.counts
+      ? `Counts toward ${esc(entry.counts)}`
+      : data.program
+        ? `Recorded in your study history · 0 units currently counted toward this degree${entry.withheldBy ? ` (incompatible with ${esc(entry.withheldBy)}, which is counting)` : ""}`
+        : "";
     body = `
       <section class="panel__current" aria-labelledby="in-plan">
         <h3 class="panel__section" id="in-plan">In your plan</h3>
         <div class="panel__entry">${MARK[entry.status]}
           <span><strong>${STATUS_LABEL[entry.status]}</strong> · ${esc(whenOf(entry))}${known && known.min !== known.max ? ` · ${entry.units} units` : ""}
-          <span class="panel__counts">${entry.counts ? `Counts toward ${esc(entry.counts)}` : data.program ? "Doesn't count toward any requirement" : ""}</span></span>
+          <span class="panel__counts">${counted}</span></span>
           <form method="post" action="/api/entries/${entry.id}" data-enhance data-astro-reload data-keep-open data-course="${esc(code)}">
             <input type="hidden" name="op" value="delete"><button class="linkish linkish--danger">Remove</button></form>
         </div>
@@ -346,21 +423,11 @@ function renderPanel(code: string | null, opts: { year?: number; session?: Sessi
         <input type="hidden" name="op" value="update">
         ${termFields({ status: entry.status, year: entry.year, session: entry.session, units: entry.units, known: code ? toFacts(code) : undefined })}
         <p class="form-error" data-error role="alert"></p>
-        <div class="panel__actions"><button class="btn">Save changes</button></div>
+        <div class="panel__actions"><button class="btn" data-submit data-label="Save changes">Save changes</button></div>
       </form>`;
-  } else if (clash) {
-    body = `
-      <div class="conflict" role="note">
-        <p><strong>${esc(code)} can't be added alongside ${esc(clash.course)}.</strong> They're incompatible, so only one can count.
-        ${esc(clash.course)} is already in your plan (${STATUS_LABEL[clash.status]} · ${esc(whenOf(clash))}).</p>
-        ${known?.incompatibleNote || data.courses[clash.course]?.incompatibleNote ? `<p class="conflict__quote">The official course page says: “${esc(known?.incompatibleNote ?? data.courses[clash.course]?.incompatibleNote)}”</p>` : ""}
-        <button class="btn btn--quiet" type="button" data-open-course="${esc(clash.course)}">Open ${esc(clash.course)}</button>
-      </div>`;
   } else {
     const status: Status = opts.year && opts.session ? statusForTerm(opts.year, opts.session) : "planned";
-    let term = opts.year && opts.session ? { year: opts.year, session: opts.session } : defaultTerm(status);
-    const semesters = known?.semesters ?? 1;
-    if (semesters > 1 && term.session !== "S1" && term.session !== "S2") term = { year: term.year, session: "S2" };
+    const term = opts.year && opts.session ? { year: opts.year, session: opts.session } : defaultTerm(status);
     body = `
       <form class="entry-form" method="post" action="/api/entries" data-enhance data-astro-reload data-panel-form ${code ? `data-course="${esc(code)}"` : ""}>
         <h3 class="panel__section">Add to your plan</h3>
@@ -372,9 +439,10 @@ function renderPanel(code: string | null, opts: { year?: number; session?: Sessi
                  <datalist id="course-codes"></datalist></label>
                <div class="field__hint" id="code-status" data-code-status aria-live="polite">Only courses in the 2027 ANU undergraduate catalogue can be added.</div>`
         }
+        <div class="replace" data-replace hidden></div>
         ${termFields({ status, year: term.year, session: term.session, units: known?.min ?? 6, known: code ? toFacts(code) : undefined })}
         <p class="form-error" data-error role="alert"></p>
-        <div class="panel__actions"><button class="btn" ${code ? "" : "disabled"} data-submit>Add to plan</button></div>
+        <div class="panel__actions"><button class="btn" ${code ? "" : "disabled"} data-submit data-label="Add to plan">Add to plan</button></div>
       </form>`;
   }
 
@@ -389,7 +457,8 @@ function renderPanel(code: string | null, opts: { year?: number; session?: Sessi
     ${code ? `<a class="btn btn--official" href="https://programsandcourses.anu.edu.au/2027/course/${esc(code)}" target="_blank" rel="noopener">Open the official course page <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>` : ""}
     ${facts.length ? `<dl class="facts">${facts.join("")}</dl>` : ""}
     <div class="panel__alert" data-panel-alert role="alert"></div>
-    ${body}`;
+    ${body}
+    ${code ? rulesSections(code, known) : `<div data-rules></div>`}`;
   root.dataset.code = code ?? "";
   const form = $<HTMLFormElement>("[data-panel-form]", root);
   if (form) void refreshHints(form);
@@ -398,7 +467,7 @@ function renderPanel(code: string | null, opts: { year?: number; session?: Sessi
 
 function toFacts(code: string): CourseFacts | undefined {
   const k = data?.courses[code];
-  return k ? { code, unitsMin: k.min, unitsMax: k.max, semesters: k.semesters, offered: k.offered } : undefined;
+  return k ? { code, unitsMin: k.min, unitsMax: k.max, semesters: k.semesters, offered: k.offered, rules: k.rules } : undefined;
 }
 
 async function fillDatalist() {
@@ -408,40 +477,46 @@ async function fillDatalist() {
   list.innerHTML = [...all.values()].map((c) => `<option value="${esc(c.code)}">${esc(c.title)}</option>`).join("");
 }
 
-// Live hints from the same rules the server applies.
+const setHtml = (el: HTMLElement, html: string) => {
+  // re-render only on change: replacing a button mid-click would swallow the click
+  if (el.dataset.html === html) return;
+  el.dataset.html = html;
+  el.innerHTML = html;
+};
+
+// Live checks from the same rules the server applies.
 async function refreshHints(form: HTMLFormElement) {
   if (!data) return;
   const fd = new FormData(form);
   const code = normCode(String(fd.get("course") ?? $<HTMLElement>("[data-panel]")?.dataset.code ?? ""));
-  const list = $("[data-issues]", form);
   const submit = $<HTMLButtonElement>("[data-submit]", form);
   const status = $("[data-code-status]", form);
   const course = code ? await facts(code) : undefined;
+  const self = data.entries.find((e) => e.course === code);
+  const editing = Boolean(form.querySelector('input[name="op"]'));
+  const target = { year: Number(fd.get("year")), session: String(fd.get("session")) as Session };
+  let blocked = !course;
 
   if (status) {
     let html = "";
-    const existing = data.entries.find((e) => e.course === code);
-    const clash = course ? clashFor(code) : undefined;
     if (!code) html = "Only courses in the 2027 ANU undergraduate catalogue can be added.";
     else if (!/^[A-Z]{4}\d{4}$/.test(code)) html = "A course code is four letters and four digits.";
     else if (!course) html = `<span class="bad">${esc(code)} isn't in the 2027 ANU undergraduate catalogue, so it can't be added.</span>`;
-    else if (existing) {
-      const target = { year: Number(fd.get("year")), session: fd.get("session") as Session };
-      html = `<span class="bad"><strong>${esc(code)}</strong> is already in your plan (${STATUS_LABEL[existing.status]} · ${esc(whenOf(existing))}). Each course is in your plan once.</span>
-        <span class="status-actions"><button type="button" class="btn btn--quiet" data-move-existing="${existing.id}">Move it to ${esc(termLabel(target.year, target.session))}</button>
+    else if (self) {
+      const moving = self.year !== target.year || self.session !== target.session;
+      html = `<span class="bad"><strong>${esc(code)}</strong> is already in your plan (${STATUS_LABEL[self.status]} · ${esc(whenOf(self))}). Each course is in your plan once.</span>
+        <span class="status-actions">${
+          moving
+            ? `<button type="button" class="btn btn--quiet" data-move-existing="${self.id}">Move it to ${esc(termLabel(target.year, target.session))}</button>`
+            : `<span class="status-note">It's already in ${esc(termLabel(target.year, target.session))}.</span>`
+        }
         <button type="button" class="linkish" data-open-course="${esc(code)}">Open it</button></span>`;
-    } else if (clash) {
-      html = `<span class="bad">${esc(code)} is incompatible with ${esc(clash.course)}, already in your plan (${STATUS_LABEL[clash.status]} · ${esc(whenOf(clash))}).</span>
-        <span class="status-actions"><button type="button" class="linkish" data-open-course="${esc(clash.course)}">Open ${esc(clash.course)}</button></span>`;
-    } else html = `<strong>${esc(course.title)}</strong> · ${course.unitsMin === course.unitsMax ? course.unitsMin : `${course.unitsMin}–${course.unitsMax}`} units${course.semesters > 1 ? " per semester, over two semesters" : ""}`;
-    // re-render only on change: replacing a button mid-click would swallow the click
-    if (status.dataset.html !== html) {
-      status.dataset.html = html;
-      status.innerHTML = html;
+      blocked = true;
+    } else {
+      html = `<strong>${esc(course.title)}</strong> · ${course.unitsMin === course.unitsMax ? course.unitsMin : `${course.unitsMin}–${course.unitsMax}`} units${course.semesters > 1 ? " per semester, over two semesters" : ""}`;
     }
-    if (submit) submit.disabled = !course || Boolean(existing) || Boolean(clash);
+    setHtml(status, html);
 
-    // shape the term fields to this course
     const unitsField = $<HTMLElement>("[data-units-field]", form);
     const units = unitsField && $<HTMLInputElement>("input", unitsField);
     if (course && unitsField && units && units.dataset.for !== code) {
@@ -452,35 +527,67 @@ async function refreshHints(form: HTMLFormElement) {
       units.min = String(course.unitsMin);
       units.max = String(course.unitsMax);
       units.value = String(course.unitsMin);
-      const select = $<HTMLSelectElement>("[data-session-select]", form);
-      if (select) {
-        for (const opt of select.options) opt.disabled = course.semesters > 1 && opt.value !== "S1" && opt.value !== "S2";
-        if (select.selectedOptions[0]?.disabled) select.value = "S2";
-      }
     }
   }
 
-  if (!list) return;
-  if (!course) {
-    list.innerHTML = "";
+  // in the add panel, the typed course's rules
+  const rulesBox = $<HTMLElement>("[data-rules]");
+  if (rulesBox) setHtml(rulesBox, course && !self ? rulesSections(code, data.courses[code]) : "");
+
+  // a choose-one requirement already satisfied by another course
+  const replace = $<HTMLElement>("[data-replace]", form);
+  if (replace) {
+    const r = course && !self && !editing ? replacementFor(code) : null;
+    replace.hidden = !r;
+    setHtml(
+      replace,
+      r
+        ? `<p><strong>${esc(r.entry.course)}</strong> currently satisfies <strong>${esc(r.title)}</strong> (choose one). Only one of them counts toward that requirement.</p>
+           <button class="btn btn--quiet" name="replace" value="${r.entry.id}">Replace ${esc(r.entry.course)} with ${esc(code)}</button>
+           <p class="replace__hint">Or add ${esc(code)} as well: it will be recorded, and counted elsewhere only where the program's rules allow.</p>`
+        : "",
+    );
+  }
+
+  const section = $<HTMLElement>("[data-checks]", form);
+  const list = $("[data-issues]", form);
+  const note = $<HTMLElement>("[data-checks-note]", form);
+  if (!section || !list || !note || !course) {
+    if (section) section.hidden = true;
+    if (submit) submit.disabled = blocked;
     return;
   }
-  const self = data.entries.find((e) => e.course === code);
   const placement = {
     courseCode: code,
     status: String(fd.get("status") ?? "planned") as Status,
-    year: Number(fd.get("year")),
-    session: String(fd.get("session")) as Session,
+    year: target.year,
+    session: target.session,
     units: Number(fd.get("units") ?? course.unitsMin) || course.unitsMin,
   };
   const others = data.entries
-    .filter((e) => e.course !== code && (!self || e.id !== self.id))
-    .map((e) => ({ placement: { courseCode: e.course, status: e.status, year: e.year, session: e.session, units: e.units }, semesters: data?.courses[e.course]?.semesters ?? 1 }));
-  const issues = checkPlacement(placement, course, data.now, others);
-  list.innerHTML = issues
-    .map((i) => `<li class="issue issue--${i.level}">${i.level === "block" ? "Can't save: " : ""}${esc(i.message)}</li>`)
-    .join("");
-  if (submit && issues.some((i) => i.level === "block")) submit.disabled = true;
+    .filter((e) => e.course !== code)
+    .map((e) => ({
+      placement: { courseCode: e.course, status: e.status, year: e.year, session: e.session, units: e.units },
+      semesters: data?.courses[e.course]?.semesters ?? 1,
+      rules: data?.courses[e.course]?.rules ?? null,
+    }));
+  const issues = self && !editing ? [] : checkPlacement(placement, { ...course, rules: data.courses[code]?.rules ?? null }, data.now, others, data.program);
+  const shown = issues.filter((i) => i.level !== "info" || i.code !== "rules_partly_read");
+  section.hidden = shown.length === 0;
+  setHtml(
+    list,
+    shown
+      .map((i) => `<li class="issue issue--${i.level}"><span class="visually-hidden">${i.level === "warn" ? "Warning: " : i.level === "block" ? "Can't save: " : "Note: "}</span>${esc(i.message)}</li>`)
+      .join(""),
+  );
+  const warnings = issues.filter((i) => i.level === "warn");
+  note.hidden = warnings.length === 0;
+  if (issues.some((i) => i.level === "block")) blocked = true;
+  if (submit) {
+    submit.disabled = blocked;
+    const base = submit.dataset.label ?? submit.textContent ?? "";
+    submit.textContent = warnings.length && !blocked ? base.replace(/^Add to plan$/, "Add anyway").replace(/^Save changes$/, "Save anyway") : base;
+  }
 }
 
 function openPanel(code: string | null, opts: { year?: number; session?: Session } = {}) {
@@ -561,10 +668,10 @@ function showError(form: HTMLFormElement, result: Result) {
   const target = form.closest("dialog") ? ($("[data-error]", form) ?? $("[data-panel-alert]")) : null;
   let html = esc(result.error ?? "Something went wrong.");
   if (result.code === "unauthenticated") html += ` <a href="/login/?next=${encodeURIComponent(location.pathname)}">Log in again</a>`;
-  if ((result.code === "duplicate" || result.code === "incompatible") && result.existing) {
+  if (result.code === "duplicate" && result.existing) {
     const fd = new FormData(form);
     const move =
-      result.code === "duplicate" && fd.get("year")
+      fd.get("year") && (Number(fd.get("year")) !== result.existing.year || fd.get("session") !== result.existing.session)
         ? `<button type="button" class="btn btn--quiet" data-move-existing="${result.existing.id}">Move it to ${esc(termLabel(Number(fd.get("year")), fd.get("session") as Session))}</button>`
         : "";
     html += `<span class="status-actions">${move}<button type="button" class="linkish" data-open-course="${esc(result.existing.course)}">Open ${esc(result.existing.course)}</button></span>`;
@@ -618,8 +725,13 @@ function report(result: Result) {
       },
     });
   } else if (result.entry) {
-    const base = `Saved ${result.entry.course}: ${result.entry.where}.`;
-    announce(warnings.length ? `${base} Note: ${warnings.map((w) => w.message).join(" ")}` : base, { tone: warnings.length ? "warn" : "ok" });
+    const planning = warnings.filter((w) => w.level === "warn");
+    const base = result.replaced
+      ? `Replaced ${result.replaced.course} with ${result.entry.course}: ${result.entry.where}.`
+      : `Saved ${result.entry.course}: ${result.entry.where}.`;
+    announce(planning.length ? `${base} ${planning.length === 1 ? "1 planning warning" : `${planning.length} planning warnings`} noted.` : base, {
+      tone: planning.length ? "warn" : "ok",
+    });
   } else {
     announce("Saved.");
   }

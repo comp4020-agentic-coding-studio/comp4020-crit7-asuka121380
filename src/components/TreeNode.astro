@@ -54,6 +54,7 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
       preview={preview}
       chooseOne={parent !== undefined && isChooseOne(parent, catalogue)}
       alternativesInPlan={parent && parent.kind === "pick" ? parent.children.filter((c) => c.kind === "course" && evaluation.byCode.has(c.code)).length : 0}
+      withheldBy={leafEntry ? evaluation.withheld.get(leafEntry.id) : undefined}
       listedAs={node.listedAs}
       target={courseTarget(node, catalogue)}
     />
