@@ -1,0 +1,64 @@
+Bachelor of Advanced Computing (Honours)
+Source: https://programsandcourses.anu.edu.au/2027/program/AACOM
+Retrieved: 2026-09-27
+
+Program Requirements
+The Bachelor of Advanced Computing (Honours) requires completion of 192 units, of which:
+A maximum of 60 units may come from completion of 1000-level courses
+A minimum of 48 units that come from the completion of 4000-level courses from the subject area COMP Computer Science.
+A minimum of 12 units of courses tagged as Transdisciplinary Problem-Solving
+The 192 units must include:
+6 units from completion of a course from the following list:
+[COMP1100] Programming as Problem Solving (6 units) / [COMP1130] Programming as Problem Solving (Advanced) (6 units)
+6 units from completion of a course from the following list:
+[COMP1110] Structured Programming (6 units) / [COMP1140] Structured Programming (Advanced) (6 units)
+6 units from completion of a course from the following list:
+[MATH1005] Discrete Mathematical Models (6 units) / [MATH2222] Introduction to Mathematical Thinking: Problem-Solving and Proofs (6 units)
+48 units from completion of compulsory courses from the following list:
+[COMP2100] Software Design Methodologies (6 units)
+[COMP2120] Software Engineering (6 units)
+[COMP2300] Computer Architecture (6 units)
+[COMP2310] Systems, Networks and Concurrency (6 units)
+[COMP2400] Relational Databases (6 units)
+[COMP3600] Algorithms (6 units)
+[COMP3630] Theory of Computation (6 units)
+[COMP4450] Computing Research Methods (6 units)
+24 units from the completion of one of the following specialisations:
+Artificial Intelligence
+Human-Centred and Creative Computing
+Machine Learning
+Systems and Architecture
+Theoretical Computer Science
+18 units from the completion of 3000 or 4000-level courses from the subject area COMP Computer Science
+12 units from completion of Information and Communications Technology-related courses from the following list:
+[ARTH2181] Digital Approaches to Art History and Curatorship (6 units)
+[ASIA3032] Digital Asia: Technology and Society (6 units)
+[DESN2010] Making Creative and Critical Technologies: Physical Computing for Design and Art (6 units)
+[ENGN1211] Engineering Design 1: Discovering Engineering (6 units)
+[ENVS2015] GIS and Spatial Analysis
+[INFS2024] Information Systems Analysis (6 units)
+[INFS3002] Enterprise Systems in Business (6 units)
+[INFS3024] Information Systems Management (6 units)
+[MATH1013] Mathematics and Applications 1 (6 units)
+[MATH1115] Advanced Mathematics and Applications 1 (6 units)
+[MATH2301] Games, Graphs and Machines (6 units)
+[MATH2307] Bioinformatics and Biological Modelling (6 units)
+[MGMT2009] Design Thinking: Human-Centred Innovation (6 units)
+[MUSI3309] Music and Digital Media (6 units)
+[SCOM3029] Science Communication and Planetary Crises (6 units)
+[SOCY2038] Introduction to Quantitative Research Methods (6 units)
+[SOCY2166] Social Science of the Internet (6 units)
+[STAT1003] Statistical Techniques (6 units)
+[STAT1008] Quantitative Research Methods (6 units)
+Either:
+24 units from completion of [COMP4550] Computing Research Project, which must be completed twice, in consecutive semesters (12+12 units)
+OR
+12 units from [COMP4500] Software Engineering Team Project, which must be completed twice, in consecutive semesters (6+6 units)
+AND 12 units from the completion of further 4000-level courses from the subject area COMP Computer Science
+OR
+[COMP4820] Advanced Computing Internship (12 units)
+AND 12 units from the completion of further 4000-level courses from the subject area COMP Computer Science
+A minimum of 48 units from completion of elective courses offered by ANU
+Honours Calculation
+[COMP4801] Final Honours Grade will be used to record the Class of Honours and the Mark. The Honours Mark will be a weighted average percentage mark (APM) calculated by first calculating the average mark for 1000, 2000, 3000 and 4000 level courses. We denote these averages: A1, A2, A3, and A4, respectively. The averages are calculated based on all courses completed (including fails) that are listed in the program requirements, excluding non-COMP-coded electives, giving NCN and WN a nominal mark of zero. Finally, these averages are combined using the formula APM = (0.1 X A1) + (0.2 X A2) + (0.3 X A3) + (0.4 X A4).
+The APM will then be used to determine the final grade according to the ANU Honours grading scale, found at {http://www.anu.edu.au/students/program-administration/assessments-exams/grading-scale -> http://www.anu.edu.au/students/program-administration/assessments-exams/grading-scale}.

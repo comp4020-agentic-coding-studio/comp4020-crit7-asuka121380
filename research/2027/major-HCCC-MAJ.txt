@@ -1,0 +1,33 @@
+Human-Centred and Creative Computing Major
+Source: https://programsandcourses.anu.edu.au/2027/major/HCCC-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+The HCCC major requires the completion of 48 units, of which:
+A maximum of 18 units may come from completion of 1000-level courses
+A minimum of 18 units must come from completion of 3000 and 4000-level courses
+6 units from completion of the following compulsory courses:
+[COMP3900] Human-Computer Interaction
+A minimum of 12 units from completion of Advanced HCCC courses from the following list:
+[COMP3540] Game Development
+[COMP4020] Advanced Topics in Human-Centred and Creative Computing
+[COMP4350] Sound and Music Computing
+[COMP4528] Computer Vision
+[COMP4610] Computer Graphics
+A maximum of 30 units from completion of courses from the following list:
+[ARTH2181] Digital Approaches to Art History and Curatorship
+[COMP1720] Art and Interaction Computing
+[COMP2120] Software Engineering
+[COMP3670] Introduction to Machine Learning
+[DESN2002] Foundations of Creative Code
+[DESN2004] Autonomous Agents: Natural and Algorithmic Systems in Art and Design
+[DESN2006] Front-End Web: Crafting Online Experience
+[DESN2008] Design Thinking: Human-Centred Design Methodologies
+[DESN2010] Making Creative and Critical Technologies: Physical Computing for Design and Art
+[MGMT2009] Design Thinking: Human-Centred Innovation
+[MUSI1110] Introduction to Music Technology
+[MUSI3309] Digital Music: Platforms, Content and AI
+[SOCR3001] Data for Decision Making
+[SOCY2038] Introduction to Quantitative Research Methods
+[SOCY2166] Social Science of the Internet
+This Major is incompatible with the Human-Centred and Creative Computing Specialisation and the Human-Centred and Creative Computing Minor.

@@ -1,0 +1,39 @@
+Bachelor of Advanced Computing (Research and Development) (Honours)
+Source: https://programsandcourses.anu.edu.au/2027/program/AACRD
+Retrieved: 2026-09-27
+
+Program Requirements
+The Bachelor of Advanced Computing (Research and Development) (Honours) requires completion of 192 units, of which:
+A maximum of 60 units may come from completion of 1000-level courses
+A minimum of 48 units must come from completion of 4000-level courses from the subject area COMP
+A minimum of 12 units of courses tagged as Transdisciplinary Problem-Solving
+The 192 units must include:
+78 units from completion of compulsory courses from the following list:
+[COMP1130] Programming as Problem Solving (Advanced) (6 units)
+[COMP1140] Structured Programming (Advanced) (6 units)
+[COMP2100] Software Construction (6 units)
+[COMP2300] Computer Architecture (6 units)
+[COMP2550] Computing R&D Methods (6 units)
+[COMP3600] Algorithms (6 units)
+[COMP3630] Theory of Computation (6 units)
+[COMP3770] Individual Research Project, which must be completed twice, in consecutive semesters (6+6 units)
+[COMP4550] Computing Research Project, which must be completed twice, in consecutive semesters (12+12 units).
+18 units from completion of courses from the following list:
+[MATH1005] Discrete Mathematical Models (6 units)
+[MATH1013] Mathematics and Applications 1 (6 units)
+[MATH1014] Mathematics and Applications 2 (6 units)
+[MATH1115] Advanced Mathematics and Applications 1 (6 units)
+[MATH1116] Advanced Mathematics and Applications 2 (6 units)
+[MATH2222] Introduction to Mathematical Thinking: Problem-Solving and Proofs (6 units)
+[STAT1003] Statistical Techniques (6 units)
+[STAT1008] Quantitative Research Methods (6 units)
+24 units from the completion of 4000-level courses from the subject area COMP Computer Science
+12 units of Transdisciplinary Problem-Solving tagged courses
+12 units from completion of elective courses offered by ANU, which may include courses in the subject area COMP Computer Science
+A minimum of 48 units from completion of elective courses offered by ANU
+After the first four periods of enrolment students must achieve a minimum 75% Weighted Average Mark in Computing courses. Students who do not achieve a minimum 75% Weighted Average Mark will be transferred to the Bachelor of Advanced Computing (Honours).
+To continue into the final year of the program students must have completed 144 units and achieved a minimum 80% Weighted Average Mark calculated from the courses that contribute to the final Honours grade calculation. Students who do not achieve this 80% Weighted Average Mark will be automatically transferred to the Bachelor of Advanced Computing (Honours) degree.
+To graduate with the Bachelor of Advanced Computing (Research and Development) (Honours) students must achieve a minimum 80% final Honours mark. Students who do not achieve a minimum 80% final Honours mark will be transferred to the Bachelor of Advanced Computing (Honours) degree program prior to graduating.
+Honours Calculation
+[COMP4801] Final Honours Grade will be used to record the Class of Honours and the Mark. The Honours Mark will be a weighted average percentage mark (APM) calculated by first calculating the average mark for 1000, 2000, 3000 and 4000 level courses. We denote these averages: A1, A2, A3, and A4 respectively. The averages are calculated based on all courses completed (including fails), that are listed in the program requirements, excluding non-COMP-coded electives, giving NCN and WN a nominal mark of zero. Finally, these averages are combined using the formula APM = (0.1 X A1) + (0.2 X A2) + (0.3 X A3) + (0.4 X A4).
+The APM will then be used to determine the final grade according to the ANU Honours grading scale, found at {http://www.anu.edu.au/students/program-administration/assessments-exams/grading-scale -> http://www.anu.edu.au/students/program-administration/assessments-exams/grading-scale}.

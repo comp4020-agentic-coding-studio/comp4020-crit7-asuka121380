@@ -1,0 +1,23 @@
+Computer Systems Major
+Source: https://programsandcourses.anu.edu.au/2027/major/COMS-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+The COMS major requires the completion of 48 units, of which:
+A maximum of 18 units may come from completion of 1000-level courses
+A minimum of 18 units must come from completion of 3000 and 4000-level courses
+24 units from completion of the following compulsory courses:
+[COMP2310] Systems Networks and Concurrency
+[COMP3300] Operating Systems Implementation
+[COMP3310] Computer Networks
+[ENGN4213] Digital Systems and Microprocessors
+A minimum of 6 units from the completion of a course from the following list:
+[COMP3320] High Performance Scientific Computation
+[COMP3610] Principles of Programming Languages
+A maximum of 18 units from completion of courses from the following list:
+[COMP4045] Advanced Topics in Computer Systems
+[COMP4300] Parallel Systems
+[COMP4712] Compiler Construction
+[ENGN1218] Introduction to Electronics
+[ENGN2218] Electronic Systems and Design
+This Major is incompatible with the Systems and Architecture Specialisation.

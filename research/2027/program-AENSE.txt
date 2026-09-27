@@ -1,0 +1,56 @@
+Bachelor of Engineering (Honours) in Software Engineering
+Source: https://programsandcourses.anu.edu.au/2027/program/AENSE
+Retrieved: 2026-09-27
+
+Program Requirements
+The Bachelor of Engineering (Honours) in Software Engineering requires completion of 192 units, of which:
+A maximum of 60 units may come from completion of 1000-level courses
+A minimum of 12 units of courses tagged as Transdisciplinary Problem-Solving
+The 192 units must consist of:
+108 units from completion of the following compulsory courses:
+[COMP1600] Foundations of Computing
+[COMP2100] Software Construction
+[COMP2120] Software Engineering
+[COMP2300] Computer Organisation and Program Execution
+[COMP2310] Systems, Networks and Concurrency
+[COMP2400] Relational Databases
+[COMP3500] Software Engineering Project (12 units)
+[COMP3600] Algorithms
+[COMP3900] Human-Computer Interaction
+[COMP4130] Managing Software Quality and Process
+[ENGN1211] Engineering Design 1: Discovering Engineering
+[ENGN2300] Engineering Design 2: Systems Approaches for Design
+[ENGN2301] Engineering Design 3: Systems Approaches for Analysis
+[ENGN3100] Practical Experience (0 units)
+[ENGN3300] Engineering Design 4A: Systems Approaches for Management
+[ENGN3301] Engineering Design 4B: Systems Approaches for Operations
+[ENGN4213] Digital Systems and Microprocessors
+[MATH1005] Discrete Mathematical Models
+12 units from completion of a course from the following list:
+[ENGN4300] Capstone Project
+[ENGN4350] Individual Project
+[COMP4500] Software Engineering Team Project
+6 units from completion of a course from the following list:
+[COMP1100] Programming as Problem Solving
+[COMP1130] Programming as Problem Solving (Advanced)
+6 units from completion of a course from the following list:
+[COMP1110] Structured Programming
+[COMP1140] Structured Programming (Advanced)
+6 units from completion of a course from the following list:
+[MATH1013] Mathematics & Applications 1
+[MATH1115] Advanced Mathematics & Applications 1
+6 units from completion of a course from the following list:
+[COMP2610] Information Theory
+[ENGN1217] Introduction to Mechanics
+[ENGN1218] Introduction to Electronics
+24 units from completion of courses from the following subject areas: ENGN Engineering or COMP Computer Science
+24 units from completion of elective courses offered by ANU.
+Honours
+Students must formally enrol in [ENGN4100] Engineering Honours at the commencement of their intended final semester.
+Honours Grade Calculation
+[ENGN4100] Engineering Honours Grade will be used to calculate the Class of Honours and the mark. It will be calculated as the weighted average mark (WAM) of the courses listed below. The mark for each course is weighted by the units of credit (UoC) of the course, as well as a course weighting as indicated below. WAM is calculated as follows:
+WAM = ( S Mark*UoC*Weighting) / (S UoC*Weighting)
+Science, Engineering and Computing Foundations (0.1 weighting): [MATH1013] or [MATH1115], [MATH1014] or [MATH1116], [MATH1005], [PHYS1001] or [PHYS1101], [ENGN1000]-series courses and [COMP1000]-series courses.
+Engineering and Computing Fundamentals (0.2 weighting): [ENGN2000]-series courses (excluding [ENGN2300] and [ENGN2301]) and [COMP2000]-series courses.
+Professional Core (0.3 weighting): [ENGN2300], [ENGN2301], [ENGN3300], [ENGN3301], [ENGN3200]
+Engineering Discipline and Final Year Project (0.4 weighting): [ENGN3000]-series courses (excluding [ENGN3300], [ENGN3301] and [ENGN3200]), [COMP3000]-series courses, [ENGN4000]-series courses, and [COMP4000]-series courses.

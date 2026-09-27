@@ -1,0 +1,21 @@
+Information Systems Major
+Source: https://programsandcourses.anu.edu.au/2027/major/INFS-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+The INFS major requires the completion of 48 units, which must consist of:
+A maximum of 18 units may come from completion of 1000-level courses
+A minimum of 18 units must come from completion of 3000 and 4000-level courses
+30 units from the completion of the following compulsory courses:
+[COMP2120] Software Engineering (6 units)
+[INFS1001] Business Information Systems (6 units)
+[INFS2024] Information Systems Analysis (6 units)
+[INFS3024] Information Systems Management (6 units)
+[INFS3059] Project Management and Information Systems (6 units)
+18 units from the completion of courses from the following list:
+[COMP3425] Data Mining (6 units)
+[COMP3430] Data Wrangling (6 units)
+[COMP3900] Human Computer Interface Design and Evaluation (6 units)
+[COMP4650] Document Analysis (6 units)
+[INFS3002] Enterprise Systems in Business (6 units)
+This major is incompatible with the Business Information Systems Major.

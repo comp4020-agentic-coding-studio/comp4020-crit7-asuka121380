@@ -1,0 +1,20 @@
+Artificial Intelligence Specialisation
+Source: https://programsandcourses.anu.edu.au/2027/specialisation/ARIN-SPEC
+Retrieved: 2026-09-27
+
+Requirements
+This Specialisation requires the completion of 24 units, which must include a minimum of 12 units of 4000-level courses.
+A maximum of 12 units from the following list:
+[COMP2620] Logic
+[COMP3242] Deep Learning
+[COMP3620] Artificial Intelligence
+[COMP3670] Introduction to Machine Learning
+A minimum of 12 units from the following list:
+[COMP4528] Computer Vision
+[COMP4620] Advanced Topics in Artificial Intelligence
+[COMP4650] Document Analysis
+[COMP4670] Statistical Machine Learning
+[COMP4680] Advanced Topics in Machine Learning
+[COMP4691] Optimisation
+This specialisation is not compatible with the INSY-MAJ.
+This specialisation is only available to students studying BAC (AACOM) and BACR&D (AACRD).

@@ -1,0 +1,23 @@
+Cyber Security Major
+Source: https://programsandcourses.anu.edu.au/2027/major/CSEC-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+This major requires the completion of 48 units, including,
+A minimum of 18 units from completion of 3000 or 4000 level courses.
+36 units from completion of the following compulsory courses:
+[COMP2120] Software Engineering
+[COMP2310] Systems Networks, and Concurrency
+[COMP2700] Cyber Security Foundations
+[COMP3300] Operating Systems Implementation
+[COMP3310] Computer Networks
+[COMP3704] Network Security
+A minimum of 6 units from completion of courses from the following list:
+[COMP4130] Managing Software Quality and Process
+[COMP4703] Vulnerability Research and Exploit Mitigation
+A maximum of 6 units from completion of courses from the following list:
+[COMP4011] Advanced Topics in Formal Methods and Programming Languages
+[COMP4045] Advanced Topics in Computer Systems
+[COMP4712] Compiler Construction
+[CRIM2010] Cybercrime: An Introduction
+[MATH3301] Number Theory and Cryptography

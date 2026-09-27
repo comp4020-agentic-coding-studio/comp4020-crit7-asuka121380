@@ -1,0 +1,14 @@
+Machine Learning Specialisation
+Source: https://programsandcourses.anu.edu.au/2026/specialisation/MACL-SPEC
+Retrieved: 2026-09-27
+
+Requirements
+This specialisation requires the completion of 24 units, which must consist of a minimum of 12 units of 4000-level courses.
+24 units from completion of courses from the list:
+[COMP3670] Introduction to Machine Learning
+[COMP4528] Computer Vision
+[COMP4650] Document Analysis
+[COMP4670] Statistical Machine Learning
+[COMP4680] Advanced Topics in Machine Learning
+This Specialisation is incompatible with the Intelligent Systems major, and the Advanced Intelligent Systems major.
+This specialisation is only available to students studying BAC (AACOM) and BACR&D (AACRD).

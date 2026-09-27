@@ -1,0 +1,21 @@
+Data Science Major
+Source: https://programsandcourses.anu.edu.au/2027/major/DTSC-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+The DTSC major requires the completion of 48 units, of which:
+A maximum of 18 units may come from completion of 1000-level courses
+A minimum of 18 units must come from completion of 3000 and 4000-level courses
+12 units from completion of the following compulsory courses:
+[COMP3430] Data Wrangling
+[COMP4425] Data Mining
+36 units from completion of courses from the following list:
+[COMP2120] Software Engineering
+[COMP2700] Cyber Security Foundations
+[COMP3670] Introduction to Machine Learning
+[COMP4650] Document Analysis
+[COMP4880] Computational Methods for Network Science
+[MATH2307] Bioinformatics and Biological Modelling
+[SOCR3001] Data for Decision Making
+[STAT1003] Statistical Techniques
+This major is not available to BADAN students.

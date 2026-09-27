@@ -1,0 +1,55 @@
+Bachelor of Computing
+Source: https://programsandcourses.anu.edu.au/2027/program/BCOMP
+Retrieved: 2026-09-27
+
+Program Requirements
+The Bachelor of Computing requires completion of 144 units, of which:
+A minimum of 12 units must come from completion of courses tagged as Transdisciplinary Problem-Solving
+A minimum of 24 units must come from completion of 3000 and 4000-level COMP courses
+A maximum of 60 units may come from completion of 1000-level courses
+A minimum of 96 units from completion of courses from the following lists:
+6 units from completion of a course from the following list:
+[COMP1100] Programming as Problem Solving (6 units)
+[COMP1130] Programming as Problem Solving (Advanced) (6 units)
+6 units from completion of a course from the following list:
+[COMP1110] Structured Programming (6 units)
+[COMP1140] Structured Programming (Advanced) (6 units)
+6 units from completion of a course from the following list:
+[MATH1005] Discrete Mathematical Models (6 units)
+[MATH2222] Introduction to Mathematical Thinking: Problem-Solving and Proofs (6 units)
+24 units from the completion of the following compulsory courses:
+[COMP1600] Foundations of Computing (6 units)
+[COMP2100] Software Construction (6 units)
+[COMP2300] Computer Architecture (6 units)
+[COMP2400] Relational Databases (6 units)
+48 units from completion of courses from the subject area COMP Computer Science
+OR completion of one of the following computing majors:
+COMS-MAJ Computer systems
+CSEC-MAJ Cyber Security
+DTSC-MAJ Data Science
+HCCC-MAJ Human-Centred and Creative Computing
+INFS-MAJ Information Systems
+INSY-MAJ Intelligent Systems
+SOFT-MAJ Software Development
+AND
+6 units from completion of Information and Communications Technology-related courses from the following list:
+[ARTH2181] Digital Approaches to Art History and Curatorship (6 units)
+[ASIA3032] Digital Asia: Technology and Society (6 units)
+[DESN2010] Making Creative and Critical Technologies: Physical Computing for Design and Art (6 units)
+[ENGN1211] Engineering Design 1: Discovering Engineering (6 units)
+[ENVS2015] GIS and Spatial Analysis
+[INFS2024] Information Systems Analysis (6 units)
+[INFS3002] Enterprise Systems in Business (6 units)
+[INFS3024] Information Systems Management (6 units)
+[MATH1013] Mathematics and Applications 1 (6 units)
+[MATH1115] Advanced Mathematics and Applications 1 (6 units)
+[MATH2301] Games, Graphs and Machines (6 units)
+[MATH2307] Bioinformatics and Biological Modelling (6 units)
+[MGMT2009] Design Thinking: Human-Centred Innovation (6 units)
+[MUSI3309] Music and Digital Media (6 units)
+[SCOM3029] Science Communication and Planetary Crises (6 units)
+[SOCY2038] Introduction to Quantitative Research Methods (6 units)
+[SOCY2166] Social Science of the Internet (6 units)
+[STAT1003] Statistical Techniques (6 units)
+[STAT1008] Quantitative Research Methods (6 units)
+A minimum of 48 units from completion of elective courses offered by ANU

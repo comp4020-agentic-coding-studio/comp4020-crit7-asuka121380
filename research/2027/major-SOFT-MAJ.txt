@@ -1,0 +1,27 @@
+Software Development Major
+Source: https://programsandcourses.anu.edu.au/2027/major/SOFT-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+The SOFT major requires the completion of 48 units, which must consist of:
+A maximum of 18 units may come from completion of 1000-level courses
+A minimum of 18 units must come from completion of 3000 and 4000-level courses
+24 units from the completion of the following compulsory courses:
+[COMP2120] Software Engineering (6 units)
+[COMP3500] Software Engineering Project (6+6 units)
+[COMP4130] Managing Software Quality and Process (6 units)
+A minimum of 12 units from the following list:
+[COMP3600] Algorithms (6 units)
+[COMP3610] Principles of Programming Languages (6 units)
+[COMP3900] Human-Computer Interaction (6 units)
+[INFS3024] Information Systems Management (6 units)
+[INFS3059] Project Management and Information Systems (6 units)
+A maximum of 12 units from the following list:
+[ASIA3032] Technology and Society in Asia (6 units)
+[COMP2700] Cyber Security Foundations (6 units)
+[ENGN1211] Engineering Design 1: Discovering Engineering
+[ENGN2300] Engineering Design 2: Systems Approaches for Design
+[INFS3002] Enterprise Systems in Business (6 units)
+[MGMT2009] Design Thinking: Human-Centred Innovation (6 units)
+[SCOM3029] Science Communication and Planetary Crises (6 units)
+The SOFT-MAJ is not available to Bachelor of Engineering in Software Engineering(AENSE/ASENG) or Bachelor of Advanced Computing(AACOM) or Bachelor of Advanced Computing Research and Development (AACRD) students.

@@ -1,0 +1,17 @@
+Theoretical Computer Science Specialisation
+Source: https://programsandcourses.anu.edu.au/2027/specialisation/THCS-SPEC
+Retrieved: 2026-09-27
+
+Requirements
+This specialisation requires the completion of 24 units, of which:
+A minimum of 12 units must come from the completion of 4000-level courses.
+A minimum of 12 units from completion of the following courses:
+[COMP4011] Advanced Topics in Formal Methods and Programming Languages
+[COMP4600] Advanced Algorithms
+[MATH4343] Foundations of Mathematics
+A maximum of 12 units from completion of courses from the following list:
+[COMP2620] Logic
+[COMP3610] Principles of Programming Languages
+[COMP3630] Theory of Computation
+[COMP4712] Compiler Construction
+This specialisation is only available to students studying Bachelor of Advanced Computing (AACOM) and Bachelor of Advanced Computing Research & Development (AACRD).

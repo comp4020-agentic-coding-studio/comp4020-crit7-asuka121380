@@ -1,0 +1,24 @@
+Intelligent Systems Major
+Source: https://programsandcourses.anu.edu.au/2027/major/INSY-MAJ
+Retrieved: 2026-09-27
+
+Requirements
+The INSY major requires the completion of 48 units, of which:
+A maximum of 18 units may come from completion of 1000-level courses
+A minimum of 18 units must come from completion of 3000 and 4000-level courses
+18 units from completion of the following compulsory courses:
+[COMP2620] Logic
+[COMP3620] Artificial Intelligence
+[COMP3670] Introduction to Machine Learning
+A minimum of 12 units from completion of Intelligent Systems courses from the following list:
+[COMP3242] Deep Learning
+[COMP3600] Algorithms
+[COMP4620] Advanced Topics in Artificial Intelligence
+[COMP4670] Statistical Machine Learning
+[COMP4680] Advanced Topics in Machine Learning
+[COMP4691] Optimisation
+A maximum of 18 units from completion of courses from the following list:
+[COMP4528] Computer Vision
+[COMP4610] Computer Graphics
+[COMP4650] Document Analysis
+This Major is incompatible with the Artificial Intelligence Specialisation and the Machine Learning Specialisation and the Intelligent Systems Specialisation.

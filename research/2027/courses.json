@@ -1,0 +1,857 @@
+{
+ "source": "https://programsandcourses.anu.edu.au/2027/course/<CODE>",
+ "retrieved": "2026-09-27",
+ "courses": {
+  "ARTH2181": {
+   "title": "Digital Approaches to Art History and Curatorship",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ASIA3032": {
+   "title": "Technology and Society in Asia",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "COMP1100": {
+   "title": "Programming as Problem Solving",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP1110": {
+   "title": "Structured Programming",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP1130": {
+   "title": "Programming as Problem Solving (Advanced)",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP1140": {
+   "title": "Structured Programming (Advanced)",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP1600": {
+   "title": "Foundations of Computing",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "COMP1720": {
+   "title": "Art and Interaction Computing",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "COMP2100": {
+   "title": "Software Construction",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "COMP2120": {
+   "title": "Software Engineering",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "COMP2300": {
+   "title": "Computer Architecture",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP2310": {
+   "title": "Systems, Networks, and Concurrency",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP2400": {
+   "title": "Relational Databases",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "COMP2550": {
+   "title": "Computing R&D Methods",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "COMP2610": {
+   "title": "Information Theory",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP2620": {
+   "title": "Logic",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP2700": {
+   "title": "Cyber Security Foundations",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3242": {
+   "title": "Deep Learning",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3300": {
+   "title": "Operating Systems Implementation",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3310": {
+   "title": "Computer Networks",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3320": {
+   "title": "High Performance Scientific Computation",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3425": {
+   "title": "Data Mining",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "COMP3430": {
+   "title": "Data Wrangling",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3500": {
+   "title": "Software Engineering Project",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "COMP3540": {
+   "title": "Game Development",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "COMP3600": {
+   "title": "Algorithms",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3610": {
+   "title": "Principles of Programming Languages",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3620": {
+   "title": "Artificial Intelligence",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3630": {
+   "title": "Theory of Computation",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3670": {
+   "title": "Introduction to Machine Learning",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3704": {
+   "title": "Network Security",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3770": {
+   "title": "Computing Research Project (R&D)",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP3900": {
+   "title": "Human-Computer Interaction",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  },
+  "COMP4011": {
+   "title": "Advanced Topics in Formal Methods and Programming Languages",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4020": {
+   "title": "Advanced Topics in Human-Centred and Creative Computing",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4045": {
+   "title": "Advanced Topics in Computer Systems",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4130": {
+   "title": "Managing Software Quality and Process",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4300": {
+   "title": "Parallel Systems",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4350": {
+   "title": "Sound and Music Computing",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4425": {
+   "title": "Data Mining",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4450": {
+   "title": "Computing Research Methods",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "COMP4500": {
+   "title": "Software Engineering Team Project",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  },
+  "COMP4528": {
+   "title": "Computer Vision",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "COMP4550": {
+   "title": "Computing Research Project",
+   "unitValue": "12 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "COMP4600": {
+   "title": "Advanced Algorithms",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "COMP4610": {
+   "title": "Computer Graphics",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4620": {
+   "title": "Advanced Topics in Artificial Intelligence",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4650": {
+   "title": "Document Analysis",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4670": {
+   "title": "Statistical Machine Learning",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4680": {
+   "title": "Advanced Topics in Machine Learning",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4691": {
+   "title": "Optimisation",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "COMP4703": {
+   "title": "Vulnerability Research and Exploit Mitigation",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "COMP4712": {
+   "title": "Compiler Construction",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "COMP4820": {
+   "title": "Advanced Computing Internship",
+   "unitValue": "12 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  },
+  "COMP4880": {
+   "title": "Computational Methods for Network Science",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "CRIM2010": {
+   "title": "Cybercrime: an introduction",
+   "unitValue": "6 units",
+   "offered": [
+    "Winter Session 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "DESN2002": {
+   "title": "Foundations of Creative Code",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "DESN2004": {
+   "title": "Autonomous Agents: Natural and Algorithmic Systems in Art and Design",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "DESN2006": {
+   "title": "Front-End Web: Crafting Online Experience",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "DESN2008": {
+   "title": "Design Thinking: Human-Centred Design Methodologies",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "DESN2010": {
+   "title": "Making Creative and Critical Technologies: Physical Computing for Design and Art",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN1211": {
+   "title": "Engineering Design 1: Discovering Engineering",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN1217": {
+   "title": "Introduction to Mechanics",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN1218": {
+   "title": "Introduction to Electronics",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN2218": {
+   "title": "Electronic Systems and Design",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN2300": {
+   "title": "Engineering Design 2: Systems Approaches for Design",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "ENGN2301": {
+   "title": "Engineering Design 3: Systems Approaches for Analysis",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "ENGN3100": {
+   "title": "Practical Experience",
+   "unitValue": "0 units",
+   "offered": [
+    "Summer Session 2027",
+    "First Semester 2027",
+    "Winter Session 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN3300": {
+   "title": "Engineering Design 4A: Systems Approaches for Management",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "ENGN3301": {
+   "title": "Engineering Design 4B: Systems Approaches for Operations",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "ENGN4213": {
+   "title": "Digital Systems and Microprocessors",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "ENGN4300": {
+   "title": "Capstone Design Project",
+   "unitValue": "6 to 12 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  },
+  "ENGN4350": {
+   "title": "Individual Project",
+   "unitValue": "6 to 12 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  },
+  "ENVS2015": {
+   "title": "GIS and Spatial Analysis",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "INFS1001": {
+   "title": "Business Information Systems",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "INFS2024": {
+   "title": "Information Systems Analysis",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "INFS3002": {
+   "title": "Enterprise Systems in Business",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "INFS3024": {
+   "title": "Information Systems Management",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking"
+   ]
+  },
+  "INFS3059": {
+   "title": "Information Systems Capstone Project",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  },
+  "MATH1005": {
+   "title": "Discrete Mathematical Models",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH1013": {
+   "title": "Mathematics and Applications 1",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH1014": {
+   "title": "Mathematics and Applications 2",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027",
+    "Spring Session 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH1115": {
+   "title": "Advanced Mathematics and Applications 1",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH1116": {
+   "title": "Advanced Mathematics and Applications  2",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH2222": {
+   "title": "Introduction to Mathematical Thinking: Problem-Solving and Proofs",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH2301": {
+   "title": "Games, Graphs and Machines",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH2307": {
+   "title": "Bioinformatics and Biological Modelling",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "MATH3301": {
+   "title": "Number Theory and Cryptography",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MATH4343": {
+   "title": "Foundations of Mathematics",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MGMT2009": {
+   "title": "Design Thinking: Human-Centred Innovation",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "MUSI1110": {
+   "title": "Introduction to Music Technology",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "MUSI3309": {
+   "title": "Digital Music: Platforms, Content and AI",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "SCOM3029": {
+   "title": "Science Communication and Planetary Crises",
+   "unitValue": "6 units",
+   "offered": [
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary",
+    "Indigenous Perspectives"
+   ]
+  },
+  "SOCR3001": {
+   "title": "Data for Decision Making",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "SOCY2038": {
+   "title": "Introduction to Quantitative Research Methods",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Transdisciplinary"
+   ]
+  },
+  "SOCY2166": {
+   "title": "Social Science of the Internet",
+   "unitValue": "6 units",
+   "offered": [],
+   "graduateAttributes": []
+  },
+  "STAT1003": {
+   "title": "Statistical Techniques",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027"
+   ],
+   "graduateAttributes": []
+  },
+  "STAT1008": {
+   "title": "Quantitative Research Methods",
+   "unitValue": "6 units",
+   "offered": [
+    "First Semester 2027",
+    "Second Semester 2027"
+   ],
+   "graduateAttributes": [
+    "Critical Thinking",
+    "Transdisciplinary"
+   ]
+  }
+ }
+}

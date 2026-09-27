@@ -1,0 +1,20 @@
+Human-Centred and Creative Computing Specialisation
+Source: https://programsandcourses.anu.edu.au/2027/specialisation/HCCC-SPEC
+Retrieved: 2026-09-27
+
+Requirements
+Advice to Students
+This Undergraduate Specialisation requires the completion of 24 units, which must include a minimum of 12 units of 4000-level courses:
+This specialisation is only available to students studying BAC (AACOM) and BACR&D (AACRD).
+The 24 units must consist of:
+[COMP3900] Human-Computer Interaction
+AND
+A minimum of 12 units from completion of courses from the following list:
+[COMP4020] Advanced Topics in Human-Centred and Creative Computing
+[COMP4350] Sound and Music Computing
+[COMP4528] Computer Vision
+[COMP4610] Computer Graphics
+AND
+A maximum of 6 units from completion of courses from the following list:
+[COMP3540] Game Development
+[COMP3670] Introduction to Machine Learning

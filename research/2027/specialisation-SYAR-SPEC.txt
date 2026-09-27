@@ -1,0 +1,17 @@
+Systems and Architecture Specialisation
+Source: https://programsandcourses.anu.edu.au/2027/specialisation/SYAR-SPEC
+Retrieved: 2026-09-27
+
+Requirements
+This specialisation requires the completion of 24 units, which must consist of a minimum of 12 units of 4000 level courses.
+A minimum of 12 units from completion of courses from the following list:
+[COMP4045] Advanced Topics in Computer Systems
+[COMP4300] Parallel Systems
+[COMP4712] Compiler Construction
+A maximum of 12 units from completion of courses from the following list:
+[COMP3300] Operating Systems Implementation
+[COMP3310] Computer Networks
+[COMP3320] High Performance Scientific Computation
+[COMP3610] Principles of Programming Languages
+This specialisation is incompatible with the Computer Systems (COMS) Major.
+This specialisation is only available to students studying BAC (AACOM) and BACR&D (AACRD).
