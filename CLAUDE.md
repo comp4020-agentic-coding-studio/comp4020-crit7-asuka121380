@@ -69,8 +69,9 @@ Rules from my brief for this week, held for every session on this repo:
 - It's a planning aid, never an audit: no copy that claims eligibility,
   completion or graduation.
 - Course status is never colour alone: mark shape and a text label as well.
-- Stay in scope: no recommendations, prerequisite checking, timetabling,
-  GPA, real ANU sign-in or ISIS integration.
+- Stay in scope: no recommendations, authoritative prerequisite enforcement,
+  timetabling, GPA, real ANU sign-in or ISIS integration. Conservative planning
+  warnings are allowed under the course-rule policy below.
 - Every write is a plain form POST that works without JavaScript; enhanced
   forms carry `data-astro-reload` so Astro's router leaves them to
   `src/scripts/planner.ts`.

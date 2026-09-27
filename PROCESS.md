@@ -6,8 +6,7 @@ My Degree Planner: four official 2027 ANU Computing programs rendered as
 collapsible requirement trees, with a student's completed, current and planned
 courses persisted in SQLite and shown in two views, the tree and a semester
 plan. `README.md` says what it is and what good means here. This file is the
-working log of how it got there. It is a chronological evidence log, to be
-curated into the final account later.
+chronological evidence log of how it got there.
 
 ## How I got here
 
@@ -250,7 +249,7 @@ original 15 scenarios plus the rule headings, "Add anyway", replacement, no
 same-semester Move and a single announcement. A screenshot of the COMP3320
 panel confirmed the wording reads as the brief asks.
 
-### Checked by (first build)
+### Earlier first-build checks
 
 - `pnpm check`: 57 tests. Invariants on `/`, `/plan/` and `/readme/`, the
   README served in full, the contract above, the transcription arithmetic, the

@@ -226,8 +226,10 @@ of that production data before deploying.
 
 ### Where it stops
 
-- a planning estimate, not an audit: prerequisites, marks, timetables and
-  eligibility are not modelled
+- a planning estimate, not an audit: course-rule findings are conservative
+  warnings, not authoritative eligibility decisions; complex marks, permissions
+  and progression conditions may remain as official wording rather than being
+  evaluated, and timetables are not modelled
 - a two-semester course has one status for both semesters
 - local rules inside majors and specialisations ("a maximum of 18 units may come
   from 1000-level courses", incompatibilities between a major and a
@@ -239,13 +241,14 @@ of that production data before deploying.
 - study history is entered by hand
 
 What was left out on purpose: combined and double degrees, every other ANU
-program, course recommendations, prerequisite checking, timetable clashes, GPA,
-financial information, enrolment, and any ANUHub or ISIS access. Reading a
-student's results automatically would need an officially approved ANU
-integration; there is no public interface for it, and this app never asks for
-ANU credentials. A possible future step would be importing a Statement of
-Results with the student's explicit consent, extracting only course codes and
-terms and keeping neither the document nor the marks. That is not built.
+program, course recommendations, authoritative prerequisite enforcement,
+timetable clashes, GPA, financial information, enrolment, and any ANUHub or
+ISIS access. Reading a student's results automatically would need an officially
+approved ANU integration; there is no public interface for it, and this app
+never asks for ANU credentials. A possible future step would be importing a
+Statement of Results with the student's explicit consent, extracting only
+course codes and terms and keeping neither the document nor the marks. That is
+not built.
 
 ## What's enforced, and what's judged
 
