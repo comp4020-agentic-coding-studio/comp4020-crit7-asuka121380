@@ -4,7 +4,7 @@
 // script adds the animated expansion and the mobile drill-down.
 import type { OneNode, ReqNode } from "../lib/requirements";
 import type { Evaluation } from "../lib/progress";
-import { courseTarget, filled } from "../lib/progress";
+import { courseTarget, filled, isChooseOne } from "../lib/progress";
 import type { Course } from "../lib/schema";
 import { relation, ruleLine } from "../lib/describe";
 import Leaf from "./Leaf.astro";
@@ -18,14 +18,25 @@ interface Props {
   choices: Record<string, string>;
   // set when this node is a pathway inside a "one of" requirement
   pathwayOf?: OneNode;
+  // the group a course leaf sits in
+  parent?: ReqNode;
+  // inside a pathway that isn't chosen: show what it would hold
+  preview?: boolean;
 }
-const { node, evaluation, catalogue, choices, pathwayOf } = Astro.props;
+const { node, evaluation, catalogue, choices, pathwayOf, parent, preview = false } = Astro.props;
 const Self = Astro.self;
 
 const rel = relation(node);
 const [lead, rest] = ruleLine(node, catalogue);
-const tally = node.kind === "course" ? undefined : evaluation.tally.get(node.id);
 const chosenId = pathwayOf ? choices[pathwayOf.id] : undefined;
+const inPreview = preview || Boolean(pathwayOf && chosenId !== node.id);
+const tally = node.kind === "course" ? undefined : (inPreview ? evaluation.preview : evaluation.tally).get(node.id);
+const chooseOne = node.kind === "pick" && isChooseOne(node, catalogue);
+const bucketEntries =
+  node.kind === "open"
+    ? [...evaluation.byCode.values()].filter((e) => (inPreview ? evaluation.previewCredit : evaluation.credit).get(e.id)?.nodeId === node.id)
+    : [];
+const leafEntry = node.kind === "course" ? evaluation.byCode.get(node.code) : undefined;
 const isChosen = pathwayOf && chosenId === node.id;
 const isMuted = pathwayOf && chosenId && chosenId !== node.id;
 const isBest = pathwayOf && !chosenId && evaluation.bestOption.get(pathwayOf.id) === node.id;
@@ -37,10 +48,13 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
     <Leaf
       code={node.code}
       course={catalogue.get(node.code)}
-      status={evaluation.leaf.get(node.code)?.status ?? "none"}
-      entries={evaluation.leaf.get(node.code)?.entries ?? []}
+      entry={leafEntry}
+      nodeId={parent?.id ?? ""}
+      credit={leafEntry ? (preview ? (evaluation.previewCredit.get(leafEntry.id) ?? evaluation.credit.get(leafEntry.id)) : evaluation.credit.get(leafEntry.id)) : undefined}
+      preview={preview}
+      chooseOne={parent !== undefined && isChooseOne(parent, catalogue)}
+      alternativesInPlan={parent && parent.kind === "pick" ? parent.children.filter((c) => c.kind === "course" && evaluation.byCode.has(c.code)).length : 0}
       listedAs={node.listedAs}
-      enrolments={node.enrolments}
       target={courseTarget(node, catalogue)}
     />
   ) : (
@@ -55,6 +69,7 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
               {node.title}
               {isChosen && <span class="badge badge--chosen">Your pathway</span>}
               {isBest && <span class="badge">Closest match so far</span>}
+              {chooseOne && evaluation.selections[node.id] && <span class="badge">You picked {evaluation.selections[node.id]}</span>}
             </span>
             <span class="group__rule">
               <span class="group__rel">{lead}</span>
@@ -71,7 +86,8 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
           {tally && (
             <span class="group__progress">
               <Meter tally={tally} id={node.id} />
-              <span class="group__fraction">
+              <span class="group__fraction" title={inPreview ? "What this pathway would hold if you chose it" : undefined}>
+                {inPreview && <span class="group__if">if chosen </span>}
                 {filled(tally)}
                 <span class="group__of">/{tally.target}</span>
               </span>
@@ -111,16 +127,25 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
 
           {node.kind === "open" ? (
             <div class="bucket">
-              {(evaluation.bucket.get(node.id) ?? []).length > 0 ? (
+              {bucketEntries.length > 0 ? (
                 <ol class="children" role="list" data-rel="open">
-                  {(evaluation.bucket.get(node.id) ?? []).map((e) => (
-                    <Leaf code={e.courseCode} course={catalogue.get(e.courseCode)} status={e.status} entries={[e]} target={e.units} />
+                  {bucketEntries.map((e) => (
+                    <Leaf
+                      code={e.courseCode}
+                      course={catalogue.get(e.courseCode)}
+                      entry={e}
+                      nodeId={node.id}
+                      credit={(inPreview ? evaluation.previewCredit : evaluation.credit).get(e.id)}
+                      preview={inPreview}
+                      target={(inPreview ? evaluation.previewCredit : evaluation.credit).get(e.id)?.units}
+                    />
                   ))}
                 </ol>
               ) : (
                 <p class="bucket__empty">
-                  Nothing placed here yet. Courses you add to your semester plan that aren't named elsewhere in this program fill
-                  open requirements like this one.
+                  {inPreview
+                    ? "Nothing would be placed here yet."
+                    : "Nothing counts here yet. Courses in your plan that aren't named elsewhere in this program fill open requirements like this one."}
                 </p>
               )}
               <button class="btn btn--quiet" type="button" data-add-course>
@@ -130,8 +155,12 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
           ) : (
             <ol class="children" role="list" data-rel={rel}>
               {node.kind === "one"
-                ? node.options.map((option) => <Self node={option} evaluation={evaluation} catalogue={catalogue} choices={choices} pathwayOf={node} />)
-                : node.children.map((child) => <Self node={child} evaluation={evaluation} catalogue={catalogue} choices={choices} />)}
+                ? node.options.map((option) => (
+                    <Self node={option} evaluation={evaluation} catalogue={catalogue} choices={choices} pathwayOf={node} preview={preview} />
+                  ))
+                : node.children.map((child) => (
+                    <Self node={child} evaluation={evaluation} catalogue={catalogue} choices={choices} parent={node} preview={inPreview} />
+                  ))}
             </ol>
           )}
         </div>

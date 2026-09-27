@@ -1,0 +1,49 @@
+---
+import AccountNotice from "../components/AccountNotice.astro";
+import Shell from "../layouts/Shell.astro";
+import { authenticate, lockedOut, normaliseUsername, startSession } from "../lib/auth";
+import { safeReturn } from "../lib/forms";
+
+const next = safeReturn(Astro.url.searchParams.get("next"), "/");
+if (Astro.locals.user) return Astro.redirect(next, 303);
+
+let error = "";
+let username = "";
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData();
+  username = normaliseUsername(String(form.get("username") ?? ""));
+  const password = String(form.get("password") ?? "");
+  if (lockedOut(username)) {
+    error = "Too many failed attempts for this username. Wait 15 minutes and try again.";
+  } else {
+    const user = await authenticate(username, password);
+    if (user) {
+      startSession(Astro.cookies, user, Astro.url.protocol === "https:");
+      return Astro.redirect(next, 303);
+    }
+    error = "That username and password don't match a My Degree Planner account.";
+  }
+  Astro.response.status = 400;
+}
+---
+
+<Shell title="Log in · My Degree Planner" active="login">
+  <section class="auth">
+    <p class="eyebrow">My Degree Planner</p>
+    <h1>Log in to your plan</h1>
+    <AccountNotice />
+    <form class="auth__form" method="post" novalidate={false}>
+      {error && <p class="form-error" role="alert" id="auth-error">{error}</p>}
+      <label class="field">
+        <span>Planner username</span>
+        <input name="username" autocomplete="username" required value={username} aria-describedby={error ? "auth-error" : undefined} />
+      </label>
+      <label class="field">
+        <span>Planner password</span>
+        <input name="password" type="password" autocomplete="current-password" required />
+      </label>
+      <button class="btn">Log in</button>
+    </form>
+    <p class="auth__alt">New here? <a href={`/signup/${next !== "/" ? `?next=${encodeURIComponent(next)}` : ""}`}>Create a planner account</a></p>
+  </section>
+</Shell>

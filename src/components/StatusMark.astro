@@ -1,7 +1,8 @@
 ---
 // Status is carried by shape as well as colour: filled + tick, half-filled,
 // dashed ring, faint ring.
-import type { LeafStatus } from "../lib/progress";
+import type { Status } from "../lib/terms";
+type LeafStatus = Status | "none";
 interface Props {
   status: LeafStatus;
   size?: number;

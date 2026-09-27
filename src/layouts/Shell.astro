@@ -9,9 +9,10 @@ import "../styles.css";
 interface Props {
   title: string;
   view?: PlannerView;
-  active?: "requirements" | "plan" | "about";
+  active?: "requirements" | "plan" | "about" | "login";
 }
 const { title, view, active } = Astro.props;
+const user = Astro.locals.user;
 const program = view?.program;
 const path = Astro.url.pathname;
 ---
@@ -38,31 +39,89 @@ const path = Astro.url.pathname;
           <span class="wordmark__text">My Degree Planner</span>
         </a>
         <nav class="tabs" aria-label="Views">
-          <a href="/" aria-current={active === "requirements" ? "page" : undefined}>Requirements</a>
-          <a href="/plan/" aria-current={active === "plan" ? "page" : undefined}><span class="tabs__long">Semester plan</span><span class="tabs__short">Plan</span></a>
+          {
+            user && (
+              <>
+                <a href="/" aria-current={active === "requirements" ? "page" : undefined}>
+                  Requirements
+                </a>
+                <a href="/plan/" aria-current={active === "plan" ? "page" : undefined}>
+                  <span class="tabs__long">Semester plan</span>
+                  <span class="tabs__short">Plan</span>
+                </a>
+              </>
+            )
+          }
           <a href="/readme/" aria-current={active === "about" ? "page" : undefined}>About</a>
         </nav>
         {
           view && program && (
-            <details class="switcher">
-              <summary>
-                <span class="switcher__label">Program</span>
-                <span class="switcher__code">{program.code}</span>
+            <details class="switcher menu">
+              <summary aria-label={`Program: ${program.name} (${program.code}). Change program`}>
+                <span class="switcher__label" aria-hidden="true">
+                  Program
+                </span>
+                <span class="switcher__code" aria-hidden="true">
+                  {program.code}
+                </span>
               </summary>
-              <div class="switcher__menu">
-                <p class="switcher__hint">Your courses stay put; they're re-read against the program you pick.</p>
-                {view.programs.map((p) => (
-                  <form method="post" action="/api/profile" data-enhance data-astro-reload>
-                    <input type="hidden" name="program" value={p.code} />
-                    <input type="hidden" name="return" value={path} />
-                    <button class="switcher__option" aria-current={p.code === program.code ? "true" : undefined}>
-                      <span class="switcher__option-code">{p.code}</span>
-                      <span>{p.name}</span>
-                    </button>
-                  </form>
-                ))}
+              <div class="switcher__menu menu__panel">
+                <p class="switcher__hint" id="switcher-hint">
+                  Your courses stay put; they're re-read against the program you pick.
+                </p>
+                <ul class="menu__list" role="list">
+                  {view.programs.map((p) => (
+                    <li>
+                      <form method="post" action="/api/profile" data-enhance data-astro-reload>
+                        <input type="hidden" name="program" value={p.code} />
+                        <input type="hidden" name="return" value={path} />
+                        <button
+                          class="switcher__option"
+                          aria-label={p.code === program.code ? `${p.name} (${p.code}), your current program` : `Switch to ${p.name} (${p.code})`}
+                          aria-describedby="switcher-hint"
+                          aria-current={p.code === program.code ? "true" : undefined}
+                        >
+                          <span class="switcher__option-code" aria-hidden="true">
+                            {p.code}
+                          </span>
+                          <span aria-hidden="true">{p.name}</span>
+                        </button>
+                      </form>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </details>
+          )
+        }
+        {
+          user ? (
+            <details class="account menu">
+              <summary aria-label={`Account: signed in as ${user.username}`}>
+                <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                  <circle cx="9" cy="6.2" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  <path d="M2.8 15.6c.9-3 3.3-4.6 6.2-4.6s5.3 1.6 6.2 4.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="account__name" aria-hidden="true">
+                  {user.username}
+                </span>
+              </summary>
+              <div class="menu__panel account__panel">
+                <p class="account__who">
+                  Signed in as <strong>{user.username}</strong>
+                </p>
+                <p class="switcher__hint">A My Degree Planner account, separate from your ANU account.</p>
+                <form method="post" action="/api/auth/logout" data-astro-reload>
+                  <button class="btn btn--quiet">Log out</button>
+                </form>
+              </div>
+            </details>
+          ) : (
+            active !== "login" && (
+              <a class="btn btn--quiet masthead__login" href="/login/">
+                Log in
+              </a>
+            )
           )
         }
       </div>
@@ -81,7 +140,13 @@ const path = Astro.url.pathname;
         </p>
         {
           view && (view.program || view.entries.length > 0) && (
-            <form method="post" action="/api/reset" data-enhance data-astro-reload data-confirm="Clear your program, courses and pathway choices?">
+            <form
+              method="post"
+              action="/api/reset"
+              data-enhance
+              data-astro-reload
+              data-confirm="Clear your program, courses and choices? This only affects your own plan."
+            >
               <input type="hidden" name="return" value="/" />
               <button class="btn btn--quiet">Reset my plan</button>
             </form>
@@ -89,6 +154,9 @@ const path = Astro.url.pathname;
         }
       </div>
     </footer>
+
+    <p class="visually-hidden" role="status" aria-live="polite" id="announcer"></p>
+    <div class="toast" id="toast" hidden></div>
 
     {
       view && (

@@ -281,7 +281,7 @@ export const majors: AllNode[] = [
         title: "Compulsory courses",
         text: "24 units from the completion of the following compulsory courses:",
         units: 24,
-        children: [course("COMP2120"), course("COMP3500", { enrolments: 2 }), course("COMP4130")],
+        children: [course("COMP2120"), course("COMP3500"), course("COMP4130")],
       },
       {
         kind: "pick",

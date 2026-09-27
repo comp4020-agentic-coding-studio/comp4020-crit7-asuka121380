@@ -3,26 +3,45 @@
 import StatusMark from "../components/StatusMark.astro";
 import { courseUrl } from "../data/catalogue";
 import Shell from "../layouts/Shell.astro";
+import { MAX_LOAD, STANDARD_LOAD, studyPeriod, termsOccupied } from "../lib/checks";
+import { filled } from "../lib/progress";
 import type { PlanEntry, Session } from "../lib/schema";
 import { SESSIONS, STATUS_LABEL, termKey, termOrder } from "../lib/terms";
 import { loadView } from "../lib/view";
 
-const view = loadView();
-const { program, entries, evaluation, catalogue, now } = view;
+const user = Astro.locals.user;
+if (!user) return Astro.redirect("/login/?next=/plan/", 303);
+const view = loadView(user.id);
+const { program, entries, evaluation, catalogue, now, warnings } = view;
 
-const years = entries.map((e) => e.year);
+// A two-semester course is one entry that appears in both of its semesters.
+type Slot = { entry: PlanEntry; part: number; of: number };
+const byTerm = new Map<string, Slot[]>();
+for (const e of entries) {
+  const terms = termsOccupied(e.year, e.session, catalogue.get(e.courseCode)?.semesters ?? 1);
+  terms.forEach((t, i) => {
+    const key = termKey(t.year, t.session);
+    byTerm.set(key, [...(byTerm.get(key) ?? []), { entry: e, part: i + 1, of: terms.length }]);
+  });
+}
+
+const years = [...byTerm.keys()].map((k) => Number(k.slice(0, 4)));
 const first = Math.min(now.year - 1, ...years);
 const last = Math.max(now.year + 2, ...years);
 const nowOrder = termOrder(now.year, now.session);
-
-const byTerm = new Map<string, PlanEntry[]>();
-for (const e of entries) byTerm.set(termKey(e.year, e.session), [...(byTerm.get(termKey(e.year, e.session)) ?? []), e]);
+const periodLoad = new Map<string, number>();
+for (const [key, slots] of byTerm) {
+  const [y, s] = key.split("-");
+  const p = studyPeriod({ year: Number(y), session: s as Session });
+  periodLoad.set(p, (periodLoad.get(p) ?? 0) + slots.reduce((n, x) => n + x.entry.units, 0));
+}
 
 const plan = Array.from({ length: last - first + 1 }, (_, i) => first + i).map((year) => ({
   year,
   terms: SESSIONS.filter((s) => s.id === "S1" || s.id === "S2" || byTerm.has(termKey(year, s.id))).map((s) => {
     const order = termOrder(year, s.id);
     const list = byTerm.get(termKey(year, s.id)) ?? [];
+    const load = periodLoad.get(studyPeriod({ year, session: s.id })) ?? 0;
     return {
       year,
       session: s.id as Session,
@@ -30,41 +49,54 @@ const plan = Array.from({ length: last - first + 1 }, (_, i) => first + i).map((
       key: termKey(year, s.id),
       when: order < nowOrder ? "past" : order === nowOrder ? "now" : "future",
       list,
-      units: list.reduce((n, e) => n + e.units, 0),
+      units: list.reduce((n, x) => n + x.entry.units, 0),
+      heavy: (s.id === "S1" || s.id === "S2") && load > STANDARD_LOAD,
+      load,
     };
   }),
 }));
 
-const hint = (e: PlanEntry, when: string) => {
-  if (e.status === "planned" && when === "past") return "Planned for a term that has passed. Completed?";
-  if (e.status === "completed" && when === "future") return "Marked completed in a future term.";
-  if (e.status === "current" && when !== "now") return "Marked as studying now, but this isn't the current semester.";
-  return null;
+const summary = evaluation?.summary;
+const inPlan = summary?.inPlan ?? {
+  completed: entries.filter((e) => e.status === "completed").reduce((n, e) => n + e.units * (catalogue.get(e.courseCode)?.semesters ?? 1), 0),
+  current: entries.filter((e) => e.status === "current").reduce((n, e) => n + e.units * (catalogue.get(e.courseCode)?.semesters ?? 1), 0),
+  planned: entries.filter((e) => e.status === "planned").reduce((n, e) => n + e.units * (catalogue.get(e.courseCode)?.semesters ?? 1), 0),
 };
-const totals = { completed: 0, current: 0, planned: 0 };
-for (const e of entries) totals[e.status] += e.units;
 ---
 
 <Shell title="Semester plan · My Degree Planner" view={view} active="plan">
   <div class="planview">
-    <section class="hero hero--compact">
+    <section class="hero hero--compact" data-summary>
       <p class="eyebrow">{program ? `${program.code} · ${program.name}` : "No program chosen yet"}</p>
       <h1>Semester plan</h1>
       <p class="lede">
-        The same courses as the requirements tree, in the order you take them. Change a course here and its node in the
-        tree changes with it.
+        The same courses as the requirements tree, in the order you take them. Each course is in your plan once; change it
+        here and its node in the tree changes with it.
       </p>
       <p class="hero__breakdown">
-        <span class="key key--completed">{totals.completed} units completed</span>
-        <span class="key key--current">{totals.current} studying now</span>
-        <span class="key key--planned">{totals.planned} planned</span>
-        {program && <span class="key key--target">of {program.units} required</span>}
+        <span class="key key--completed">{inPlan.completed} units completed</span>
+        <span class="key key--current">{inPlan.current} studying now</span>
+        <span class="key key--planned">{inPlan.planned} planned</span>
       </p>
-      {!program && (
-        <p>
-          <a class="btn" href="/">Choose a program</a> to see where each course counts.
-        </p>
-      )}
+      {
+        program && summary && (
+          <p class="hero__extra">
+            <strong data-counting>{filled(summary.counting)}</strong> of {program.units} units count toward the {program.code}
+            requirements
+            {filled(summary.notCounting) > 0 && `; ${filled(summary.notCounting)} don't count toward any requirement`}.
+          </p>
+        )
+      }
+      {
+        !program && (
+          <p>
+            <a class="btn" href="/">
+              Choose a program
+            </a>{" "}
+            to see where each course counts.
+          </p>
+        )
+      }
     </section>
 
     <ol class="years" role="list">
@@ -80,28 +112,47 @@ for (const e of entries) totals[e.status] += e.units;
                     {t.when === "now" && <span class="badge badge--now">Now</span>}
                     <span class="term__units">{t.units} units</span>
                   </header>
+                  {t.heavy && (
+                    <p class={`term__load${t.load > MAX_LOAD ? " term__load--over" : ""}`}>
+                      {t.load} units in this study period: above the standard {STANDARD_LOAD}-unit load
+                      {t.load > MAX_LOAD ? `, and over the ${MAX_LOAD}-unit maximum ANU permits` : ", which needs overload approval"}.
+                    </p>
+                  )}
                   {t.list.length > 0 && (
                     <ol class="term__list" role="list">
-                      {t.list.map((e) => {
+                      {t.list.map(({ entry: e, part, of }) => {
                         const course = catalogue.get(e.courseCode);
-                        const toward = evaluation?.countsToward.get(e.id);
-                        const warn = hint(e, t.when);
+                        const credit = evaluation?.credit.get(e.id);
+                        const issues = part === 1 ? (warnings.get(e.id) ?? []) : [];
                         return (
-                          <li class="entry" data-entry-course={e.courseCode} data-status={e.status}>
-                            <button class="entry__main" type="button" data-open-course={e.courseCode} data-entry={e.id} aria-haspopup="dialog">
+                          <li class="entry" data-entry-course={e.courseCode} data-entry-part={part} data-status={e.status}>
+                            <button class="entry__main" type="button" data-open-course={e.courseCode} aria-haspopup="dialog">
                               <StatusMark status={e.status} />
                               <span class="entry__code">{e.courseCode}</span>
-                              <span class="entry__title">{course?.title ?? "Not in the planner's catalogue"}</span>
+                              <span class="entry__title">{course?.title ?? e.courseCode}</span>
                               <span class="entry__units">{e.units} units</span>
-                              <span class="entry__status">{STATUS_LABEL[e.status]}</span>
-                              {program && (
-                                <span class={`entry__toward${toward ? "" : " entry__toward--none"}`}>
-                                  {toward ? `Counts toward ${toward.join(", ")}` : "Not counted towards a listed requirement"}
+                              <span class="entry__status">
+                                {STATUS_LABEL[e.status]}
+                                {of > 1 && ` · semester ${part} of ${of}`}
+                              </span>
+                              {program && part === 1 && (
+                                <span class={`entry__toward${credit ? "" : " entry__toward--none"}`}>
+                                  {credit
+                                    ? `Counts toward ${credit.title}${credit.units < e.units * of ? ` (${credit.units} of ${e.units * of} units)` : ""}`
+                                    : "Doesn't count toward any requirement"}
                                 </span>
                               )}
-                              {warn && <span class="entry__hint">{warn}</span>}
+                              {issues.map((i) => (
+                                <span class="entry__hint">{i.message}</span>
+                              ))}
                             </button>
-                            <a class="leaf__link" href={courseUrl(e.courseCode)} target="_blank" rel="noopener" aria-label={`${e.courseCode} on ANU Programs and Courses (opens in a new tab)`}>
+                            <a
+                              class="leaf__link"
+                              href={courseUrl(e.courseCode)}
+                              target="_blank"
+                              rel="noopener"
+                              aria-label={`${e.courseCode} on ANU Programs and Courses (opens in a new tab)`}
+                            >
                               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M6 3.5h6.5V10M12.2 3.8 4 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                               </svg>

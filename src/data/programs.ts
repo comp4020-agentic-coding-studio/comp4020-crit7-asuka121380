@@ -224,7 +224,7 @@ export const programs: Program[] = [
             title: "Computing Research Project",
             text: "24 units from completion of COMP4550 Computing Research Project, which must be completed twice, in consecutive semesters (12+12 units)",
             units: 24,
-            children: [course("COMP4550", { enrolments: 2 })],
+            children: [course("COMP4550")],
           },
           {
             kind: "all",
@@ -233,7 +233,7 @@ export const programs: Program[] = [
             text: "12 units from COMP4500 Software Engineering Team Project, which must be completed twice, in consecutive semesters (6+6 units) AND 12 units from the completion of further 4000-level courses from the subject area COMP Computer Science",
             units: 24,
             children: [
-              course("COMP4500", { enrolments: 2 }),
+              course("COMP4500"),
               {
                 kind: "open",
                 id: "final.team.comp4",
@@ -331,8 +331,8 @@ export const programs: Program[] = [
         units: 78,
         children: [
           ...courses("COMP1130", "COMP1140", "COMP2100", "COMP2300", "COMP2550", "COMP3600", "COMP3630"),
-          course("COMP3770", { enrolments: 2, listedAs: "Individual Research Project" }),
-          course("COMP4550", { enrolments: 2 }),
+          course("COMP3770", { listedAs: "Individual Research Project" }),
+          course("COMP4550"),
         ],
       },
       {
@@ -437,7 +437,7 @@ export const programs: Program[] = [
           ...courses("COMP1600", "COMP2100", "COMP2120"),
           course("COMP2300", { listedAs: "Computer Organisation and Program Execution" }),
           ...courses("COMP2310", "COMP2400"),
-          course("COMP3500", { enrolments: 2 }),
+          course("COMP3500"),
           ...courses("COMP3600", "COMP3900", "COMP4130", "ENGN1211", "ENGN2300", "ENGN2301", "ENGN3100"),
           ...courses("ENGN3300", "ENGN3301", "ENGN4213", "MATH1005"),
         ],
@@ -450,9 +450,9 @@ export const programs: Program[] = [
         units: 12,
         bound: "exact",
         children: [
-          course("ENGN4300", { enrolments: 2, units: 12, listedAs: "Capstone Project" }),
-          course("ENGN4350", { enrolments: 2, units: 12 }),
-          course("COMP4500", { enrolments: 2 }),
+          course("ENGN4300", { units: 12, listedAs: "Capstone Project" }),
+          course("ENGN4350", { units: 12 }),
+          course("COMP4500"),
         ],
       },
       choose6("prog1", "Programming as Problem Solving", course("COMP1100"), course("COMP1130")),

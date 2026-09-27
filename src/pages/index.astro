@@ -1,20 +1,50 @@
 ---
+import AccountNotice from "../components/AccountNotice.astro";
 import Chooser from "../components/Chooser.astro";
 import Constraints from "../components/Constraints.astro";
 import Legend from "../components/Legend.astro";
 import Meter from "../components/Meter.astro";
 import TreeNode from "../components/TreeNode.astro";
 import Shell from "../layouts/Shell.astro";
+import { filled } from "../lib/progress";
 import { loadView } from "../lib/view";
 
-const view = loadView();
-const { program, evaluation, catalogue, choices } = view;
-const total = evaluation?.constraints.find((c) => c.constraint.kind === "total");
+const user = Astro.locals.user;
+const view = user ? loadView(user.id) : null;
+const program = view?.program ?? null;
+const evaluation = view?.evaluation ?? null;
+const summary = evaluation?.summary;
+const title = !user ? "My Degree Planner" : program ? `${program.code} requirements · My Degree Planner` : "Choose a program · My Degree Planner";
 ---
 
-<Shell title={program ? `${program.code} requirements · My Degree Planner` : "My Degree Planner"} view={view} active="requirements">
+<Shell title={title} view={view ?? undefined} active={user ? "requirements" : undefined}>
   {
-    !program || !evaluation ? (
+    !user || !view ? (
+      <section class="landing">
+        <div class="chooser__intro">
+          <p class="eyebrow">ANU Computing · 2027 requirements</p>
+          <h1>See your degree as a structure, not a wall of text</h1>
+          <p class="lede">
+            My Degree Planner turns the official requirements for four ANU Computing programs into a tree you can open one level
+            at a time, and lays your own completed, current and planned courses over it. Your plan is private to your planner
+            account and stays put between visits.
+          </p>
+          <p class="landing__actions">
+            <a class="btn" href="/signup/">
+              Create a planner account
+            </a>
+            <a class="btn btn--quiet" href="/login/">
+              Log in
+            </a>
+          </p>
+          <AccountNotice />
+          <p class="landing__note">
+            You enter your study history yourself: the planner can't read ANUHub or ISIS, and never asks for ANU credentials.
+            It is a planning aid built from the 2027 Programs &amp; Courses catalogue, not an official degree audit.
+          </p>
+        </div>
+      </section>
+    ) : !program || !evaluation || !summary ? (
       <Chooser programs={view.programs} />
     ) : (
       <div class="requirements">
@@ -24,30 +54,25 @@ const total = evaluation?.constraints.find((c) => c.constraint.kind === "total")
           </p>
           <h1 data-selected-program>{program.name}</h1>
           <p class="lede">{program.summary}</p>
-          <div class="hero__stats">
-            {total && (
-              <p class="hero__total">
-                <span class="hero__figure">{total.completed + total.current + total.planned}</span>
-                <span class="hero__of">of {program.units} units in your plan</span>
+          <div class="hero__stats" data-summary>
+            <p class="hero__total">
+              <span class="hero__figure" data-counting>
+                {filled(summary.counting)}
+              </span>
+              <span class="hero__of">of {program.units} units counted toward this degree</span>
+            </p>
+            <Meter tally={{ target: program.units, ...summary.counting }} id="hero" size="md" />
+            <p class="hero__breakdown">
+              <span class="key key--completed">{summary.counting.completed} completed</span>
+              <span class="key key--current">{summary.counting.current} studying now</span>
+              <span class="key key--planned">{summary.counting.planned} planned</span>
+            </p>
+            {filled(summary.notCounting) > 0 && (
+              <p class="hero__extra">
+                Plus {filled(summary.notCounting)} units in your plan that don't count toward any requirement.
+                <a href="/plan/">See which</a>
               </p>
             )}
-            {total && (
-              <Meter
-                tally={{
-                  target: program.units,
-                  completed: Math.min(total.completed, program.units),
-                  current: Math.min(total.current, Math.max(0, program.units - total.completed)),
-                  planned: Math.min(total.planned, Math.max(0, program.units - total.completed - total.current)),
-                }}
-                id="hero"
-                size="md"
-              />
-            )}
-            <p class="hero__breakdown">
-              <span class="key key--completed">{total?.completed ?? 0} completed</span>
-              <span class="key key--current">{total?.current ?? 0} studying now</span>
-              <span class="key key--planned">{total?.planned ?? 0} planned</span>
-            </p>
           </div>
           <a class="official-link" href={program.url} target="_blank" rel="noopener">
             Official program page<span class="visually-hidden"> (opens in a new tab)</span> ↗
@@ -57,7 +82,9 @@ const total = evaluation?.constraints.find((c) => c.constraint.kind === "total")
         <div class="requirements__grid">
           <section class="tree-panel" aria-labelledby="tree-title">
             <div class="tree-panel__head">
-              <h2 id="tree-title" class="section-title">Program requirements</h2>
+              <h2 id="tree-title" class="section-title">
+                Program requirements
+              </h2>
               <div class="tree-tools">
                 <button class="btn btn--quiet" type="button" data-reveal-mine>
                   Show my courses
@@ -71,7 +98,7 @@ const total = evaluation?.constraints.find((c) => c.constraint.kind === "total")
             <nav class="crumbs" aria-label="Position in the requirements" data-crumbs hidden />
             <ol class="tree" role="list" data-tree>
               {program.requirements.map((node) => (
-                <TreeNode node={node} evaluation={evaluation} catalogue={catalogue} choices={choices} />
+                <TreeNode node={node} evaluation={evaluation} catalogue={view.catalogue} choices={view.choices} />
               ))}
             </ol>
           </section>

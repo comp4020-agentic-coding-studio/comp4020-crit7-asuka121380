@@ -76,3 +76,29 @@ Rules from my brief for this week, held for every session on this repo:
   `src/scripts/planner.ts`.
 - The Fly.io token lives in the environment. Never print, inspect, log or
   commit it.
+
+## Accounts, integrity and progress (added for the reliability pass)
+
+- Accounts are My Degree Planner's own. Never ask for, store or imitate ANU
+  credentials, never scrape ANUHub or ISIS, and never treat a student number as
+  identity. Any account UI carries the notice that this isn't an ANU account.
+- The user comes from the server-side session only. Every query and mutation in
+  `src/lib/db.ts` takes the session user's id explicitly; nothing reads a user
+  id from the request. Live events are filtered to that account.
+- A constraint that matters is enforced by the server and, where possible, the
+  database (`UNIQUE(user_id, course_code)`, the course foreign key), not only by
+  disabling controls.
+- Only codes in the verified catalogue (`research/2027/ug-catalogue.json`) can
+  enter a plan. Never invent a title or build an official link for a code that
+  isn't there.
+- Progress is calculated in one place, `src/lib/progress.ts`: each record
+  credits at most one requirement, within every enclosing cap. Pages read its
+  result; they never recompute totals themselves.
+- Refuse what's impossible (duplicates, official incompatibilities, the 36-unit
+  policy maximum, units outside the official range); warn about what's merely
+  unusual. `src/lib/checks.ts` holds those rules for server and client alike.
+- API failures answer with a specific status and `code`, and the client shows
+  the server's message. Never collapse them into one generic error.
+- In client templates, never name a form field `action`, `method` or another
+  form property: it shadows the DOM property (this broke Edit and Remove once).
+  Read the URL with `form.getAttribute("action")`.

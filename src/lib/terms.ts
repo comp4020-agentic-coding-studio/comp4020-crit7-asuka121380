@@ -1,4 +1,5 @@
-import type { Session, Status } from "./schema";
+export type Status = "completed" | "current" | "planned";
+export type Session = "SUM" | "S1" | "AUT" | "WIN" | "S2" | "SPR";
 
 // ANU's teaching periods in calendar order within a year.
 export const SESSIONS = [

@@ -1,60 +1,91 @@
 ---
-// One course in the tree. The row opens the course panel (status, term,
-// official details); the arrow is always a direct link to the official page.
+// One course in the tree. The row opens the course panel; the arrow is a
+// direct link to the official page. Taking a course and having it count
+// here are different things, and the row says which.
 import { courseUrl } from "../data/catalogue";
+import { termsOccupied } from "../lib/checks";
+import type { Credit } from "../lib/progress";
 import type { Course, PlanEntry } from "../lib/schema";
-import type { LeafStatus } from "../lib/progress";
 import { STATUS_LABEL, termShort } from "../lib/terms";
 import StatusMark from "./StatusMark.astro";
 
 interface Props {
   code: string;
   course?: Course;
-  status: LeafStatus;
-  entries: PlanEntry[];
+  entry?: PlanEntry;
+  nodeId: string;
+  credit?: Credit;
+  // inside a pathway that isn't chosen: credit is hypothetical
+  preview?: boolean;
+  // this leaf sits in a "choose one" list, so the student can pick it
+  chooseOne?: boolean;
+  alternativesInPlan?: number;
   listedAs?: string;
-  enrolments?: number;
   target?: number;
 }
-const { code, course, status, entries, listedAs, enrolments, target } = Astro.props;
-const title = course?.title ?? "Not in the planner's catalogue";
-const units = target ?? course?.unitsMin;
+const { code, course, entry, nodeId, credit, preview, chooseOne, alternativesInPlan = 0, listedAs, target } = Astro.props;
+const title = course?.title ?? code;
+const semesters = course?.semesters ?? 1;
+const here = credit?.nodeId === nodeId;
+const terms = entry ? termsOccupied(entry.year, entry.session, semesters) : [];
+const when = terms.map((t) => termShort(t.year, t.session)).join(" – ");
+
+let note = "";
+if (entry) {
+  if (here && preview) note = "Would count here if you choose this pathway";
+  else if (here && chooseOne && alternativesInPlan > 1) note = "Counts here";
+  else if (!here && credit) note = preview ? `Counts toward ${credit.title} for now` : `Counts toward ${credit.title} instead`;
+  else if (!here) note = preview ? "Choose this pathway to use it here" : "Doesn't count toward any requirement";
+}
 ---
 
 <li
   class="leaf"
   data-course={code}
-  data-status={status}
+  data-status={entry?.status ?? "none"}
+  data-counts={entry ? (here ? "here" : credit ? "elsewhere" : "none") : undefined}
   data-listed={listedAs}
-  data-enrolments={enrolments}
 >
   <button class="leaf__main" type="button" data-open-course={code} aria-haspopup="dialog">
-    <StatusMark status={status} />
+    <StatusMark status={entry?.status ?? "none"} />
     <span class="leaf__code">{code}</span>
     <span class="leaf__title">
       {title}
       {listedAs && <span class="leaf__listed">Listed as “{listedAs}”</span>}
     </span>
     <span class="leaf__meta">
-      {units !== undefined && (
-        <span class="leaf__units">{enrolments && enrolments > 1 ? `${units / enrolments} units × ${enrolments}` : `${units} units`}</span>
-      )}
+      {
+        target !== undefined && (
+          <span class="leaf__units">{semesters > 1 ? `${target / semesters} units × ${semesters} semesters` : `${target} units`}</span>
+        )
+      }
     </span>
     <span class="leaf__state">
-      {entries.length === 0 ? (
-        <span class="state state--none">{STATUS_LABEL.none}</span>
-      ) : (
-        entries.map((e) => (
-          <span class={`state state--${e.status}`}>
-            <span class="state__label">{STATUS_LABEL[e.status]}</span> · {termShort(e.year, e.session)}
-          </span>
-        ))
-      )}
-      {enrolments && enrolments > 1 && entries.length > 0 && entries.length < enrolments && (
-        <span class="state state--gap">{entries.length} of {enrolments} semesters in your plan</span>
-      )}
+      {
+        entry ? (
+          <>
+            <span class={`state state--${entry.status}`}>
+              <span class="state__label">{STATUS_LABEL[entry.status]}</span> · {when}
+            </span>
+            {note && <span class={`credit credit--${here ? "here" : "elsewhere"}`}>{note}</span>}
+          </>
+        ) : (
+          <span class="state state--none">{STATUS_LABEL.none}</span>
+        )
+      }
     </span>
   </button>
+  {
+    entry && chooseOne && !here && !preview && (
+      <form class="leaf__use" method="post" action="/api/selections" data-enhance data-astro-reload>
+        <input type="hidden" name="node" value={nodeId} />
+        <input type="hidden" name="course" value={code} />
+        <button class="linkish" aria-label={`Count ${code} toward this requirement instead`}>
+          Count this one here
+        </button>
+      </form>
+    )
+  }
   <a
     class="leaf__link"
     href={courseUrl(code)}

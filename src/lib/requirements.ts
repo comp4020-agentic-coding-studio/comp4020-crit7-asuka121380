@@ -12,8 +12,6 @@ export type CourseRef = {
   kind: "course";
   id: string;
   code: string;
-  // annual courses that must be completed twice, in consecutive semesters
-  enrolments?: number;
   // the units this requirement needs from the course, when the listing says
   units?: number;
   // the title printed on the program page, when it differs from the course page

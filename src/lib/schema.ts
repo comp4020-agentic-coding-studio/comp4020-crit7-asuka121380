@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import { int, primaryKey, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqlite-core";
 import type { Constraint, Program, ReqNode } from "./requirements";
+import type { Session, Status } from "./terms";
 
 // The schema is the ground truth for the database. To change it: edit here,
 // run `pnpm db:generate` to turn the diff into a migration under drizzle/,
@@ -14,8 +15,14 @@ export const courses = sqliteTable("courses", {
   title: text().notNull(),
   unitsMin: int("units_min").notNull(),
   unitsMax: int("units_max").notNull(),
-  offered: text({ mode: "json" }).$type<string[]>().notNull(),
-  transdisciplinary: int({ mode: "boolean" }).notNull(),
+  offered: text({ mode: "json" }).$type<Session[]>().notNull(),
+  semesters: int().notNull().default(1),
+  semesterNote: text("semester_note"),
+  // null when the planner hasn't read the course page, so the tag is unknown
+  transdisciplinary: int({ mode: "boolean" }),
+  incompatible: text({ mode: "json" }).$type<string[]>().notNull().default(sql`'[]'`),
+  incompatibleNote: text("incompatible_note"),
+  detailed: int({ mode: "boolean" }).notNull().default(false),
   url: text().notNull(),
 });
 
@@ -32,12 +39,32 @@ export const programs = sqliteTable("programs", {
   untracked: text({ mode: "json" }).$type<Program["untracked"]>().notNull(),
 });
 
-// ---- personal planning state: written only by the student ----
+// ---- accounts: My Degree Planner's own, never an ANU identity ----
 
 export const users = sqliteTable("users", {
   id: int().primaryKey({ autoIncrement: true }),
-  name: text().notNull(),
+  username: text().notNull().unique(),
+  // scrypt, salted; never the password itself
+  passwordHash: text("password_hash").notNull(),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`(datetime('now'))`),
 });
+
+// The cookie holds a random token; only its SHA-256 is stored, so a leaked
+// database can't be replayed as a session.
+export const sessions = sqliteTable("sessions", {
+  id: text().primaryKey(),
+  userId: int("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  expiresAt: text("expires_at").notNull(),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`(datetime('now'))`),
+});
+
+// ---- personal planning state: every row belongs to one account ----
 
 export const profiles = sqliteTable("profiles", {
   userId: int("user_id")
@@ -51,10 +78,9 @@ export const profiles = sqliteTable("profiles", {
     .default(sql`(datetime('now'))`),
 });
 
-// Entries are not tied to a program: they're the student's own history and
-// plan, so switching program re-reads the same courses against new rules.
-// course_code is deliberately not a foreign key — a student can plan an
-// elective the seeded catalogue doesn't carry.
+// Entries are not tied to a program: they're the student's own record, so
+// switching program re-reads the same courses against new rules. Only codes
+// in the verified catalogue can be planned (the foreign key enforces it).
 export const planEntries = sqliteTable(
   "plan_entries",
   {
@@ -62,7 +88,9 @@ export const planEntries = sqliteTable(
     userId: int("user_id")
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
-    courseCode: text("course_code").notNull(),
+    courseCode: text("course_code")
+      .notNull()
+      .references(() => courses.code),
     status: text({ enum: ["completed", "current", "planned"] }).notNull(),
     year: int().notNull(),
     session: text({ enum: ["SUM", "S1", "AUT", "WIN", "S2", "SPR"] }).notNull(),
@@ -71,7 +99,9 @@ export const planEntries = sqliteTable(
       .notNull()
       .default(sql`(datetime('now'))`),
   },
-  (t) => [uniqueIndex("plan_entries_user_course_term").on(t.userId, t.courseCode, t.year, t.session)],
+  // One record per course per student: a course is in the plan once, in one
+  // place. A two-semester course is still one record, starting in `session`.
+  (t) => [uniqueIndex("plan_entries_user_course").on(t.userId, t.courseCode)],
 );
 
 export const pathwayChoices = sqliteTable(
@@ -89,7 +119,24 @@ export const pathwayChoices = sqliteTable(
   (t) => [primaryKey({ columns: [t.userId, t.programCode, t.nodeId] })],
 );
 
+// Which of the student's courses satisfies a "choose" requirement, when
+// they'd rather pick than accept the planner's default.
+export const requirementSelections = sqliteTable(
+  "requirement_selections",
+  {
+    userId: int("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    programCode: text("program_code")
+      .notNull()
+      .references(() => programs.code),
+    nodeId: text("node_id").notNull(),
+    courseCode: text("course_code").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.programCode, t.nodeId] })],
+);
+
 export type Course = typeof courses.$inferSelect;
 export type PlanEntry = typeof planEntries.$inferSelect;
-export type Status = PlanEntry["status"];
-export type Session = PlanEntry["session"];
+export type User = typeof users.$inferSelect;
+export type { Session, Status };

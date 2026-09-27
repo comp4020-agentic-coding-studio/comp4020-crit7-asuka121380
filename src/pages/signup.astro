@@ -1,0 +1,64 @@
+---
+import AccountNotice from "../components/AccountNotice.astro";
+import Shell from "../layouts/Shell.astro";
+import { createUser, normaliseUsername, startSession, validateCredentials } from "../lib/auth";
+import { safeReturn } from "../lib/forms";
+
+const next = safeReturn(Astro.url.searchParams.get("next"), "/");
+if (Astro.locals.user) return Astro.redirect(next, 303);
+
+let error = "";
+let username = "";
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData();
+  username = normaliseUsername(String(form.get("username") ?? ""));
+  const password = String(form.get("password") ?? "");
+  const confirm = String(form.get("confirm") ?? "");
+  error = validateCredentials(username, password) ?? (password !== confirm ? "The two passwords don't match." : "");
+  if (!error) {
+    const user = await createUser(username, password);
+    if (user) {
+      startSession(Astro.cookies, user, Astro.url.protocol === "https:");
+      return Astro.redirect(next, 303);
+    }
+    error = "That username is taken. Choose another.";
+  }
+  Astro.response.status = 400;
+}
+---
+
+<Shell title="Create an account · My Degree Planner" active="login">
+  <section class="auth">
+    <p class="eyebrow">My Degree Planner</p>
+    <h1>Create a planner account</h1>
+    <AccountNotice />
+    <form class="auth__form" method="post">
+      {error && <p class="form-error" role="alert" id="auth-error">{error}</p>}
+      <label class="field">
+        <span>Choose a username</span>
+        <input
+          name="username"
+          autocomplete="username"
+          required
+          minlength="3"
+          maxlength="32"
+          pattern="[A-Za-z0-9][A-Za-z0-9._\-]{2,31}"
+          value={username}
+          aria-describedby="username-hint"
+        />
+        <span class="field__hint" id="username-hint">3–32 letters, digits, dots, dashes or underscores. Not your student number or ANU ID.</span>
+      </label>
+      <label class="field">
+        <span>Choose a password</span>
+        <input name="password" type="password" autocomplete="new-password" required minlength="10" aria-describedby="password-hint" />
+        <span class="field__hint" id="password-hint">At least 10 characters. Not your ANU password.</span>
+      </label>
+      <label class="field">
+        <span>Type it again</span>
+        <input name="confirm" type="password" autocomplete="new-password" required minlength="10" />
+      </label>
+      <button class="btn">Create account</button>
+    </form>
+    <p class="auth__alt">Already have one? <a href="/login/">Log in</a></p>
+  </section>
+</Shell>

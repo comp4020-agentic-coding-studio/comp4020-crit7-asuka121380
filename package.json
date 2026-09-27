@@ -11,7 +11,8 @@
     "check": "pnpm typecheck && pnpm test",
     "check:evidence": "node scripts/check-evidence.ts",
     "test": "astro build && vitest run",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "e2e": "node e2e/planner.e2e.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.1",
@@ -28,6 +29,7 @@
     "axe-core": "^4.13.0",
     "drizzle-kit": "^0.31.10",
     "jsdom": "^29.1.1",
+    "playwright-core": "~1.56.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"
   },

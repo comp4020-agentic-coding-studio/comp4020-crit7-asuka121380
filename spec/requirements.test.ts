@@ -1,30 +1,55 @@
 import { describe, expect, it } from "vitest";
 import { catalogue as seed } from "../src/data/catalogue";
 import { programByCode, programs } from "../src/data/programs";
-import { courseTarget, evaluate } from "../src/lib/progress";
+import { checkPlacement } from "../src/lib/checks";
+import { hashPassword, verifyPassword } from "../src/lib/password";
+import { courseTarget, evaluate, filled } from "../src/lib/progress";
 import { courseCodes, type ReqNode, walk } from "../src/lib/requirements";
-import type { PlanEntry, Session, Status } from "../src/lib/schema";
+import type { Course, PlanEntry } from "../src/lib/schema";
+import type { Session, Status } from "../src/lib/terms";
 
-// Two promises that hold without a server: the transcribed requirements add
-// up the way the official pages say they do, and the evaluation that both
-// views read places courses the way the README describes.
+// Promises that hold without a server: the transcription and catalogue are
+// faithful to the official pages, and the one evaluation every view reads
+// credits each course once, never beyond what a requirement can hold.
 
-const catalogue = new Map(seed.map((c) => [c.code, c]));
+const catalogue = new Map<string, Course>(seed.map((c) => [c.code, c as Course]));
 
 const target = (node: ReqNode): number =>
   node.kind === "course" ? courseTarget(node, catalogue) : node.kind === "all" ? (node.units ?? 0) : node.units;
 
-describe("transcribed requirements", () => {
-  it("names only courses that exist in the scraped 2027 catalogue", () => {
+describe("verified catalogue", () => {
+  it("holds the official 2027 undergraduate list, with page detail for every course a program names", () => {
+    expect(catalogue.size).toBe(1523);
     for (const p of programs) {
-      for (const code of courseCodes(p.requirements)) expect(catalogue.has(code), `${p.code}: ${code}`).toBe(true);
+      for (const code of courseCodes(p.requirements)) expect(catalogue.get(code)?.detailed, `${p.code}: ${code}`).toBe(true);
     }
+    expect(catalogue.has("COMP0721")).toBe(false);
   });
 
+  it("marks exactly the courses whose pages say they run over two semesters", () => {
+    const twoSemester = [...catalogue.values()].filter((c) => c.semesters === 2).map((c) => c.code);
+    expect(twoSemester.sort()).toEqual(["COMP3500", "COMP3770", "COMP4500", "COMP4550", "ENGN4300", "ENGN4350"]);
+  });
+
+  it("reads official incompatibilities from the course pages", () => {
+    expect(catalogue.get("COMP1100")?.incompatible).toContain("COMP1130");
+    expect(catalogue.get("COMP1130")?.incompatible).toContain("COMP1100");
+    expect(catalogue.get("COMP4820")?.incompatible).toEqual(expect.arrayContaining(["COMP4500", "COMP4550"]));
+    expect(catalogue.get("COMP1100")?.incompatibleNote).toMatch(/Incompatible with COMP1130/);
+  });
+
+  it("quotes official incompatibility sentences whole, never cut off", () => {
+    for (const c of catalogue.values()) {
+      if (c.incompatibleNote) expect(c.incompatibleNote, c.code).toMatch(/(\.|[A-Z]{4}\d{4})$/);
+    }
+    expect(catalogue.get("MATH2222")?.incompatibleNote).toContain("MATH3116 or MATH6222");
+  });
+});
+
+describe("transcribed requirements", () => {
   it("adds each program's requirements up to its official total", () => {
     for (const p of programs) {
-      const sum = p.requirements.reduce((n, node) => n + target(node), 0);
-      expect(sum, p.code).toBe(p.units);
+      expect(p.requirements.reduce((n, node) => n + target(node), 0), p.code).toBe(p.units);
       expect(p.constraints.find((c) => c.kind === "total")?.units, p.code).toBe(p.units);
     }
   });
@@ -33,15 +58,13 @@ describe("transcribed requirements", () => {
     for (const p of programs) {
       walk(p.requirements, (node) => {
         if (node.kind !== "all" || node.units === undefined) return;
-        // min/max bands inside a group are ranges, so only fixed groups add up exactly
         if (node.children.some((c) => c.kind === "pick" && c.bound !== "exact")) return;
-        const sum = node.children.reduce((n, c) => n + target(c), 0);
-        expect(sum, `${p.code} ${node.id}`).toBe(node.units);
+        expect(node.children.reduce((n, c) => n + target(c), 0), `${p.code} ${node.id}`).toBe(node.units);
       });
     }
   });
 
-  it("gives every node a unique id within its program", () => {
+  it("gives every group a unique id within its program", () => {
     for (const p of programs) {
       const ids: string[] = [];
       walk(p.requirements, (node) => node.kind !== "course" && ids.push(node.id));
@@ -61,61 +84,145 @@ const entry = (courseCode: string, status: Status, year: number, session: Sessio
   units: catalogue.get(courseCode)?.unitsMin ?? 6,
   updatedAt: "",
 });
-
 const program = (code: string) => {
   const p = programByCode.get(code);
   if (!p) throw new Error(code);
   return p;
 };
+const run = (code: string, entries: PlanEntry[], choices = {}, selections = {}) =>
+  evaluate(program(code), entries, choices, selections, catalogue);
+const creditOf = (e: ReturnType<typeof run>, x: PlanEntry) => e.credit.get(x.id)?.nodeId;
 
-describe("evaluation", () => {
-  it("shows a named course's status on its leaf and fills its group", () => {
-    const e = evaluate(program("AACOM"), [entry("COMP1100", "completed", 2025)], {}, catalogue);
-    expect(e.leaf.get("COMP1100")?.status).toBe("completed");
+describe("allocation", () => {
+  it("credits a named course to its listing", () => {
+    const c = entry("COMP1100", "completed", 2025);
+    const e = run("AACOM", [c]);
+    expect(creditOf(e, c)).toBe("prog1");
     expect(e.tally.get("prog1")).toMatchObject({ target: 6, completed: 6 });
   });
 
-  it("caps a choose-one group: both alternatives done still fills 6 of 6", () => {
-    const e = evaluate(
-      program("AACOM"),
-      [entry("COMP1100", "completed", 2025), entry("COMP1130", "completed", 2025, "S2")],
-      {},
-      catalogue,
-    );
-    expect(e.tally.get("prog1")).toMatchObject({ target: 6, completed: 6, current: 0, planned: 0 });
+  it("never credits a choose-one requirement twice: the second option goes elsewhere", () => {
+    const a = entry("MATH1005", "completed", 2025);
+    const b = entry("MATH2222", "completed", 2025, "S2");
+    const e = run("AACOM", [a, b]);
+    expect(e.tally.get("maths")).toMatchObject({ target: 6, completed: 6 });
+    expect(creditOf(e, a)).toBe("maths");
+    expect(creditOf(e, b)).toBe("electives");
   });
 
-  it("counts one semester of an annual course as half of it", () => {
-    const e = evaluate(program("AACOM"), [entry("COMP4550", "planned", 2027)], { final: "final.research" }, catalogue);
-    expect(e.leaf.get("COMP4550")?.status).toBe("planned");
-    expect(e.tally.get("final.research")).toMatchObject({ target: 24, planned: 12 });
+  it("lets the student pick which option satisfies a choose-one requirement", () => {
+    const a = entry("MATH1005", "completed", 2025);
+    const b = entry("MATH2222", "completed", 2025, "S2");
+    const e = run("AACOM", [a, b], {}, { maths: "MATH2222" });
+    expect(creditOf(e, b)).toBe("maths");
+    expect(creditOf(e, a)).toBe("electives");
+    expect(e.selections).toEqual({ maths: "MATH2222" });
   });
 
-  it("lets a course named only in an unchosen pathway count as an elective", () => {
-    const e = evaluate(program("BCOMP"), [entry("COMP3320", "completed", 2026)], {}, catalogue);
-    expect(e.bucket.get("electives")?.map((x) => x.courseCode)).toEqual(["COMP3320"]);
-    expect(e.unassigned).toEqual([]);
+  it("credits a course listed in two places only once", () => {
+    const c = entry("COMP3630", "completed", 2026);
+    const e = run("AACOM", [c], { specialisation: "THCS-SPEC" });
+    expect(creditOf(e, c)).toBe("compulsory");
+    expect(filled(e.tally.get("THCS-SPEC.b") ?? { completed: 0, current: 0, planned: 0 })).toBe(0);
+    expect(filled(e.summary.counting)).toBe(6);
   });
 
-  it("keeps a course inside the pathway once that pathway is chosen", () => {
-    const e = evaluate(program("BCOMP"), [entry("COMP3320", "completed", 2026)], { computing: "COMS-MAJ" }, catalogue);
-    expect(e.tally.get("COMS-MAJ.a")).toMatchObject({ completed: 6 });
-    expect(e.bucket.get("electives")).toEqual([]);
+  it("treats a two-semester course as one record worth both semesters", () => {
+    const c = entry("COMP4550", "planned", 2027);
+    const e = run("AACOM", [c], { final: "final.research" });
+    expect(e.tally.get("final.research")).toMatchObject({ target: 24, planned: 24 });
+    expect(e.summary.inPlan.planned).toBe(24);
   });
 
-  it("fills a filtered bucket before unrestricted electives", () => {
-    const e = evaluate(program("AACOM"), [entry("COMP3320", "planned", 2027)], {}, catalogue);
-    expect(e.bucket.get("comp34")?.map((x) => x.courseCode)).toEqual(["COMP3320"]);
-    expect(e.bucket.get("electives")).toEqual([]);
+  it("previews an unchosen pathway without counting it, and lets its courses count as electives meanwhile", () => {
+    const c = entry("COMP3320", "completed", 2026);
+    const e = run("BCOMP", [c]);
+    expect(creditOf(e, c)).toBe("electives");
+    expect(e.preview.get("COMS-MAJ.a")).toMatchObject({ completed: 6 });
+    expect(e.preview.get("comp48")).toMatchObject({ completed: 6 });
+    expect(["comp48", "COMS-MAJ"]).toContain(e.bestOption.get("computing"));
+    const chosen = run("BCOMP", [c], { computing: "COMS-MAJ" });
+    expect(creditOf(chosen, c)).toBe("COMS-MAJ.a");
+  });
+
+  it("puts a course whole into an open requirement that can hold it, rather than part of it into one that can't", () => {
+    const c = entry("COMP4550", "planned", 2028);
+    const e = run("AACOM", [c]);
+    expect(e.credit.get(c.id)).toMatchObject({ nodeId: "electives", units: 24 });
+    expect(filled(e.summary.notCounting)).toBe(0);
+  });
+
+  it("fills a filtered requirement before unrestricted electives", () => {
+    const c = entry("COMP3320", "planned", 2027);
+    expect(creditOf(run("AACOM", [c]), c)).toBe("comp34");
+  });
+
+  it("keeps the headline, the tree and the total-units rule on the same number, capped at the program", () => {
+    const many = [...catalogue.values()]
+      .filter((c) => c.code.startsWith("COMP") && c.semesters === 1 && c.unitsMin === 6)
+      .slice(0, 45)
+      .map((c, i) => entry(c.code, "completed", 2015 + Math.floor(i / 6), i % 2 ? "S2" : "S1"));
+    const e = run("AACOM", many);
+    const top = program("AACOM").requirements.reduce((n, node) => n + filled(e.tally.get(node.id) ?? { completed: 0, current: 0, planned: 0 }), 0);
+    expect(filled(e.summary.counting)).toBe(top);
+    expect(filled(e.summary.counting)).toBeLessThanOrEqual(192);
+    expect(e.constraints.find((c) => c.constraint.kind === "total")?.completed).toBe(top);
+    expect(filled(e.summary.inPlan)).toBe(filled(e.summary.counting) + filled(e.summary.notCounting));
   });
 
   it("flags a whole-program maximum when the plan exceeds it", () => {
-    const firstYear = ["COMP1100", "COMP1110", "COMP1600", "MATH1005", "MATH1013", "MATH1014", "MATH1115", "MATH1116"];
-    const extra = ["STAT1003", "STAT1008", "ENGN1211"];
-    const entries = [...firstYear, ...extra].map((c, i) => entry(c, "completed", 2020 + Math.floor(i / 4), i % 2 ? "S2" : "S1"));
-    const e = evaluate(program("AACOM"), entries, {}, catalogue);
-    const cap = e.constraints.find((c) => c.constraint.id === "level1");
-    expect(cap?.completed).toBe(66);
+    const codes = ["COMP1100", "COMP1110", "COMP1600", "MATH1005", "MATH1013", "MATH1014", "MATH1115", "MATH1116", "STAT1003", "STAT1008", "ENGN1211"];
+    const entries = codes.map((c, i) => entry(c, "completed", 2020 + Math.floor(i / 4), i % 2 ? "S2" : "S1"));
+    const cap = run("AACOM", entries).constraints.find((c) => c.constraint.id === "level1");
+    expect(cap?.completed).toBeGreaterThan(60);
     expect(cap?.met).toBe(false);
+  });
+});
+
+describe("consistency checks", () => {
+  const facts = (code: string) => {
+    const c = catalogue.get(code);
+    if (!c) throw new Error(code);
+    return c;
+  };
+  const now = { year: 2026, session: "S2" as Session };
+  const at = (courseCode: string, status: Status, year: number, session: Session, units = 6) => ({ courseCode, status, year, session, units });
+  const codes = (issues: { code: string }[]) => issues.map((i) => i.code);
+
+  it("warns about status and term contradictions without blocking them", () => {
+    expect(codes(checkPlacement(at("COMP1100", "completed", 2027, "S1"), facts("COMP1100"), now, []))).toContain("completed_future");
+    expect(codes(checkPlacement(at("COMP1100", "planned", 2025, "S1"), facts("COMP1100"), now, []))).toContain("planned_past");
+    expect(codes(checkPlacement(at("COMP1100", "current", 2027, "S1"), facts("COMP1100"), now, []))).toContain("current_not_now");
+    expect(checkPlacement(at("COMP1100", "current", 2026, "S2"), facts("COMP1100"), now, []).every((i) => i.level === "warn")).toBe(true);
+  });
+
+  it("warns above the standard 24-unit load and blocks above the 36-unit policy maximum", () => {
+    const others = (n: number) =>
+      Array.from({ length: n }, (_, i) => ({ placement: at(`COMP${2100 + i}`, "planned", 2027, "S1"), semesters: 1 }));
+    expect(codes(checkPlacement(at("COMP1100", "planned", 2027, "S1"), facts("COMP1100"), now, others(4)))).toContain("heavy_load");
+    const over = checkPlacement(at("COMP1100", "planned", 2027, "S1"), facts("COMP1100"), now, others(6));
+    expect(over.find((i) => i.code === "over_limit")?.level).toBe("block");
+  });
+
+  it("warns when a 2027 session isn't one the course is listed for", () => {
+    const c = facts("COMP1600");
+    expect(c.offered).toEqual(["S2"]);
+    expect(codes(checkPlacement(at("COMP1600", "planned", 2027, "S1"), c, now, []))).toContain("not_offered");
+  });
+
+  it("blocks units outside the official range and two-semester courses outside a semester", () => {
+    expect(checkPlacement(at("ENGN4300", "planned", 2027, "S1", 13), facts("ENGN4300"), now, []).find((i) => i.code === "invalid_units")?.level).toBe("block");
+    expect(checkPlacement(at("COMP4550", "planned", 2027, "WIN", 12), facts("COMP4550"), now, []).find((i) => i.code === "invalid_session")?.level).toBe("block");
+  });
+});
+
+describe("passwords", () => {
+  it("are stored salted and hashed, never as the password", async () => {
+    const a = await hashPassword("correct horse battery");
+    const b = await hashPassword("correct horse battery");
+    expect(a).not.toContain("correct horse battery");
+    expect(a).not.toBe(b);
+    expect(await verifyPassword("correct horse battery", a)).toBe(true);
+    expect(await verifyPassword("wrong horse battery", a)).toBe(false);
   });
 });

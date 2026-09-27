@@ -22,6 +22,27 @@
       "when": 1790498674134,
       "tag": "0002_drop_guestbook",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1790511261528,
+      "tag": "0003_reset_shared_demo_data",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1790511290430,
+      "tag": "0004_accounts_and_integrity",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1790511332107,
+      "tag": "0005_one_record_per_course",
+      "breakpoints": true
     }
   ]
 }

@@ -5,6 +5,7 @@
 import type { Evaluation } from "../lib/progress";
 import type { Program } from "../lib/requirements";
 import Meter from "./Meter.astro";
+import { filled } from "../lib/progress";
 
 interface Props {
   program: Program;
@@ -71,6 +72,12 @@ const verdict = (c: Evaluation["constraints"][number]) => {
             {c.constraint.filter?.transdisciplinary && (
               <p class="rule__caveat">
                 Counts courses whose official page lists the Transdisciplinary graduate attribute. Confirm the tag with the School.
+                {c.unknownTag > 0 && ` ${c.unknownTag} of your counted units are from courses whose page the planner hasn't read, so their tag is unknown and they aren't counted here.`}
+              </p>
+            )}
+            {c.constraint.kind === "total" && filled(evaluation.summary.notCounting) > 0 && (
+              <p class="rule__caveat">
+                {filled(evaluation.summary.notCounting)} more units in your plan don't count toward any requirement of this program.
               </p>
             )}
           </li>

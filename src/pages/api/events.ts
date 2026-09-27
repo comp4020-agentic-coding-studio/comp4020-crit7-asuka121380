@@ -1,20 +1,25 @@
 import type { APIRoute } from "astro";
 import { bus } from "../../lib/events";
 
-// Server-sent events: every write to the plan is announced here, so another
-// open tab (the tree in one, the semester plan in the other) refreshes
-// itself from the database. One-directional plain HTTP is all this needs.
-export const GET: APIRoute = () => {
-  let onPlan: (event: { client: string }) => void;
+// Server-sent events, one account at a time: a write to your plan is
+// announced only to your own open tabs, so another tab (the tree in one, the
+// semester plan in the other) refreshes itself. Nobody else's plan moves.
+export const GET: APIRoute = ({ locals }) => {
+  const user = locals.user;
+  if (!user) return new Response("Log in to receive plan updates.", { status: 401 });
+  let onPlan: (event: { user: number; client: string }) => void;
   let heartbeat: ReturnType<typeof setInterval>;
 
   const stream = new ReadableStream<string>({
     start(controller) {
-      // an opening comment so the client (and the post-deploy CI probe) sees
-      // bytes immediately, and a periodic one so proxies don't drop it idle
+      // an opening comment so the client sees bytes immediately, and a
+      // periodic one so proxies don't drop the connection as idle
       controller.enqueue(": connected\n\n");
       heartbeat = setInterval(() => controller.enqueue(": ping\n\n"), 30_000);
-      onPlan = (event) => controller.enqueue(`event: plan\ndata: ${JSON.stringify({ type: "plan", ...event })}\n\n`);
+      onPlan = (event) => {
+        if (event.user !== user.id) return;
+        controller.enqueue(`event: plan\ndata: ${JSON.stringify({ type: "plan", client: event.client })}\n\n`);
+      };
       bus.on("plan", onPlan);
     },
     cancel() {
