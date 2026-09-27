@@ -168,16 +168,22 @@ await step("13. failed requests explain themselves", async () => {
   assert.match(await A.page.textContent("[data-panel-form] [data-error]"), /Couldn't reach the server/);
   await A.ctx.setOffline(false);
   await A.page.keyboard.press("Escape");
+  // let the live-update stream reconnect before the next step
+  await A.page.goto(`${BASE}/plan/`);
 });
 
 await step("14. keyboard: Escape closes the panel and focus returns to its opener", async () => {
   await A.page.focus('[data-entry-course="MATH1005"] .entry__main');
   await A.page.keyboard.press("Enter");
   await A.page.waitForSelector("#course-panel[open]");
-  assert.equal(await A.page.evaluate(() => document.activeElement?.id), "panel-title");
+  assert.equal(await A.page.evaluate(() => document.activeElement?.id), "panel-title", "focus moves into the panel");
   await A.page.keyboard.press("Escape");
   await A.page.waitForTimeout(300);
-  assert.equal(await A.page.evaluate(() => document.activeElement?.closest("[data-entry-course]")?.dataset.entryCourse), "MATH1005");
+  assert.equal(
+    await A.page.evaluate(() => document.activeElement?.closest("[data-entry-course]")?.dataset.entryCourse),
+    "MATH1005",
+    "focus returns to the course that opened the panel",
+  );
 });
 
 await step("11. program switcher options have screen-reader names", async () => {
