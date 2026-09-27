@@ -50,3 +50,29 @@ predict one), what changed, why, and how you checked or evaluated the result.
 This is a chronological evidence log, not the final submission narrative —
 don't compress or rewrite earlier entries. It gets manually curated into the
 shorter reflective version later, separately.
+
+## Crit 7: My Degree Planner
+
+Rules from my brief for this week, held for every session on this repo:
+
+- The 2027 ANU Programs & Courses catalogue is the only source for academic
+  facts: program names, requirement wording, unit values, course codes and
+  titles, offerings, majors and specialisations. Never invent, paraphrase into
+  a rule, or "tidy" one. If a source is ambiguous or two pages disagree, keep
+  the official wording and show the disagreement rather than resolving it.
+- New facts arrive through `research/2027/` first (a plain-text extract with
+  its source URL), then get transcribed into `src/data/`. The seeded course
+  catalogue is `research/2027/courses.json` itself.
+- A requirement group's `text` is the official sentence verbatim; its `title`
+  is only a navigation label and must not assert anything the text doesn't.
+- Every course rendered anywhere links to its official 2027 course page.
+- It's a planning aid, never an audit: no copy that claims eligibility,
+  completion or graduation.
+- Course status is never colour alone: mark shape and a text label as well.
+- Stay in scope: no recommendations, prerequisite checking, timetabling,
+  GPA, real ANU sign-in or ISIS integration.
+- Every write is a plain form POST that works without JavaScript; enhanced
+  forms carry `data-astro-reload` so Astro's router leaves them to
+  `src/scripts/planner.ts`.
+- The Fly.io token lives in the environment. Never print, inspect, log or
+  commit it.

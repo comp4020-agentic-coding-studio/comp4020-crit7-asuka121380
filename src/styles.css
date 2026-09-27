@@ -1630,6 +1630,10 @@ dialog.panel::backdrop {
   .children > li + li {
     border-top: 1px solid var(--line);
   }
+  .leaf,
+  .leaf__main {
+    border-radius: 0;
+  }
   .node[data-pathway] > details {
     margin: 8px 0;
   }
