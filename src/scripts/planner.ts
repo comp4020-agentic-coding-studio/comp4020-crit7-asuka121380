@@ -135,6 +135,7 @@ function drill(details: HTMLDetailsElement | null, animate = true) {
     for (const d of $$<HTMLDetailsElement>("details[open]", tree)) d.open = false;
     crumbs.hidden = true;
     crumbs.innerHTML = "";
+    if (animate) tree.scrollIntoView({ block: "start", behavior: reduced.matches ? "auto" : "smooth" });
     return;
   }
 
@@ -218,7 +219,7 @@ function entryForm(opts: { code: string | null; entry?: Entry; status: Status; y
   const variable = !known || known.min !== known.max;
   const years = Array.from({ length: 17 }, (_, i) => 2018 + i);
   const units = entry?.units ?? known?.min ?? 6;
-  return `<form class="entry-form" method="post" action="${entry ? `/api/entries/${entry.id}` : "/api/entries"}" data-enhance data-panel-form>
+  return `<form class="entry-form" method="post" action="${entry ? `/api/entries/${entry.id}` : "/api/entries"}" data-enhance data-astro-reload data-panel-form>
     <h3 class="panel__section">${entry ? "Change this enrolment" : "Add to your plan"}</h3>
     ${entry ? '<input type="hidden" name="action" value="update">' : ""}
     ${
@@ -277,6 +278,12 @@ function renderPanel(code: string | null, opts: { editId?: number; year?: number
   } else {
     status = "planned";
     term = defaultTerm(status);
+    // an annual course with one semester planned: suggest the next one
+    const last = entries.at(-1);
+    if (last && entries.length < Number(leaf?.dataset.enrolments ?? 1)) {
+      status = last.status === "completed" ? "current" : "planned";
+      term = last.session === "S1" ? { year: last.year, session: "S2" } : { year: last.year + 1, session: "S1" };
+    }
   }
 
   const facts: string[] = [];
@@ -286,8 +293,11 @@ function renderPanel(code: string | null, opts: { editId?: number; year?: number
     if (known.tps) facts.push("<div><dt>Graduate attributes</dt><dd>Transdisciplinary</dd></div>");
   }
   if (leaf?.dataset.listed) facts.push(`<div><dt>On the program page</dt><dd>Listed as “${esc(leaf.dataset.listed)}”</dd></div>`);
-  if (Number(leaf?.dataset.enrolments) > 1)
-    facts.push(`<div><dt>This requirement</dt><dd>Completed twice, in ${esc(leaf?.dataset.enrolments)} consecutive semesters</dd></div>`);
+  const enrolments = Number(leaf?.dataset.enrolments ?? 1);
+  if (enrolments > 1)
+    facts.push(
+      `<div><dt>This requirement</dt><dd>Completed ${enrolments === 2 ? "twice" : `${enrolments} times`}, in consecutive semesters. ${entries.length} of ${enrolments} in your plan.</dd></div>`,
+    );
 
   panel.innerHTML = `
     <header class="panel__head">
@@ -313,7 +323,7 @@ function renderPanel(code: string | null, opts: { editId?: number; year?: number
                     (e) => `<li class="panel__entry${e.id === editing?.id ? " is-editing" : ""}">${MARK[e.status]}
                       <span><strong>${STATUS_LABEL[e.status]}</strong> · ${e.year} ${esc(sessionLabel(e.session))}${known && known.min === known.max ? "" : ` · ${e.units} units`}</span>
                       <button class="linkish" type="button" data-edit-entry="${e.id}">Edit</button>
-                      <form method="post" action="/api/entries/${e.id}" data-enhance data-keep-open>
+                      <form method="post" action="/api/entries/${e.id}" data-enhance data-astro-reload data-keep-open>
                         <input type="hidden" name="action" value="delete"><button class="linkish linkish--danger">Remove</button></form></li>`,
                   )
                   .join("")}</ul>`

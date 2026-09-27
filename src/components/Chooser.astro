@@ -21,7 +21,7 @@ const sorted = [...programs].sort((a, b) => order.indexOf(a.code) - order.indexO
     {
       sorted.map((p) => (
         <li class="program-card">
-          <form method="post" action="/api/profile" data-enhance>
+          <form method="post" action="/api/profile" data-enhance data-astro-reload>
             <input type="hidden" name="program" value={p.code} />
             <button class="program-card__button">
               <span class="program-card__code">{p.code}</span>

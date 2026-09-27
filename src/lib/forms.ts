@@ -58,7 +58,8 @@ function back(form: FormData, request: Request): string {
 }
 
 export async function handle(request: Request, write: (form: FormData) => unknown): Promise<Response> {
-  const form = await request.formData();
+  const form = await request.formData().catch(() => null);
+  if (!form) return new Response("expected a form submission", { status: 400 });
   const wantsJson = request.headers.get("accept")?.includes("application/json");
   try {
     const result = write(form);

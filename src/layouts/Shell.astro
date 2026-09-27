@@ -39,7 +39,7 @@ const path = Astro.url.pathname;
         </a>
         <nav class="tabs" aria-label="Views">
           <a href="/" aria-current={active === "requirements" ? "page" : undefined}>Requirements</a>
-          <a href="/plan/" aria-current={active === "plan" ? "page" : undefined}>Semester plan</a>
+          <a href="/plan/" aria-current={active === "plan" ? "page" : undefined}><span class="tabs__long">Semester plan</span><span class="tabs__short">Plan</span></a>
           <a href="/readme/" aria-current={active === "about" ? "page" : undefined}>About</a>
         </nav>
         {
@@ -52,7 +52,7 @@ const path = Astro.url.pathname;
               <div class="switcher__menu">
                 <p class="switcher__hint">Your courses stay put; they're re-read against the program you pick.</p>
                 {view.programs.map((p) => (
-                  <form method="post" action="/api/profile" data-enhance>
+                  <form method="post" action="/api/profile" data-enhance data-astro-reload>
                     <input type="hidden" name="program" value={p.code} />
                     <input type="hidden" name="return" value={path} />
                     <button class="switcher__option" aria-current={p.code === program.code ? "true" : undefined}>
@@ -76,12 +76,12 @@ const path = Astro.url.pathname;
       <div class="colophon__inner">
         <p>
           <strong>A planning aid, not an official degree audit.</strong> Program rules, course titles, unit values and
-          offerings are taken from the 2027 <a href="https://programsandcourses.anu.edu.au/" rel="noopener">ANU Programs &amp; Courses</a>
+          offerings are taken from the 2027 <a href="https://programsandcourses.anu.edu.au/" rel="noopener">ANU Programs &amp; Courses</a>{" "}
           catalogue (retrieved {retrieved}). Check your enrolment with the University before relying on it.
         </p>
         {
           view && (view.program || view.entries.length > 0) && (
-            <form method="post" action="/api/reset" data-enhance data-confirm="Clear your program, courses and pathway choices?">
+            <form method="post" action="/api/reset" data-enhance data-astro-reload data-confirm="Clear your program, courses and pathway choices?">
               <input type="hidden" name="return" value="/" />
               <button class="btn btn--quiet">Reset my plan</button>
             </form>

@@ -117,6 +117,10 @@ button {
   color: inherit;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -181,6 +185,7 @@ button {
 }
 .tabs a {
   position: relative;
+  white-space: nowrap;
   padding: 8px 12px;
   font-size: 0.92rem;
   color: var(--ink-3);
@@ -200,11 +205,15 @@ button {
   position: absolute;
   left: 12px;
   right: 12px;
-  bottom: -11px;
+  bottom: -12px;
   height: 2px;
   border-radius: 2px;
   background: var(--gold);
   view-transition-name: tab-indicator;
+}
+
+.tabs__short {
+  display: none;
 }
 
 .switcher {
@@ -677,6 +686,10 @@ form[aria-busy="true"] .btn {
 
 /* ---------- the tree ---------- */
 
+[data-tree] {
+  scroll-margin-top: 120px;
+}
+
 .tree,
 .children {
   list-style: none;
@@ -942,6 +955,11 @@ details[open] > summary > .group__chevron {
   border-style: dashed;
   border-color: color-mix(in oklab, var(--st-planned) 55%, var(--surface));
   background: color-mix(in oklab, var(--st-planned) 7%, var(--surface));
+}
+.state--gap {
+  border-style: dashed;
+  color: var(--ink-3);
+  background: none;
 }
 .leaf__link {
   flex: none;
@@ -1330,6 +1348,7 @@ dialog.panel::backdrop {
 }
 .field__hint {
   margin: 0;
+  min-height: 1.5em;
   font-size: 0.8rem;
   color: var(--ink-3);
 }
@@ -1548,6 +1567,12 @@ dialog.panel::backdrop {
   .tabs a {
     padding: 8px;
     font-size: 0.86rem;
+  }
+  .tabs__long {
+    display: none;
+  }
+  .tabs__short {
+    display: inline;
   }
   .tabs a[aria-current="page"]::after {
     left: 8px;

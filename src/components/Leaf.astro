@@ -36,8 +36,9 @@ const units = target ?? course?.unitsMin;
       {listedAs && <span class="leaf__listed">Listed as “{listedAs}”</span>}
     </span>
     <span class="leaf__meta">
-      {units !== undefined && <span class="leaf__units">{units} u</span>}
-      {enrolments && enrolments > 1 && <span class="leaf__annual">×{enrolments} semesters</span>}
+      {units !== undefined && (
+        <span class="leaf__units">{enrolments && enrolments > 1 ? `${units / enrolments} units × ${enrolments}` : `${units} units`}</span>
+      )}
     </span>
     <span class="leaf__state">
       {entries.length === 0 ? (
@@ -48,6 +49,9 @@ const units = target ?? course?.unitsMin;
             <span class="state__label">{STATUS_LABEL[e.status]}</span> · {termShort(e.year, e.session)}
           </span>
         ))
+      )}
+      {enrolments && enrolments > 1 && entries.length > 0 && entries.length < enrolments && (
+        <span class="state state--gap">{entries.length} of {enrolments} semesters in your plan</span>
       )}
     </span>
   </button>

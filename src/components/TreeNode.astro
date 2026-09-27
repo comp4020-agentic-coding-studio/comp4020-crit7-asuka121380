@@ -6,7 +6,7 @@ import type { OneNode, ReqNode } from "../lib/requirements";
 import type { Evaluation } from "../lib/progress";
 import { courseTarget, filled } from "../lib/progress";
 import type { Course } from "../lib/schema";
-import { RELATION_LABEL, relation, ruleLine } from "../lib/describe";
+import { relation, ruleLine } from "../lib/describe";
 import Leaf from "./Leaf.astro";
 import Meter from "./Meter.astro";
 import RelGlyph from "./RelGlyph.astro";
@@ -23,6 +23,7 @@ const { node, evaluation, catalogue, choices, pathwayOf } = Astro.props;
 const Self = Astro.self;
 
 const rel = relation(node);
+const [lead, rest] = ruleLine(node, catalogue);
 const tally = node.kind === "course" ? undefined : evaluation.tally.get(node.id);
 const chosenId = pathwayOf ? choices[pathwayOf.id] : undefined;
 const isChosen = pathwayOf && chosenId === node.id;
@@ -56,9 +57,9 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
               {isBest && <span class="badge">Closest match so far</span>}
             </span>
             <span class="group__rule">
-              <span class="group__rel">{RELATION_LABEL[rel]}</span>
-              <span aria-hidden="true"> · </span>
-              {ruleLine(node, catalogue)}
+              <span class="group__rel">{lead}</span>
+              {rest && <span aria-hidden="true"> · </span>}
+              {rest}
               {node.kind === "one" && (
                 <span class="group__choice">
                   <span aria-hidden="true"> · </span>
@@ -100,7 +101,7 @@ const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === cho
               </ul>
             )}
             {pathwayOf && (
-              <form class="choose" method="post" action="/api/choices" data-enhance>
+              <form class="choose" method="post" action="/api/choices" data-enhance data-astro-reload>
                 <input type="hidden" name="node" value={pathwayOf.id} />
                 <input type="hidden" name="option" value={isChosen ? "" : node.id} />
                 <button class={isChosen ? "btn btn--quiet" : "btn"}>{isChosen ? "Clear this choice" : "Choose this pathway"}</button>

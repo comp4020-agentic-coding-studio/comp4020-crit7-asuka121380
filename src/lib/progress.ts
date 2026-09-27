@@ -55,8 +55,9 @@ export function evaluate(
   const byCode = new Map<string, PlanEntry[]>();
   for (const e of entries) byCode.set(e.courseCode, [...(byCode.get(e.courseCode) ?? []), e]);
 
-  // Courses named anywhere still in play are "claimed" by that listing and
-  // never leak into an open bucket.
+  // Courses named in an active part of the tree are "claimed" by that
+  // listing and never leak into an open bucket. A course named only inside a
+  // pathway nobody has chosen stays free, so it still counts somewhere.
   const claimed = new Set<string>();
   const buckets: OpenNode[] = [];
   const countsToward = new Map<number, string[]>();
@@ -70,8 +71,9 @@ export function evaluate(
   const scan = (nodes: ReqNode[], label: string, active: boolean) => {
     for (const node of nodes) {
       if (node.kind === "course") {
+        if (!active) continue;
         claimed.add(node.code);
-        if (active) credit(node.code, label);
+        credit(node.code, label);
       } else if (node.kind === "open") {
         if (active) buckets.push(node);
       } else if (node.kind === "one") {

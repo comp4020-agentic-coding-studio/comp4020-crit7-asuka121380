@@ -92,7 +92,7 @@ for (const e of entries) totals[e.status] += e.units;
                               <StatusMark status={e.status} />
                               <span class="entry__code">{e.courseCode}</span>
                               <span class="entry__title">{course?.title ?? "Not in the planner's catalogue"}</span>
-                              <span class="entry__units">{e.units} u</span>
+                              <span class="entry__units">{e.units} units</span>
                               <span class="entry__status">{STATUS_LABEL[e.status]}</span>
                               {program && (
                                 <span class={`entry__toward${toward ? "" : " entry__toward--none"}`}>
