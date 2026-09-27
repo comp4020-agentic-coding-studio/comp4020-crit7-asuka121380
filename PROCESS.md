@@ -122,7 +122,77 @@ collects what only showed up by using the app in Chromium, at 1360px and at
 arithmetic from the research step into a check: every named course exists in
 the catalogue, and every program and fixed group adds up to its official units.
 
-### Checked by
+### Reliability pass: private accounts, one record per course, one calculation
+
+A second brief reported the deployed prototype's failures. Every visitor
+shared one plan; courses could be added twice; Remove did nothing; Edit said
+"Something went wrong"; both options of a choose-one list counted; the headline
+(114 units) disagreed with the tree; and COMP0721, which doesn't exist, was
+accepted with an official link to a 404. Each was reproduced before anything
+changed.
+
+**Findings first.**
+
+- **Deployed data:** `/api/state` showed 19 records, 16 distinct courses and
+  114 units, all owned by one anonymous user.
+- **Edit and Remove:** both panel forms had a hidden input named `action`,
+  which shadows the DOM's `form.action`. So `fetch(form.action)` requested
+  `[object HTMLInputElement]`, got a 404 page, and failed to parse it as JSON.
+  The Remove form had nowhere to show that error, so it failed silently. The
+  earlier HTTP tests called the API directly and never exercised these client
+  forms, which is why they missed it.
+
+[`d9fdbae`](https://github.com/comp4020-agentic-coding-studio/comp4020-crit7-asuka121380/commit/d9fdbae) adds the official evidence this pass relies on:
+
+- **The full course list:** all 1,523 2027 undergraduate courses, from the JSON
+  behind the catalogue's own search, so a plan can hold any real course and
+  nothing else.
+- **Course-page detail:** each program course's official requisite and
+  incompatibility text, and the sentence saying whether it runs over two
+  consecutive semesters.
+- **Load limits:** the ANU study load policy clauses behind the 24-unit warning
+  (clause 12) and the 36-unit limit (clause 20).
+
+[`0a0a925`](https://github.com/comp4020-agentic-coding-studio/comp4020-crit7-asuka121380/commit/0a0a925) is the change itself:
+
+- **Accounts.** My Degree Planner's own username and password: scrypt hashes,
+  and an HttpOnly session cookie whose token is stored only as a SHA-256.
+  Middleware resolves the user from that session alone. Every function in
+  `db.ts` takes that user's id, and live events are filtered to the account.
+  Migration `0003` clears the shared anonymous data, which can't be attributed
+  to anyone. That migration trail was run against a copy of production-shaped
+  data before deploying: the old build recreated its duplicates and COMP0721,
+  and the new build booted on it cleanly.
+- **Integrity.** `UNIQUE(user_id, course_code)`, plus a foreign key to the
+  verified catalogue. A two-semester course is one record that appears in both
+  semesters. Official incompatibilities (COMP1100 and COMP1130) are refused with
+  the page's own sentence. Each failure has its own status and code.
+- **One calculation.** `progress.ts` now allocates credit. Each record credits
+  at most one requirement, within every enclosing unit cap. A choose-one list
+  credits one option, and the student can pick which. The headline, tree, rules
+  and semester plan all read that one result. A screenshot during verification
+  caught a 24-unit course being partly squeezed into an 18-unit requirement;
+  courses now go whole into the first requirement that can hold them.
+- **Client.** The `action` field is renamed to `op`, and the URL is read with
+  `getAttribute`. Also new:
+  - double submits are prevented
+  - server messages are shown in place
+  - "Move it here" for a duplicate, and Undo after Remove
+  - focus returns to what opened the panel
+  - the program switcher has accessible names
+  - `checks.ts` drives live warnings in the panel with the same rules the
+    server enforces
+
+  Browser testing found one more real bug: blurring the course-code field
+  re-rendered the hint area and replaced "Move it" mid-click. The hint now
+  re-renders only when its content changes.
+
+Checked by: `pnpm check` (89 tests, including account isolation, ownership,
+duplicate and incompatibility refusal, each error code, choose-one credit, and
+the headline agreeing with the total rule), and `pnpm e2e`, which drove the 15
+required scenarios through a real browser, all passing.
+
+### Checked by (first build)
 
 - `pnpm check`: 57 tests. Invariants on `/`, `/plan/` and `/readme/`, the
   README served in full, the contract above, the transcription arithmetic, the
