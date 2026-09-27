@@ -1,0 +1,24 @@
+---
+// A three-state progress track: completed, studying now, planned, out of a
+// target. Segments are separated by a surface gap; planned is hatched, so
+// the track still reads without colour.
+import type { Tally } from "../lib/progress";
+interface Props {
+  tally: Tally;
+  id?: string;
+  size?: "sm" | "md";
+}
+const { tally, id, size = "sm" } = Astro.props;
+const pct = (n: number) => (tally.target > 0 ? (n / tally.target) * 100 : 0);
+const rest = tally.target - tally.completed - tally.current - tally.planned;
+const segments = (["completed", "current", "planned"] as const).filter((s) => tally[s] > 0);
+const summary = `${tally.completed + tally.current + tally.planned} of ${tally.target} units: ${tally.completed} completed, ${tally.current} studying now, ${tally.planned} planned`;
+---
+
+<span class={`meter meter--${size}`} data-meter={id} title={summary}>
+  <span class="meter__track" aria-hidden="true">
+    {segments.map((s) => <span class={`meter__seg meter__seg--${s}`} data-seg={s} style={`flex-basis:${pct(tally[s])}%`} />)}
+    {rest > 0 && <span class="meter__rest" />}
+  </span>
+  <span class="visually-hidden">{summary}</span>
+</span>

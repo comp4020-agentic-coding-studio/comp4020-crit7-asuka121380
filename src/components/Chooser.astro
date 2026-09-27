@@ -1,0 +1,43 @@
+---
+import type { Program } from "../lib/requirements";
+interface Props {
+  programs: Program[];
+}
+const { programs } = Astro.props;
+const order = ["BCOMP", "AACOM", "AACRD", "AENSE"];
+const sorted = [...programs].sort((a, b) => order.indexOf(a.code) - order.indexOf(b.code));
+---
+
+<section class="chooser">
+  <div class="chooser__intro">
+    <p class="eyebrow">ANU Computing · 2027 requirements</p>
+    <h1>See your degree as a structure, not a wall of text</h1>
+    <p class="lede">
+      Pick your program. Its official requirements open up one level at a time, and every course you've done, are doing
+      or plan to do shows up where it counts.
+    </p>
+  </div>
+  <ul class="chooser__list" role="list">
+    {
+      sorted.map((p) => (
+        <li class="program-card">
+          <form method="post" action="/api/profile" data-enhance>
+            <input type="hidden" name="program" value={p.code} />
+            <button class="program-card__button">
+              <span class="program-card__code">{p.code}</span>
+              <span class="program-card__name">{p.name}</span>
+              <span class="program-card__facts">
+                {p.units} units · {p.duration}
+              </span>
+              <span class="program-card__summary">{p.summary}</span>
+              <span class="program-card__cta">Plan this degree →</span>
+            </button>
+          </form>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="chooser__note">
+    Combined and double degrees aren't modelled. This prototype covers four standalone Computing programs.
+  </p>
+</section>

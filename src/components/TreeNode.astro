@@ -1,0 +1,140 @@
+---
+// One requirement node, rendered recursively. Groups are <details> so the
+// hierarchy works (and stays accessible) before any script runs; the client
+// script adds the animated expansion and the mobile drill-down.
+import type { OneNode, ReqNode } from "../lib/requirements";
+import type { Evaluation } from "../lib/progress";
+import { courseTarget, filled } from "../lib/progress";
+import type { Course } from "../lib/schema";
+import { RELATION_LABEL, relation, ruleLine } from "../lib/describe";
+import Leaf from "./Leaf.astro";
+import Meter from "./Meter.astro";
+import RelGlyph from "./RelGlyph.astro";
+
+interface Props {
+  node: ReqNode;
+  evaluation: Evaluation;
+  catalogue: Map<string, Course>;
+  choices: Record<string, string>;
+  // set when this node is a pathway inside a "one of" requirement
+  pathwayOf?: OneNode;
+}
+const { node, evaluation, catalogue, choices, pathwayOf } = Astro.props;
+const Self = Astro.self;
+
+const rel = relation(node);
+const tally = node.kind === "course" ? undefined : evaluation.tally.get(node.id);
+const chosenId = pathwayOf ? choices[pathwayOf.id] : undefined;
+const isChosen = pathwayOf && chosenId === node.id;
+const isMuted = pathwayOf && chosenId && chosenId !== node.id;
+const isBest = pathwayOf && !chosenId && evaluation.bestOption.get(pathwayOf.id) === node.id;
+const chosenOption = node.kind === "one" ? node.options.find((o) => o.id === choices[node.id]) : undefined;
+---
+
+{
+  node.kind === "course" ? (
+    <Leaf
+      code={node.code}
+      course={catalogue.get(node.code)}
+      status={evaluation.leaf.get(node.code)?.status ?? "none"}
+      entries={evaluation.leaf.get(node.code)?.entries ?? []}
+      listedAs={node.listedAs}
+      enrolments={node.enrolments}
+      target={courseTarget(node, catalogue)}
+    />
+  ) : (
+    <li class={`node node--${rel}`} data-rel={rel} data-pathway={pathwayOf ? (isChosen ? "chosen" : isMuted ? "muted" : "open") : undefined}>
+      <details data-node={node.id} class="group">
+        <summary class="group__head">
+          <span class="group__glyph">
+            <RelGlyph rel={rel} />
+          </span>
+          <span class="group__titles">
+            <span class="group__title">
+              {node.title}
+              {isChosen && <span class="badge badge--chosen">Your pathway</span>}
+              {isBest && <span class="badge">Closest match so far</span>}
+            </span>
+            <span class="group__rule">
+              <span class="group__rel">{RELATION_LABEL[rel]}</span>
+              <span aria-hidden="true"> · </span>
+              {ruleLine(node, catalogue)}
+              {node.kind === "one" && (
+                <span class="group__choice">
+                  <span aria-hidden="true"> · </span>
+                  {chosenOption ? chosenOption.title : "no pathway chosen"}
+                </span>
+              )}
+            </span>
+          </span>
+          {tally && (
+            <span class="group__progress">
+              <Meter tally={tally} id={node.id} />
+              <span class="group__fraction">
+                {filled(tally)}
+                <span class="group__of">/{tally.target}</span>
+              </span>
+            </span>
+          )}
+          <svg class="group__chevron" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="m6 3.5 4.5 4.5L6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </summary>
+
+        <div class="group__body">
+          <div class="group__intro">
+            <p class="official">
+              <span class="official__label">Official wording</span>
+              {node.text}
+            </p>
+            {node.kind === "all" && node.link && (
+              <a class="official-link" href={node.link.url} target="_blank" rel="noopener">
+                {node.link.label} on Programs &amp; Courses<span class="visually-hidden"> (opens in a new tab)</span> ↗
+              </a>
+            )}
+            {node.notes && node.notes.length > 0 && (
+              <ul class="notes">
+                {node.notes.map((n) => (
+                  <li>{n}</li>
+                ))}
+              </ul>
+            )}
+            {pathwayOf && (
+              <form class="choose" method="post" action="/api/choices" data-enhance>
+                <input type="hidden" name="node" value={pathwayOf.id} />
+                <input type="hidden" name="option" value={isChosen ? "" : node.id} />
+                <button class={isChosen ? "btn btn--quiet" : "btn"}>{isChosen ? "Clear this choice" : "Choose this pathway"}</button>
+              </form>
+            )}
+          </div>
+
+          {node.kind === "open" ? (
+            <div class="bucket">
+              {(evaluation.bucket.get(node.id) ?? []).length > 0 ? (
+                <ol class="children" role="list" data-rel="open">
+                  {(evaluation.bucket.get(node.id) ?? []).map((e) => (
+                    <Leaf code={e.courseCode} course={catalogue.get(e.courseCode)} status={e.status} entries={[e]} target={e.units} />
+                  ))}
+                </ol>
+              ) : (
+                <p class="bucket__empty">
+                  Nothing placed here yet. Courses you add to your semester plan that aren't named elsewhere in this program fill
+                  open requirements like this one.
+                </p>
+              )}
+              <button class="btn btn--quiet" type="button" data-add-course>
+                Add a course
+              </button>
+            </div>
+          ) : (
+            <ol class="children" role="list" data-rel={rel}>
+              {node.kind === "one"
+                ? node.options.map((option) => <Self node={option} evaluation={evaluation} catalogue={catalogue} choices={choices} pathwayOf={node} />)
+                : node.children.map((child) => <Self node={child} evaluation={evaluation} catalogue={catalogue} choices={choices} />)}
+            </ol>
+          )}
+        </div>
+      </details>
+    </li>
+  )
+}

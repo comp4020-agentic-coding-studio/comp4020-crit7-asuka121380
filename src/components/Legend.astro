@@ -1,0 +1,49 @@
+---
+import type { Relation } from "../lib/describe";
+import { RELATION_LABEL } from "../lib/describe";
+import RelGlyph from "./RelGlyph.astro";
+import StatusMark from "./StatusMark.astro";
+
+const relations: [Relation, string][] = [
+  ["all", "every item is required"],
+  ["choose", "pick courses adding up to the units shown"],
+  ["min", "at least this many units from the list"],
+  ["max", "optional, capped at this many units"],
+  ["one", "choose one pathway; the others drop away"],
+  ["open", "any courses matching the rule"],
+];
+---
+
+<details class="legend">
+  <summary>How to read the tree</summary>
+  <div class="legend__grid">
+    <ul class="legend__list" role="list" aria-label="Your course status">
+      <li><StatusMark status="completed" /> Completed</li>
+      <li><StatusMark status="current" /> Studying now</li>
+      <li><StatusMark status="planned" /> Planned</li>
+      <li><StatusMark status="none" /> Not in your plan</li>
+    </ul>
+    <ul class="legend__list" role="list" aria-label="How requirements relate">
+      {
+        relations.map(([rel, text]) => (
+          <li>
+            <RelGlyph rel={rel} />
+            <span>
+              <strong>{RELATION_LABEL[rel]}</strong>: {text}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="legend__track">
+      <span class="meter meter--sm" aria-hidden="true"
+        ><span class="meter__track"
+          ><span class="meter__seg meter__seg--completed" style="width:40%"></span><span
+            class="meter__seg meter__seg--current"
+            style="width:20%"></span><span class="meter__seg meter__seg--planned" style="width:25%"></span></span
+        ></span
+      >
+      Bars fill with completed, current and planned (hatched) units against what each requirement needs.
+    </p>
+  </div>
+</details>

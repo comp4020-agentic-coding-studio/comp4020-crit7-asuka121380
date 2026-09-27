@@ -1,0 +1,107 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
+import { retrieved } from "../data/catalogue";
+import type { PlannerView } from "../lib/view";
+import { clientData } from "../lib/view";
+import "../styles.css";
+
+interface Props {
+  title: string;
+  view?: PlannerView;
+  active?: "requirements" | "plan" | "about";
+}
+const { title, view, active } = Astro.props;
+const program = view?.program;
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Plan an ANU Computing degree against its official 2027 program requirements." />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <Font cssVariable="--font-sans" preload />
+    <Font cssVariable="--font-serif" />
+    <Font cssVariable="--font-mono" />
+    <ClientRouter fallback="none" />
+  </head>
+  <body data-page={active}>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="masthead__inner">
+        <a class="wordmark" href="/">
+          <span class="wordmark__mark" aria-hidden="true"></span>
+          <span class="wordmark__text">My Degree Planner</span>
+        </a>
+        <nav class="tabs" aria-label="Views">
+          <a href="/" aria-current={active === "requirements" ? "page" : undefined}>Requirements</a>
+          <a href="/plan/" aria-current={active === "plan" ? "page" : undefined}>Semester plan</a>
+          <a href="/readme/" aria-current={active === "about" ? "page" : undefined}>About</a>
+        </nav>
+        {
+          view && program && (
+            <details class="switcher">
+              <summary>
+                <span class="switcher__label">Program</span>
+                <span class="switcher__code">{program.code}</span>
+              </summary>
+              <div class="switcher__menu">
+                <p class="switcher__hint">Your courses stay put; they're re-read against the program you pick.</p>
+                {view.programs.map((p) => (
+                  <form method="post" action="/api/profile" data-enhance>
+                    <input type="hidden" name="program" value={p.code} />
+                    <input type="hidden" name="return" value={path} />
+                    <button class="switcher__option" aria-current={p.code === program.code ? "true" : undefined}>
+                      <span class="switcher__option-code">{p.code}</span>
+                      <span>{p.name}</span>
+                    </button>
+                  </form>
+                ))}
+              </div>
+            </details>
+          )
+        }
+      </div>
+    </header>
+
+    <main id="main" data-program={program?.code} transition:animate="fade">
+      <slot />
+    </main>
+
+    <footer class="colophon">
+      <div class="colophon__inner">
+        <p>
+          <strong>A planning aid, not an official degree audit.</strong> Program rules, course titles, unit values and
+          offerings are taken from the 2027 <a href="https://programsandcourses.anu.edu.au/" rel="noopener">ANU Programs &amp; Courses</a>
+          catalogue (retrieved {retrieved}). Check your enrolment with the University before relying on it.
+        </p>
+        {
+          view && (view.program || view.entries.length > 0) && (
+            <form method="post" action="/api/reset" data-enhance data-confirm="Clear your program, courses and pathway choices?">
+              <input type="hidden" name="return" value="/" />
+              <button class="btn btn--quiet">Reset my plan</button>
+            </form>
+          )
+        }
+      </div>
+    </footer>
+
+    {
+      view && (
+        <>
+          <dialog class="panel" id="course-panel" aria-labelledby="panel-title">
+            <div class="panel__inner" data-panel />
+          </dialog>
+          <script type="application/json" id="planner-data" set:html={JSON.stringify(clientData(view)).replace(/</g, "\\u003c")} />
+        </>
+      )
+    }
+    <script>
+      import "../scripts/planner";
+    </script>
+  </body>
+</html>

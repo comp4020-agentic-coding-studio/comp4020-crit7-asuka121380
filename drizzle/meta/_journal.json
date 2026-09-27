@@ -8,6 +8,20 @@
       "when": 1784173013185,
       "tag": "0000_dry_captain_flint",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1790498673452,
+      "tag": "0001_degree_planner",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790498674134,
+      "tag": "0002_drop_guestbook",
+      "breakpoints": true
     }
   ]
 }

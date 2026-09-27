@@ -1,0 +1,27 @@
+---
+// Status is carried by shape as well as colour: filled + tick, half-filled,
+// dashed ring, faint ring.
+import type { LeafStatus } from "../lib/progress";
+interface Props {
+  status: LeafStatus;
+  size?: number;
+}
+const { status, size = 16 } = Astro.props;
+---
+
+<svg class={`mark mark--${status}`} width={size} height={size} viewBox="0 0 16 16" aria-hidden="true">
+  {status === "completed" && (
+    <>
+      <circle cx="8" cy="8" r="7" fill="currentColor" />
+      <path d="M4.8 8.3 7 10.4 11.2 5.9" fill="none" stroke="var(--surface)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </>
+  )}
+  {status === "current" && (
+    <>
+      <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <path d="M8 1.8a6.2 6.2 0 0 0 0 12.4z" fill="currentColor" />
+    </>
+  )}
+  {status === "planned" && <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.6 1.9" />}
+  {status === "none" && <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.2" />}
+</svg>

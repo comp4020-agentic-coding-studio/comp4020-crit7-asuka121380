@@ -1,0 +1,35 @@
+---
+// The visual grammar for how a group's children relate. Shown with a text
+// label everywhere it matters; the glyph is the at-a-glance cue.
+import type { Relation } from "../lib/describe";
+interface Props {
+  rel: Relation;
+}
+const { rel } = Astro.props;
+---
+
+<svg class={`glyph glyph--${rel}`} width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+  {rel === "all" && (
+    <g fill="currentColor">
+      <rect x="4" y="4.5" width="12" height="2.4" rx="1.2" />
+      <rect x="4" y="8.8" width="12" height="2.4" rx="1.2" />
+      <rect x="4" y="13.1" width="12" height="2.4" rx="1.2" />
+    </g>
+  )}
+  {(rel === "choose" || rel === "min" || rel === "max") && (
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M10 3.2 16.8 10 10 16.8 3.2 10z" />
+      {rel === "choose" && <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" />}
+      {rel === "min" && <path d="M10 7.3v5.4M7.3 10h5.4" stroke-linecap="round" />}
+      {rel === "max" && <path d="M7.3 10h5.4" stroke-linecap="round" />}
+    </g>
+  )}
+  {rel === "one" && (
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M10 17V11M10 11 5 5.5M10 11l5-5.5" />
+      <circle cx="5" cy="4.5" r="1.6" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="4.5" r="1.6" fill="currentColor" stroke="none" />
+    </g>
+  )}
+  {rel === "open" && <circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.4 2.4" stroke-linecap="round" />}
+</svg>

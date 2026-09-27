@@ -1,0 +1,65 @@
+---
+// One course in the tree. The row opens the course panel (status, term,
+// official details); the arrow is always a direct link to the official page.
+import { courseUrl } from "../data/catalogue";
+import type { Course, PlanEntry } from "../lib/schema";
+import type { LeafStatus } from "../lib/progress";
+import { STATUS_LABEL, termShort } from "../lib/terms";
+import StatusMark from "./StatusMark.astro";
+
+interface Props {
+  code: string;
+  course?: Course;
+  status: LeafStatus;
+  entries: PlanEntry[];
+  listedAs?: string;
+  enrolments?: number;
+  target?: number;
+}
+const { code, course, status, entries, listedAs, enrolments, target } = Astro.props;
+const title = course?.title ?? "Not in the planner's catalogue";
+const units = target ?? course?.unitsMin;
+---
+
+<li
+  class="leaf"
+  data-course={code}
+  data-status={status}
+  data-listed={listedAs}
+  data-enrolments={enrolments}
+>
+  <button class="leaf__main" type="button" data-open-course={code} aria-haspopup="dialog">
+    <StatusMark status={status} />
+    <span class="leaf__code">{code}</span>
+    <span class="leaf__title">
+      {title}
+      {listedAs && <span class="leaf__listed">Listed as “{listedAs}”</span>}
+    </span>
+    <span class="leaf__meta">
+      {units !== undefined && <span class="leaf__units">{units} u</span>}
+      {enrolments && enrolments > 1 && <span class="leaf__annual">×{enrolments} semesters</span>}
+    </span>
+    <span class="leaf__state">
+      {entries.length === 0 ? (
+        <span class="state state--none">{STATUS_LABEL.none}</span>
+      ) : (
+        entries.map((e) => (
+          <span class={`state state--${e.status}`}>
+            <span class="state__label">{STATUS_LABEL[e.status]}</span> · {termShort(e.year, e.session)}
+          </span>
+        ))
+      )}
+    </span>
+  </button>
+  <a
+    class="leaf__link"
+    href={courseUrl(code)}
+    target="_blank"
+    rel="noopener"
+    aria-label={`${code} on ANU Programs and Courses (opens in a new tab)`}
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M6 3.5h6.5V10M12.2 3.8 4 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+</li>

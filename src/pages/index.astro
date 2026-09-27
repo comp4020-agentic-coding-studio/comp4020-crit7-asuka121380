@@ -1,53 +1,85 @@
 ---
-import { listMessages } from "../lib/db";
-import "../styles.css";
+import Chooser from "../components/Chooser.astro";
+import Constraints from "../components/Constraints.astro";
+import Legend from "../components/Legend.astro";
+import Meter from "../components/Meter.astro";
+import TreeNode from "../components/TreeNode.astro";
+import Shell from "../layouts/Shell.astro";
+import { loadView } from "../lib/view";
 
-const messages = listMessages();
+const view = loadView();
+const { program, evaluation, catalogue, choices } = view;
+const total = evaluation?.constraints.find((c) => c.constraint.kind === "total");
 ---
 
-<!doctype html>
-<html lang="en-AU">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>COMP4020 prototype</title>
-  </head>
-  <body>
-    <nav aria-label="site">
-      <a href="/">Guestbook</a>
-      <a href="/readme/">About</a>
-    </nav>
-    <main>
-      <h1>Guestbook</h1>
-      <p>
-        A minimal full-stack starter: messages live in SQLite on the machine's
-        volume (state survives a reload and a redeploy), and new messages
-        appear in every open tab over a server-sent-events stream — open this
-        page twice and sign it in one. Replace all of this with your own
-        prototype.
-      </p>
-      <form method="post" action="/api/messages">
-        <label for="body">Leave a message</label>
-        <input id="body" name="body" required maxlength="500" />
-        <button>Sign</button>
-      </form>
-      <ul id="messages">
-        {messages.map((message) => <li>{message.body}</li>)}
-      </ul>
-    </main>
-    <script>
-      // The live half of the demo: subscribe to the SSE stream and prepend
-      // messages as they arrive. The form itself needs none of this — its
-      // POST + redirect re-renders the submitting tab from SQLite; this
-      // stream is how every other tab finds out.
-      const list = document.querySelector("#messages");
-      const source = new EventSource("/api/events");
-      source.addEventListener("message", (event) => {
-        const message = JSON.parse(event.data);
-        const item = document.createElement("li");
-        item.textContent = message.body;
-        list?.prepend(item);
-      });
-    </script>
-  </body>
-</html>
+<Shell title={program ? `${program.code} requirements · My Degree Planner` : "My Degree Planner"} view={view} active="requirements">
+  {
+    !program || !evaluation ? (
+      <Chooser programs={view.programs} />
+    ) : (
+      <div class="requirements">
+        <section class="hero">
+          <p class="eyebrow">
+            {program.code} · {program.year} requirements · {program.duration}
+          </p>
+          <h1 data-selected-program>{program.name}</h1>
+          <p class="lede">{program.summary}</p>
+          <div class="hero__stats">
+            {total && (
+              <p class="hero__total">
+                <span class="hero__figure">{total.completed + total.current + total.planned}</span>
+                <span class="hero__of">of {program.units} units in your plan</span>
+              </p>
+            )}
+            {total && (
+              <Meter
+                tally={{
+                  target: program.units,
+                  completed: Math.min(total.completed, program.units),
+                  current: Math.min(total.current, Math.max(0, program.units - total.completed)),
+                  planned: Math.min(total.planned, Math.max(0, program.units - total.completed - total.current)),
+                }}
+                id="hero"
+                size="md"
+              />
+            )}
+            <p class="hero__breakdown">
+              <span class="key key--completed">{total?.completed ?? 0} completed</span>
+              <span class="key key--current">{total?.current ?? 0} studying now</span>
+              <span class="key key--planned">{total?.planned ?? 0} planned</span>
+            </p>
+          </div>
+          <a class="official-link" href={program.url} target="_blank" rel="noopener">
+            Official program page<span class="visually-hidden"> (opens in a new tab)</span> ↗
+          </a>
+        </section>
+
+        <div class="requirements__grid">
+          <section class="tree-panel" aria-labelledby="tree-title">
+            <div class="tree-panel__head">
+              <h2 id="tree-title" class="section-title">Program requirements</h2>
+              <div class="tree-tools">
+                <button class="btn btn--quiet" type="button" data-reveal-mine>
+                  Show my courses
+                </button>
+                <button class="btn btn--quiet" type="button" data-collapse-all>
+                  Collapse all
+                </button>
+              </div>
+            </div>
+            <Legend />
+            <nav class="crumbs" aria-label="Position in the requirements" data-crumbs hidden />
+            <ol class="tree" role="list" data-tree>
+              {program.requirements.map((node) => (
+                <TreeNode node={node} evaluation={evaluation} catalogue={catalogue} choices={choices} />
+              ))}
+            </ol>
+          </section>
+          <aside class="side">
+            <Constraints program={program} evaluation={evaluation} />
+          </aside>
+        </div>
+      </div>
+    )
+  }
+</Shell>

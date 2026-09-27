@@ -1,0 +1,100 @@
+---
+// Whole-program rules that don't belong to any one branch of the tree:
+// total units, level caps and floors, Transdisciplinary units. Each tile
+// quotes the official rule and measures every entry in the plan against it.
+import type { Evaluation } from "../lib/progress";
+import type { Program } from "../lib/requirements";
+import Meter from "./Meter.astro";
+
+interface Props {
+  program: Program;
+  evaluation: Evaluation;
+}
+const { program, evaluation } = Astro.props;
+
+const verdict = (c: Evaluation["constraints"][number]) => {
+  const total = c.completed + c.current + c.planned;
+  if (c.constraint.kind === "max") {
+    return c.met
+      ? { tone: "ok", text: `${c.constraint.units - total} units of room left` }
+      : { tone: "warn", text: `${total - c.constraint.units} units over the maximum` };
+  }
+  return c.met ? { tone: "ok", text: "Covered by your plan" } : { tone: "todo", text: `${c.constraint.units - total} units still to plan` };
+};
+---
+
+<section class="rules" data-constraints aria-labelledby="rules-title">
+  <h2 id="rules-title" class="section-title">Whole-program rules</h2>
+  <ul class="rules__list" role="list">
+    {
+      evaluation.constraints.map((c) => {
+        const v = verdict(c);
+        const total = c.completed + c.current + c.planned;
+        return (
+          <li class={`rule rule--${c.constraint.kind}`} data-rule={c.constraint.id}>
+            <p class="rule__figure">
+              <span class="rule__value">{total}</span>
+              <span class="rule__target">
+                {c.constraint.kind === "max" ? "max" : c.constraint.kind === "min" ? "min" : "of"} {c.constraint.units} units
+              </span>
+            </p>
+            {c.constraint.kind === "max" ? (
+              <span class="cap" style={`--cap:${(c.constraint.units / Math.max(c.constraint.units, total)) * 100}%`}>
+                <Meter tally={{ target: Math.max(c.constraint.units, total), completed: c.completed, current: c.current, planned: c.planned }} id={`rule-${c.constraint.id}`} size="md" />
+                <span class="cap__line" aria-hidden="true" />
+              </span>
+            ) : (
+              <Meter
+                tally={{
+                  target: c.constraint.units,
+                  completed: Math.min(c.completed, c.constraint.units),
+                  current: Math.min(c.current, c.constraint.units - Math.min(c.completed, c.constraint.units)),
+                  planned: Math.max(0, Math.min(c.planned, c.constraint.units - c.completed - c.current)),
+                }}
+                id={`rule-${c.constraint.id}`}
+                size="md"
+              />
+            )}
+            <p class={`rule__verdict rule__verdict--${v.tone}`}>
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+                {v.tone === "warn" ? (
+                  <path d="M8 2 15 14H1zM8 6.5v3.5M8 12h0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                ) : v.tone === "ok" ? (
+                  <path d="m3.5 8.5 3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                ) : (
+                  <circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2" />
+                )}
+              </svg>
+              {v.text}
+            </p>
+            <p class="rule__text">{c.constraint.text}</p>
+            {c.constraint.filter?.transdisciplinary && (
+              <p class="rule__caveat">
+                Counts courses whose official page lists the Transdisciplinary graduate attribute. Confirm the tag with the School.
+              </p>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  {
+    program.untracked.length > 0 && (
+      <details class="untracked">
+        <summary>Rules this planner doesn't check</summary>
+        {program.untracked.map((u) => (
+          <div class="untracked__item">
+            <h3>{u.title}</h3>
+            {u.text.map((t) => (
+              <p>{t}</p>
+            ))}
+          </div>
+        ))}
+        <a href={program.url} target="_blank" rel="noopener">
+          Full requirements on Programs &amp; Courses<span class="visually-hidden"> (opens in a new tab)</span> ↗
+        </a>
+      </details>
+    )
+  }
+</section>

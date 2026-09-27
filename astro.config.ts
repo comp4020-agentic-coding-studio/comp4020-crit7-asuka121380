@@ -1,5 +1,5 @@
 import node from "@astrojs/node";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 // Server-rendered output: pages render per request so they can read the
 // database, and `astro build` emits the Node server the Dockerfile runs.
@@ -11,4 +11,15 @@ export default defineConfig({
     // Astro trust x-forwarded-proto and accept same-origin form POSTs.
     allowedDomains: [{ hostname: "**.fly.dev", protocol: "https" }],
   },
+  fonts: [
+    { name: "Public Sans", cssVariable: "--font-sans", provider: fontProviders.google(), weights: ["300 800"] },
+    { name: "Source Serif 4", cssVariable: "--font-serif", provider: fontProviders.google(), weights: ["400 700"] },
+    {
+      name: "IBM Plex Mono",
+      cssVariable: "--font-mono",
+      provider: fontProviders.google(),
+      weights: ["400", "500", "600"],
+      styles: ["normal"],
+    },
+  ],
 });
